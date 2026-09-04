@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Currículum Nacional · Navegador de Objetivos de Aprendizaje</title>
+<meta name="description" content="Buscador y navegador de los Objetivos de Aprendizaje del currículum nacional chileno (MINEDUC), con sus Indicadores de Evaluación.">
+<link rel="stylesheet" href="./assets/app.css">
+</head>
+<body>
+<a class="skip" href="#results">Saltar al contenido</a>
+
+<header class="topbar">
+  <div class="brand">
+    <h1>Currículum Nacional</h1>
+    <p>Objetivos de Aprendizaje &middot; MINEDUC</p>
+  </div>
+
+  <form class="searchbar" role="search" autocomplete="off">
+    <label class="sr" for="q">Buscar en el currículum</label>
+    <input id="q" type="search" placeholder="Buscar: fracciones, MA1M OA 01, fotosíntesis…"
+           spellcheck="false" enterkeyhint="search">
+    <kbd class="hint">/</kbd>
+    <button id="clear-q" type="button" class="ghost" hidden aria-label="Limpiar búsqueda">&times;</button>
+  </form>
+
+  <div class="topbar-actions">
+    <button id="basket-toggle" class="ghost" aria-expanded="false">
+      Selección <span id="basket-count" class="pill">0</span>
+    </button>
+    <button id="theme-toggle" class="ghost icon" aria-label="Cambiar tema" title="Cambiar tema">◐</button>
+  </div>
+</header>
+
+<div id="status" class="status" role="status" aria-live="polite">Cargando currículum…</div>
+
+<main hidden id="app">
+  <aside class="filters" aria-label="Filtros">
+    <button id="filters-toggle" class="ghost block filters-toggle" aria-expanded="true"
+            aria-controls="filters-scroll">Filtros</button>
+    <div class="filters-scroll" id="filters-scroll">
+      <section class="fgroup">
+        <h2>Nivel</h2>
+        <div id="f-level" class="chips"></div>
+      </section>
+      <section class="fgroup">
+        <h2>Asignatura</h2>
+        <label class="sr" for="f-subject">Asignatura</label>
+        <select id="f-subject"><option value="">Todas</option></select>
+      </section>
+      <section class="fgroup">
+        <h2>Eje / Núcleo</h2>
+        <label class="sr" for="f-strand">Eje</label>
+        <select id="f-strand"><option value="">Todos</option></select>
+      </section>
+      <section class="fgroup">
+        <h2>Tipo de objetivo</h2>
+        <div id="f-category" class="chips"></div>
+      </section>
+      <section class="fgroup">
+        <h2>Plan</h2>
+        <div id="f-track" class="chips"></div>
+      </section>
+      <section class="fgroup">
+        <h2>Solo mostrar</h2>
+        <label class="check"><input type="checkbox" id="f-prioritized"> Priorización curricular</label>
+        <label class="check"><input type="checkbox" id="f-indicators"> Con indicadores de evaluación</label>
+      </section>
+      <button id="reset" class="ghost block">Limpiar filtros</button>
+
+      <section class="fgroup about">
+        <h2>Dataset</h2>
+        <dl id="meta"></dl>
+        <p class="fineprint">
+          Contenido curricular: Ministerio de Educación de Chile, Unidad de Currículum y
+          Evaluación &mdash;
+          <a href="https://www.curriculumnacional.cl" rel="noopener">curriculumnacional.cl</a>.
+          Proyecto independiente, no oficial.
+        </p>
+      </section>
+    </div>
+  </aside>
+
+  <section class="results" id="results" aria-label="Resultados">
+    <div class="results-head">
+      <h2 id="result-count">&nbsp;</h2>
+      <div class="sortbox">
+        <label class="sr" for="sort">Ordenar</label>
+        <select id="sort">
+          <option value="relevance">Relevancia</option>
+          <option value="curriculum">Orden curricular</option>
+          <option value="code">Código</option>
+          <option value="indicators">Más indicadores</option>
+        </select>
+      </div>
+    </div>
+    <ol id="list" class="list"></ol>
+    <div id="more-wrap" class="more-wrap" hidden>
+      <button id="more" class="ghost">Mostrar más</button>
+    </div>
+    <p id="empty" class="empty" hidden></p>
+  </section>
+
+  <aside class="detail" id="detail" aria-label="Detalle" tabindex="-1">
+    <p class="detail-placeholder">Selecciona un objetivo para ver su detalle,
+      sus indicadores de evaluación y su progresión entre cursos.</p>
+  </aside>
+</main>
+
+<div id="basket" class="basket" hidden aria-label="Selección">
+  <div class="basket-head">
+    <h2>Selección</h2>
+    <div class="basket-head-actions">
+      <button id="basket-clear" class="ghost small">Vaciar</button>
+      <button id="basket-close" class="ghost icon" aria-label="Cerrar">&times;</button>
+    </div>
+  </div>
+  <ol id="basket-list" class="basket-list"></ol>
+  <div class="basket-foot">
+    <label class="sr" for="export-format">Formato</label>
+    <select id="export-format">
+      <option value="markdown">Markdown</option>
+      <option value="text">Texto plano</option>
+      <option value="prompt">Bloque para LLM</option>
+      <option value="csv">CSV</option>
+      <option value="json">JSON</option>
+    </select>
+    <button id="basket-copy" class="primary">Copiar</button>
+    <button id="basket-download" class="ghost">Descargar</button>
+  </div>
+</div>
+
+<script src="./assets/app.js" type="module"></script>
+</body>
+</html>

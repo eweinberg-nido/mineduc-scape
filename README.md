@@ -26,9 +26,17 @@ pip install -e .
 ```
 
 ```bash
-mineduc-scraper scrape    -o data/mineduc_curriculum_full.json
+mineduc-scraper scrape     -o data/mineduc_curriculum_full.json
 mineduc-scraper indicators -f data/mineduc_curriculum_full.json --pdf-cache .cache/pdfs
 mineduc-scraper tp-modules -f data/mineduc_curriculum_full.json --pdf-cache .cache/pdfs
+mineduc-scraper export-manifest -f data/mineduc_curriculum_full.json -o data/manifest.json
+```
+
+To browse what you just built, serve the repository and open it —
+see [Browser navigator](#browser-navigator):
+
+```bash
+python3 -m http.server 8765
 ```
 
 The first command crawls every level (~364 pages, ~10 minutes at the default 1.5 s delay).
@@ -61,6 +69,7 @@ mineduc-scraper scrape --cache .cache -o data/mineduc_curriculum_full.json
 | `tp-modules --file F` | Attach the Técnico-Profesional *módulos*, *Aprendizajes Esperados* and *Criterios de Evaluación* |
 | `validate --file F` | Re-run JSON Schema validation and the coverage audit on an existing file |
 | `export-slim --file F -o G` | OAs only, single-line statements — for browser bundles and LLM context (`--with-indicators` to keep them) |
+| `export-manifest --file F -o G` | Small manifest identifying a build, for the browser navigator's version check |
 | `export-sqlite --file F -o G` | SQLite build with an FTS5 full-text index |
 | `split --file F -o DIR` | One JSON file per level plus an `index.json` manifest, for lazy client-side loading |
 | `levels` | List the tokens accepted by `--levels` |
@@ -410,11 +419,108 @@ positions shift from page to page, but `1.` is always an Aprendizaje Esperado an
 one of its Criterios. `objective_ids` is resolved by statement, for the same reason the
 indicator join is.
 
+## Browser navigator
+
+`index.html` at the repository root is a self-contained navigator over the dataset — no build
+step, no framework, no dependencies. It is meant to be served from GitHub Pages straight out of
+the repo, reading `data/` from the same origin.
+
+### Run it locally
+
+```bash
+python3 -m http.server 8765
+```
+
+Then open <http://localhost:8765/>.
+
+> It has to be **served over HTTP**. Opening `index.html` by double-clicking will not work:
+> Chrome blocks `fetch()` on `file://`, so the page cannot read a sibling `.json`. The app says
+> so explicitly rather than failing silently. While developing, note that `python3 -m
+> http.server` sends no cache headers, so a hard reload (**Cmd/Ctrl + Shift + R**) may be needed
+> after editing `assets/`.
+
+### Publish it on GitHub Pages
+
+Settings → Pages → *Deploy from a branch*, branch `main`, folder `/ (root)`. Nothing else to
+configure: `.nojekyll` is committed so Pages serves the files as they are, and every path in the
+app is relative, so it works from a project subpath like `https://<user>.github.io/<repo>/`.
+
+These files must stay committed for the app to work — they are what it fetches:
+
+| | |
+| --- | --- |
+| `data/mineduc_curriculum_full.json` | the dataset, 9.0 MB, which Pages gzips to ~1.3 MB |
+| `data/manifest.json` | 698 bytes, the version probe (see below) |
+
+`data/by_level/` and `data/*.db` are gitignored and are *not* used by the app — regenerate them
+locally with `split` and `export-sqlite` when you want them.
+
+### How data loading works
+
+The dataset is fetched once and then kept in **IndexedDB**, so a repeat visit costs nothing and
+the app keeps working offline. IndexedDB is not there for capacity — 9 MB is nothing against a
+desktop quota — it is there to avoid re-downloading and to survive going offline.
+
+The freshness check is what `data/manifest.json` is for: a few hundred bytes carrying the build's
+`scraped_at`, so the app can answer "is my copy current?" without downloading 1.3 MB to find
+out. Cached copy matches the manifest → load from IndexedDB. Differs → download and re-store.
+Manifest unreachable and a cached copy exists → serve it and say so. Storage blocked (private
+mode, cleared site data) → fall back to a plain fetch every time, no error.
+
+Regenerate the manifest whenever you rebuild the dataset:
+
+```bash
+mineduc-scraper export-manifest -f data/mineduc_curriculum_full.json -o data/manifest.json \
+  --slim data/mineduc_curriculum_slim.json
+```
+
+### What it does
+
+- **Search** across all 4110 statements *and* all 13 705 indicators, accent-insensitively —
+  `celula` finds *célula*, `fotosintesis` finds *fotosíntesis*. A plain inverted index with
+  prefix expansion, built in about a fifth of a second; an official code (`MA1M OA 01`) ranks
+  above a statement match, which ranks above an indicator-only match.
+- **Filters** on level, subject, eje/núcleo, objective type, plan, priorización curricular, and
+  "has indicators". Subject and eje lists rebuild from what the other filters leave reachable, so
+  you cannot land on an empty combination. Levels with no HTML objectives are shown but disabled,
+  with the reason on hover, rather than quietly missing.
+- **Every view is a link.** Filters, query and selection live in the URL hash. A bare fragment is
+  a deep link by official code — `#ma1m-oa-01` — which lands on the objective *in context*.
+- **Indicators inline**, labelled with their scope: whether the Programa publishes them for that
+  objective or for a group of objectives jointly. That distinction is in the data and matters for
+  how much weight to put on them.
+- **Técnico-Profesional drill-down**: módulo → aprendizaje esperado → criterios de evaluación,
+  with the módulos addressing the current objective opened by default.
+- **Progression**: the same objective in the other grade, and the same eje and number at other
+  levels — the "how does this strand develop" question the PDFs make nearly impossible.
+- **Selection basket** with export to Markdown, plain text, an LLM prompt block, CSV or JSON.
+  Persists in `localStorage`.
+- Light/dark following the system with a manual override, keyboard shortcuts (`/` to search,
+  `Esc` to dismiss), and a single-column layout with foldable filters on a phone.
+
+### Layout
+
+```
+index.html            app shell
+assets/app.js         wiring, rendering, URL state
+assets/index.js       flattening, accent folding, inverted index, highlighting
+assets/store.js       fetch + IndexedDB + manifest version probe
+assets/export.js      the export formats (pure functions)
+assets/export.test.js node --test assets/export.test.js
+assets/app.css        styles
+.nojekyll             tell Pages to serve the files verbatim
+```
+
 ## Development
 
 ```bash
 pip install -e '.[dev]'
 pytest
+```
+
+```bash
+python -m pytest              # scraper: extraction, normalization, schema, exports
+node --test assets/export.test.js   # navigator: the export formats
 ```
 
 The test suite runs entirely offline. HTML extraction is tested against trimmed copies of real
