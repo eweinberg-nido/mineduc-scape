@@ -14,3 +14,4 @@ venv/
 data/*.db
 data/by_level/
 .DS_Store
+./docs
