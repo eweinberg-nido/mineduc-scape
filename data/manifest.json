@@ -25,6 +25,10 @@
     "slim": {
       "path": "mineduc_curriculum_slim.json",
       "bytes": 2053558
+    },
+    "sqlite": {
+      "path": "mineduc_curriculum.db",
+      "bytes": 13926400
     }
   }
 }
