@@ -21,3 +21,4 @@ venv/
 # and rebuilt by --pdf-cache. They were briefly committed under docs/pdfs and have
 # been purged from history; keep them out.
 docs/pdfs/
+.claude
