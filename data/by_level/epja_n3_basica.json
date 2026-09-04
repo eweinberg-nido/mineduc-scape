@@ -1,0 +1,53 @@
+{
+  "metadata": {
+    "scraped_at": "2026-09-04T14:12:49+00:00",
+    "source_url": "https://www.curriculumnacional.cl",
+    "schema_version": "1.0.0",
+    "generator": "mineduc-scraper/1.0.0",
+    "level_id": "epja_n3_basica",
+    "total_oas": 0,
+    "total_by_category": {},
+    "total_subjects": 2,
+    "total_levels": 1,
+    "total_oats": 0
+  },
+  "levels": {
+    "epja_n3_basica": {
+      "level_id": "epja_n3_basica",
+      "level_name": "EPJA Nivel 3 Educación Básica (7° y 8° Básico)",
+      "subjects": {
+        "lenguaje_comunicacion": {
+          "subject_id": "lenguaje_comunicacion",
+          "subject_name": "Lenguaje y Comunicación Nivel 3 Educación Básica: 7º y 8º Año Básico",
+          "track": "plan_comun",
+          "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+          "curriculum_base_name": "Bases Curriculares de Educación de Personas Jóvenes y Adultas (EPJA)",
+          "source_url": "https://www.curriculumnacional.cl/curriculum/bases-curriculares-educacion-personas-jovenes-adultas-epja/lenguaje-comunicacion/nivel-3-educacion-basica-7o-8o-ano-basico",
+          "source_ids": {
+            "base": "8",
+            "subject": "137",
+            "grade": "30"
+          },
+          "documents": [],
+          "learning_objectives": []
+        },
+        "matematica": {
+          "subject_id": "matematica",
+          "subject_name": "Matemática Nivel 3 Educación Básica: 7º y 8º Año Básico",
+          "track": "plan_comun",
+          "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+          "curriculum_base_name": "Bases Curriculares de Educación de Personas Jóvenes y Adultas (EPJA)",
+          "source_url": "https://www.curriculumnacional.cl/curriculum/bases-curriculares-educacion-personas-jovenes-adultas-epja/matematica/nivel-3-educacion-basica-7o-8o-ano-basico",
+          "source_ids": {
+            "base": "8",
+            "subject": "138",
+            "grade": "30"
+          },
+          "documents": [],
+          "learning_objectives": []
+        }
+      }
+    }
+  },
+  "transversal_objectives": {}
+}

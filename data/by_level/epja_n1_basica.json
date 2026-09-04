@@ -1,0 +1,198 @@
+{
+  "metadata": {
+    "scraped_at": "2026-09-04T14:12:49+00:00",
+    "source_url": "https://www.curriculumnacional.cl",
+    "schema_version": "1.0.0",
+    "generator": "mineduc-scraper/1.0.0",
+    "level_id": "epja_n1_basica",
+    "total_oas": 5,
+    "total_by_category": {
+      "conocimiento": 5
+    },
+    "total_subjects": 3,
+    "total_levels": 1,
+    "total_oats": 0
+  },
+  "levels": {
+    "epja_n1_basica": {
+      "level_id": "epja_n1_basica",
+      "level_name": "EPJA Nivel 1 Educación Básica (1° a 4° Básico)",
+      "subjects": {
+        "ciencias_naturales": {
+          "subject_id": "ciencias_naturales",
+          "subject_name": "Ciencias Naturales",
+          "track": "plan_comun",
+          "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+          "curriculum_base_name": "Bases Curriculares de Educación de Personas Jóvenes y Adultas (EPJA)",
+          "source_url": "https://www.curriculumnacional.cl/curriculum/bases-curriculares-educacion-personas-jovenes-adultas-epja/ciencias-naturales/nivel-1-educacion-basica-1o-4o-ano-basico",
+          "source_ids": {
+            "base": "8",
+            "subject": "143",
+            "grade": "28"
+          },
+          "documents": [],
+          "learning_objectives": []
+        },
+        "lenguaje_comunicacion": {
+          "subject_id": "lenguaje_comunicacion",
+          "subject_name": "Lenguaje y Comunicación",
+          "track": "plan_comun",
+          "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+          "curriculum_base_name": "Bases Curriculares de Educación de Personas Jóvenes y Adultas (EPJA)",
+          "source_url": "https://www.curriculumnacional.cl/curriculum/bases-curriculares-educacion-personas-jovenes-adultas-epja/lenguaje-comunicacion/nivel-1-educacion-basica-1o-4o-ano-basico",
+          "source_ids": {
+            "base": "8",
+            "subject": "137",
+            "grade": "28"
+          },
+          "documents": [
+            {
+              "doc_type": "Programa de estudio",
+              "title": "Programa de Estudio EPJA Lenguaje y Comunicación Nivel 1- Educación Básica",
+              "url": "https://www.curriculumnacional.cl/recursos/programa-estudio-epja-lenguaje-comunicacion-nivel-1-educacion-basica-0"
+            }
+          ],
+          "learning_objectives": [
+            {
+              "oa_id": "CL_LEN_E1B_INVS_OA05",
+              "oa_number": 5,
+              "category": "conocimiento",
+              "code": "EPJA LEN1 OA05",
+              "code_slug": "epja-len1-oa05",
+              "statement": "Buscar y seleccionar información con honestidad, a partir de un propósito.",
+              "keywords": [
+                "buscar",
+                "seleccionar",
+                "información",
+                "honestidad",
+                "propósito"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/curriculum/bases-curriculares-educacion-personas-jovenes-adultas-epja/lenguaje-comunicacion/nivel-1-educacion-basica-1o-4o-ano-basico/epja-len1-oa05",
+              "strand_eje": "Investigación",
+              "strand_id": "investigacion",
+              "strand_kind": "Eje"
+            },
+            {
+              "oa_id": "CL_LEN_E1B_CO_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "EPJA LEN1 OA04",
+              "code_slug": "epja-len1-oa04",
+              "statement": "Expresarse de manera coherente y articulada utilizando un vocabulario variado y gestos, posturas, volumen y dicción adecuados al propósito y la situación comunicativa.",
+              "keywords": [
+                "expresarse",
+                "coherente",
+                "articulada",
+                "utilizando",
+                "vocabulario",
+                "variado",
+                "gestos",
+                "posturas",
+                "volumen",
+                "dicción",
+                "adecuados",
+                "propósito"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/curriculum/bases-curriculares-educacion-personas-jovenes-adultas-epja/lenguaje-comunicacion/nivel-1-educacion-basica-1o-4o-ano-basico/epja-len1-oa04",
+              "strand_eje": "Comunicación oral",
+              "strand_id": "comunicacion_oral",
+              "strand_kind": "Eje"
+            },
+            {
+              "oa_id": "CL_LEN_E1B_ESCR_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "EPJA LEN1 OA03",
+              "code_slug": "epja-len1-oa03",
+              "statement": "Escribir con letra legible para una variedad de propósitos personales y sociales.",
+              "keywords": [
+                "escribir",
+                "letra",
+                "legible",
+                "variedad",
+                "propósitos",
+                "personales",
+                "sociales"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/curriculum/bases-curriculares-educacion-personas-jovenes-adultas-epja/lenguaje-comunicacion/nivel-1-educacion-basica-1o-4o-ano-basico/epja-len1-oa03",
+              "strand_eje": "Escritura",
+              "strand_id": "escritura",
+              "strand_kind": "Eje"
+            },
+            {
+              "oa_id": "CL_LEN_E1B_LCTR_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "EPJA LEN1 OA01",
+              "code_slug": "epja-len1-oa01",
+              "statement": "Leer en voz alta textos variados de manera fluida y adecuada entonación.",
+              "keywords": [
+                "leer",
+                "alta",
+                "textos",
+                "variados",
+                "fluida",
+                "adecuada",
+                "entonación"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/curriculum/bases-curriculares-educacion-personas-jovenes-adultas-epja/lenguaje-comunicacion/nivel-1-educacion-basica-1o-4o-ano-basico/epja-len1-oa01",
+              "strand_eje": "Lectura",
+              "strand_id": "lectura",
+              "strand_kind": "Eje"
+            },
+            {
+              "oa_id": "CL_LEN_E1B_LCTR_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "EPJA LEN1 OA02",
+              "code_slug": "epja-len1-oa02",
+              "statement": "Leer textos de diversos géneros (orales, escritos y audiovisuales) para desarrollar la comprensión global.",
+              "keywords": [
+                "leer",
+                "textos",
+                "géneros",
+                "orales",
+                "escritos",
+                "audiovisuales",
+                "desarrollar",
+                "comprensión",
+                "global"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/curriculum/bases-curriculares-educacion-personas-jovenes-adultas-epja/lenguaje-comunicacion/nivel-1-educacion-basica-1o-4o-ano-basico/epja-len1-oa02",
+              "strand_eje": "Lectura",
+              "strand_id": "lectura",
+              "strand_kind": "Eje"
+            }
+          ]
+        },
+        "matematica": {
+          "subject_id": "matematica",
+          "subject_name": "Matemática Nivel 1 Educación Básica: 1º A 4º Año Básico",
+          "track": "plan_comun",
+          "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+          "curriculum_base_name": "Bases Curriculares de Educación de Personas Jóvenes y Adultas (EPJA)",
+          "source_url": "https://www.curriculumnacional.cl/curriculum/bases-curriculares-educacion-personas-jovenes-adultas-epja/matematica/nivel-1-educacion-basica-1o-4o-ano-basico",
+          "source_ids": {
+            "base": "8",
+            "subject": "138",
+            "grade": "28"
+          },
+          "documents": [
+            {
+              "doc_type": "Programa de estudio",
+              "title": "Programa de Estudio EPJA Matemática Nivel 1 - Educación Básica",
+              "url": "https://www.curriculumnacional.cl/recursos/programa-estudio-epja-matematica-nivel-1-educacion-basica-0"
+            }
+          ],
+          "learning_objectives": []
+        }
+      }
+    }
+  },
+  "transversal_objectives": {}
+}

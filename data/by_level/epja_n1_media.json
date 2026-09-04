@@ -1,0 +1,242 @@
+{
+  "metadata": {
+    "scraped_at": "2026-09-04T14:12:49+00:00",
+    "source_url": "https://www.curriculumnacional.cl",
+    "schema_version": "1.0.0",
+    "generator": "mineduc-scraper/1.0.0",
+    "level_id": "epja_n1_media",
+    "total_oas": 0,
+    "total_by_category": {},
+    "total_subjects": 11,
+    "total_levels": 1,
+    "total_oats": 0
+  },
+  "levels": {
+    "epja_n1_media": {
+      "level_id": "epja_n1_media",
+      "level_name": "EPJA Nivel 1 Educación Media (1° y 2° Medio)",
+      "subjects": {
+        "artes_visuales": {
+          "subject_id": "artes_visuales",
+          "subject_name": "Artes Visuales",
+          "track": "plan_comun",
+          "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+          "curriculum_base_name": "Bases Curriculares de Educación de Personas Jóvenes y Adultas (EPJA)",
+          "source_url": "https://www.curriculumnacional.cl/curriculum/bases-curriculares-educacion-personas-jovenes-adultas-epja/artes-visuales/nivel-1-educacion-media-1-2-ano-medio",
+          "source_ids": {
+            "base": "8",
+            "subject": "144",
+            "grade": "31"
+          },
+          "documents": [
+            {
+              "doc_type": "Programa de estudio",
+              "title": "Programa de Estudio EPJA Artes Visuales Nivel 1 y 2 - Educación Media",
+              "url": "https://www.curriculumnacional.cl/recursos/programa-estudio-epja-artes-visuales-nivel-1-2-educacion-media"
+            }
+          ],
+          "learning_objectives": []
+        },
+        "ciencias_naturales": {
+          "subject_id": "ciencias_naturales",
+          "subject_name": "Ciencias Naturales",
+          "track": "plan_comun",
+          "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+          "curriculum_base_name": "Bases Curriculares de Educación de Personas Jóvenes y Adultas (EPJA)",
+          "source_url": "https://www.curriculumnacional.cl/curriculum/bases-curriculares-educacion-personas-jovenes-adultas-epja/ciencias-naturales/nivel-1-educacion-media-1-2-ano-medio",
+          "source_ids": {
+            "base": "8",
+            "subject": "143",
+            "grade": "31"
+          },
+          "documents": [
+            {
+              "doc_type": "Programa de estudio",
+              "title": "Programa de Estudio EPJA Ciencias Naturales Nivel 1 - Educación Media",
+              "url": "https://www.curriculumnacional.cl/recursos/programa-estudio-epja-ciencias-naturales-nivel-1-educacion-media"
+            }
+          ],
+          "learning_objectives": []
+        },
+        "educacion_financiera": {
+          "subject_id": "educacion_financiera",
+          "subject_name": "Educación Financiera",
+          "track": "plan_comun",
+          "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+          "curriculum_base_name": "Bases Curriculares de Educación de Personas Jóvenes y Adultas (EPJA)",
+          "source_url": "https://www.curriculumnacional.cl/curriculum/bases-curriculares-educacion-personas-jovenes-adultas-epja/educacion-financiera/nivel-1-educacion-media-1-2-ano-medio",
+          "source_ids": {
+            "base": "8",
+            "subject": "151",
+            "grade": "31"
+          },
+          "documents": [
+            {
+              "doc_type": "Programa de estudio",
+              "title": "Programa de Estudio EPJA Educación Financiera - Educación Media",
+              "url": "https://www.curriculumnacional.cl/recursos/programa-estudio-epja-educacion-financiera-educacion-media"
+            }
+          ],
+          "learning_objectives": []
+        },
+        "educacion_fisica_salud": {
+          "subject_id": "educacion_fisica_salud",
+          "subject_name": "Educación Física y Salud",
+          "track": "plan_comun",
+          "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+          "curriculum_base_name": "Bases Curriculares de Educación de Personas Jóvenes y Adultas (EPJA)",
+          "source_url": "https://www.curriculumnacional.cl/curriculum/bases-curriculares-educacion-personas-jovenes-adultas-epja/educacion-fisica-salud/nivel-1-educacion-media-1-2-ano-medio",
+          "source_ids": {
+            "base": "8",
+            "subject": "145",
+            "grade": "31"
+          },
+          "documents": [],
+          "learning_objectives": []
+        },
+        "emprendimiento_empleabilidad": {
+          "subject_id": "emprendimiento_empleabilidad",
+          "subject_name": "Emprendimiento y Empleabilidad",
+          "track": "plan_comun",
+          "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+          "curriculum_base_name": "Bases Curriculares de Educación de Personas Jóvenes y Adultas (EPJA)",
+          "source_url": "https://www.curriculumnacional.cl/curriculum/bases-curriculares-educacion-personas-jovenes-adultas-epja/emprendimiento-empleabilidad/nivel-1-educacion-media-1-2-ano-medio",
+          "source_ids": {
+            "base": "8",
+            "subject": "150",
+            "grade": "31"
+          },
+          "documents": [
+            {
+              "doc_type": "Programa de estudio",
+              "title": "Programa de Estudio EPJA Emprendimiento y Empleabilidad - Educación Media",
+              "url": "https://www.curriculumnacional.cl/recursos/programa-estudio-epja-emprendimiento-empleabilidad-educacion-media"
+            }
+          ],
+          "learning_objectives": []
+        },
+        "filosofia": {
+          "subject_id": "filosofia",
+          "subject_name": "Filosofía",
+          "track": "plan_comun",
+          "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+          "curriculum_base_name": "Bases Curriculares de Educación de Personas Jóvenes y Adultas (EPJA)",
+          "source_url": "https://www.curriculumnacional.cl/curriculum/bases-curriculares-educacion-personas-jovenes-adultas-epja/filosofia/nivel-1-educacion-media-1-2-ano-medio",
+          "source_ids": {
+            "base": "8",
+            "subject": "146",
+            "grade": "31"
+          },
+          "documents": [
+            {
+              "doc_type": "Programa de estudio",
+              "title": "Programa de Estudio EPJA Filosofía Nivel 1 y 2 - Educación Media",
+              "url": "https://www.curriculumnacional.cl/recursos/programa-estudio-epja-filosofia-nivel-1-2-educacion-media-0"
+            }
+          ],
+          "learning_objectives": []
+        },
+        "historia_geografia_ciencias_sociales": {
+          "subject_id": "historia_geografia_ciencias_sociales",
+          "subject_name": "Historia, Geografía y Ciencias Sociales",
+          "track": "plan_comun",
+          "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+          "curriculum_base_name": "Bases Curriculares de Educación de Personas Jóvenes y Adultas (EPJA)",
+          "source_url": "https://www.curriculumnacional.cl/curriculum/bases-curriculares-educacion-personas-jovenes-adultas-epja/historia-geografia-ciencias-sociales/nivel-1-educacion-media-1-2-ano-medio",
+          "source_ids": {
+            "base": "8",
+            "subject": "149",
+            "grade": "31"
+          },
+          "documents": [
+            {
+              "doc_type": "Programa de estudio",
+              "title": "Programa de Estudio EPJA Historia, Geografía y Ciencias Sociales Nivel 1 Educación Media",
+              "url": "https://www.curriculumnacional.cl/recursos/programa-estudio-epja-historia-geografia-ciencias-sociales-nivel-1-educacion-media-0"
+            }
+          ],
+          "learning_objectives": []
+        },
+        "lenguaje_comunicacion": {
+          "subject_id": "lenguaje_comunicacion",
+          "subject_name": "Lenguaje y Comunicación",
+          "track": "plan_comun",
+          "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+          "curriculum_base_name": "Bases Curriculares de Educación de Personas Jóvenes y Adultas (EPJA)",
+          "source_url": "https://www.curriculumnacional.cl/curriculum/bases-curriculares-educacion-personas-jovenes-adultas-epja/lenguaje-comunicacion/nivel-1-educacion-media-1-2-ano-medio",
+          "source_ids": {
+            "base": "8",
+            "subject": "137",
+            "grade": "31"
+          },
+          "documents": [
+            {
+              "doc_type": "Programa de estudio",
+              "title": "Programa de Estudio EPJA Lengua y Literatura - Educación Media",
+              "url": "https://www.curriculumnacional.cl/recursos/programa-estudio-epja-lengua-literatura-educacion-media"
+            }
+          ],
+          "learning_objectives": []
+        },
+        "matematica": {
+          "subject_id": "matematica",
+          "subject_name": "Matemática Nivel 1 Educación Media: 1° y 2° Año Medio",
+          "track": "plan_comun",
+          "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+          "curriculum_base_name": "Bases Curriculares de Educación de Personas Jóvenes y Adultas (EPJA)",
+          "source_url": "https://www.curriculumnacional.cl/curriculum/bases-curriculares-educacion-personas-jovenes-adultas-epja/matematica/nivel-1-educacion-media-1-2-ano-medio",
+          "source_ids": {
+            "base": "8",
+            "subject": "138",
+            "grade": "31"
+          },
+          "documents": [
+            {
+              "doc_type": "Programa de estudio",
+              "title": "Programa de Estudio EPJA Matemática Nivel 1 Educación Media",
+              "url": "https://www.curriculumnacional.cl/recursos/programa-estudio-epja-matematica-nivel-1-educacion-media"
+            }
+          ],
+          "learning_objectives": []
+        },
+        "pensamiento_computacional": {
+          "subject_id": "pensamiento_computacional",
+          "subject_name": "Pensamiento Computacional",
+          "track": "plan_comun",
+          "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+          "curriculum_base_name": "Bases Curriculares de Educación de Personas Jóvenes y Adultas (EPJA)",
+          "source_url": "https://www.curriculumnacional.cl/curriculum/bases-curriculares-educacion-personas-jovenes-adultas-epja/pensamiento-computacional/nivel-1-educacion-media-1-2-ano-medio",
+          "source_ids": {
+            "base": "8",
+            "subject": "147",
+            "grade": "31"
+          },
+          "documents": [],
+          "learning_objectives": []
+        },
+        "responsabilidad_personal_social": {
+          "subject_id": "responsabilidad_personal_social",
+          "subject_name": "Responsabilidad Personal y Social",
+          "track": "plan_comun",
+          "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+          "curriculum_base_name": "Bases Curriculares de Educación de Personas Jóvenes y Adultas (EPJA)",
+          "source_url": "https://www.curriculumnacional.cl/curriculum/bases-curriculares-educacion-personas-jovenes-adultas-epja/responsabilidad-personal-social/nivel-1-educacion-media-1-2-ano-medio",
+          "source_ids": {
+            "base": "8",
+            "subject": "148",
+            "grade": "31"
+          },
+          "documents": [
+            {
+              "doc_type": "Programa de estudio",
+              "title": "Programa de Estudio EPJA Responsabilidad Personal y Social - Educación Media",
+              "url": "https://www.curriculumnacional.cl/recursos/programa-estudio-epja-responsabilidad-personal-social-educacion-media"
+            }
+          ],
+          "learning_objectives": []
+        }
+      }
+    }
+  },
+  "transversal_objectives": {}
+}

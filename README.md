@@ -419,6 +419,41 @@ positions shift from page to page, but `1.` is always an Aprendizaje Esperado an
 one of its Criterios. `objective_ids` is resolved by statement, for the same reason the
 indicator join is.
 
+## What ships in the repo
+
+The built dataset is committed, in every format, so a consumer can fetch one file instead of
+installing Python and re-scraping:
+
+| File | Size | For |
+| --- | --- | --- |
+| `data/mineduc_curriculum_full.json` | 9.0 MB | everything: objectives, indicators, TP módulos, OATs, provenance |
+| `data/mineduc_curriculum_slim.json` | 2.0 MB | objectives only, single-line statements — browser bundles, LLM context |
+| `data/mineduc_curriculum.db` | 13.3 MB | SQLite with FTS5 over statements *and* indicators — see [examples/queries.sql](examples/queries.sql) |
+| `data/by_level/*.json` | 9.0 MB | one file per level plus `index.json`, for loading a single grade |
+| `data/manifest.json` | <1 KB | build identity (`scraped_at` and totals) for version checks |
+
+They are all derived from the full JSON and can be rebuilt from it without touching the network:
+
+```bash
+mineduc-scraper export-sqlite   -f data/mineduc_curriculum_full.json -o data/mineduc_curriculum.db
+mineduc-scraper export-slim     -f data/mineduc_curriculum_full.json -o data/mineduc_curriculum_slim.json
+mineduc-scraper split           -f data/mineduc_curriculum_full.json -o data/by_level
+mineduc-scraper export-manifest -f data/mineduc_curriculum_full.json -o data/manifest.json
+```
+
+Two consequences worth knowing. These are binary or wholesale-rewritten files, so each rebuild
+adds its full size to git history rather than a diff — roughly 22 MB per regeneration. And the
+SQLite build must be regenerated whenever the JSON changes, or the two disagree silently; the
+`export-*` commands above are the whole recipe.
+
+### What is *not* committed
+
+The **Programa de Estudio PDFs** (~820 MB in `docs/pdfs/`) are source material, not output. They
+are re-downloadable from curriculumnacional.cl and are cached locally by `--pdf-cache`, so they
+do not belong in git: they are 40× the size of everything else in the repo combined, and GitHub
+Pages publishes at most 1 GB per site. If they need archiving for reproducibility, a GitHub
+Release asset or Git LFS is the right home for them, not the git object store.
+
 ## Browser navigator
 
 `index.html` at the repository root is a self-contained navigator over the dataset — no build

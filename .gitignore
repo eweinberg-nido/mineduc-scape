@@ -7,11 +7,17 @@ dist/
 venv/
 .cache/
 .pytest_cache/
-
-# Derived dataset artifacts: regenerate from the committed JSON with
-#   mineduc-scraper export-sqlite -f data/mineduc_curriculum_full.json -o data/mineduc_curriculum.db
-#   mineduc-scraper split         -f data/mineduc_curriculum_full.json -o data/by_level
-data/*.db
-data/by_level/
 .DS_Store
-./docs
+
+# Everything under data/ is committed on purpose: the JSON, the SQLite build and
+# the per-level split are the point of the project, and a consumer should be able
+# to fetch one file instead of installing Python and re-scraping. Regenerate with:
+#   mineduc-scraper export-sqlite    -f data/mineduc_curriculum_full.json -o data/mineduc_curriculum.db
+#   mineduc-scraper split            -f data/mineduc_curriculum_full.json -o data/by_level
+#   mineduc-scraper export-manifest  -f data/mineduc_curriculum_full.json -o data/manifest.json
+
+# Source PDFs are inputs, not outputs: ~820 MB, re-downloadable from
+# curriculumnacional.cl and cached locally via --pdf-cache. NOTE: a gitignore rule
+# only affects untracked files, and docs/pdfs/ is already tracked and pushed, so
+# this does nothing until those files are removed from the index. See README.
+docs/pdfs/

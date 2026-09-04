@@ -1,0 +1,128 @@
+{
+  "metadata": {
+    "scraped_at": "2026-09-04T14:12:49+00:00",
+    "source_url": "https://www.curriculumnacional.cl",
+    "schema_version": "1.0.0",
+    "generator": "mineduc-scraper/1.0.0",
+    "level_id": "epja_n2_basica",
+    "total_oas": 0,
+    "total_by_category": {},
+    "total_subjects": 5,
+    "total_levels": 1,
+    "total_oats": 0
+  },
+  "levels": {
+    "epja_n2_basica": {
+      "level_id": "epja_n2_basica",
+      "level_name": "EPJA Nivel 2 Educación Básica (5° y 6° Básico)",
+      "subjects": {
+        "ciencias_naturales": {
+          "subject_id": "ciencias_naturales",
+          "subject_name": "Ciencias Naturales",
+          "track": "plan_comun",
+          "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+          "curriculum_base_name": "Bases Curriculares de Educación de Personas Jóvenes y Adultas (EPJA)",
+          "source_url": "https://www.curriculumnacional.cl/curriculum/bases-curriculares-educacion-personas-jovenes-adultas-epja/ciencias-naturales/nivel-2-educacion-basica-5o-6o-ano-basico",
+          "source_ids": {
+            "base": "8",
+            "subject": "143",
+            "grade": "29"
+          },
+          "documents": [
+            {
+              "doc_type": "Programa de estudio",
+              "title": "Programa de Estudio EPJA Ciencias Naturales Nivel 2 - Educación Básica",
+              "url": "https://www.curriculumnacional.cl/recursos/programa-estudio-epja-ciencias-naturales-nivel-2-educacion-basica"
+            }
+          ],
+          "learning_objectives": []
+        },
+        "historia_geografia_ciencias_sociales": {
+          "subject_id": "historia_geografia_ciencias_sociales",
+          "subject_name": "Historia, Geografía y Ciencias Sociales",
+          "track": "plan_comun",
+          "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+          "curriculum_base_name": "Bases Curriculares de Educación de Personas Jóvenes y Adultas (EPJA)",
+          "source_url": "https://www.curriculumnacional.cl/curriculum/bases-curriculares-educacion-personas-jovenes-adultas-epja/historia-geografia-ciencias-sociales/nivel-2-educacion-basica-5o-6o-ano-basico",
+          "source_ids": {
+            "base": "8",
+            "subject": "149",
+            "grade": "29"
+          },
+          "documents": [
+            {
+              "doc_type": "Programa de estudio",
+              "title": "Programa de Estudio EPJA Historia, Geografía y Ciencias Sociales Nivel 2 Educación Básica",
+              "url": "https://www.curriculumnacional.cl/recursos/programa-estudio-epja-historia-geografia-ciencias-sociales-nivel-2-educacion-basica"
+            }
+          ],
+          "learning_objectives": []
+        },
+        "ingles": {
+          "subject_id": "ingles",
+          "subject_name": "Inglés",
+          "track": "plan_comun",
+          "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+          "curriculum_base_name": "Bases Curriculares de Educación de Personas Jóvenes y Adultas (EPJA)",
+          "source_url": "https://www.curriculumnacional.cl/curriculum/bases-curriculares-educacion-personas-jovenes-adultas-epja/ingles/nivel-2-educacion-basica-5o-6o-ano-basico",
+          "source_ids": {
+            "base": "8",
+            "subject": "142",
+            "grade": "29"
+          },
+          "documents": [
+            {
+              "doc_type": "Programa de estudio",
+              "title": "Programa de Estudio EPJA Inglés Nivel 2 - Educación Básica",
+              "url": "https://www.curriculumnacional.cl/recursos/programa-estudio-epja-ingles-nivel-2-educacion-basica-0"
+            }
+          ],
+          "learning_objectives": []
+        },
+        "lenguaje_comunicacion": {
+          "subject_id": "lenguaje_comunicacion",
+          "subject_name": "Lenguaje y Comunicación Nivel 2 Educación Básica: 5º y 6º Año Básico",
+          "track": "plan_comun",
+          "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+          "curriculum_base_name": "Bases Curriculares de Educación de Personas Jóvenes y Adultas (EPJA)",
+          "source_url": "https://www.curriculumnacional.cl/curriculum/bases-curriculares-educacion-personas-jovenes-adultas-epja/lenguaje-comunicacion/nivel-2-educacion-basica-5o-6o-ano-basico",
+          "source_ids": {
+            "base": "8",
+            "subject": "137",
+            "grade": "29"
+          },
+          "documents": [
+            {
+              "doc_type": "Programa de estudio",
+              "title": "Programa de Estudio EPJA Lenguaje y Comunicación Nivel 2 - Educación Básica",
+              "url": "https://www.curriculumnacional.cl/recursos/programa-estudio-epja-lenguaje-comunicacion-nivel-2-educacion-basica"
+            }
+          ],
+          "learning_objectives": []
+        },
+        "matematica": {
+          "subject_id": "matematica",
+          "subject_name": "Matemática Nivel 2 Educación Básica: 5º y 6º Año Básico",
+          "track": "plan_comun",
+          "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+          "curriculum_base_name": "Bases Curriculares de Educación de Personas Jóvenes y Adultas (EPJA)",
+          "source_url": "https://www.curriculumnacional.cl/curriculum/bases-curriculares-educacion-personas-jovenes-adultas-epja/matematica/nivel-2-educacion-basica-5o-6o-ano-basico",
+          "source_ids": {
+            "base": "8",
+            "subject": "138",
+            "grade": "29"
+          },
+          "documents": [
+            {
+              "doc_type": "Programa de estudio",
+              "title": "Programa de Estudio EPJA Matemática Nivel 2 - Educación Básica",
+              "url": "https://www.curriculumnacional.cl/recursos/programa-estudio-epja-matematica-nivel-2-educacion-basica"
+            }
+          ],
+          "learning_objectives": []
+        }
+      }
+    }
+  },
+  "transversal_objectives": {}
+}
