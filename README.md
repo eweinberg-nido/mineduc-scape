@@ -448,11 +448,13 @@ SQLite build must be regenerated whenever the JSON changes, or the two disagree 
 
 ### What is *not* committed
 
-The **Programa de Estudio PDFs** (~820 MB in `docs/pdfs/`) are source material, not output. They
-are re-downloadable from curriculumnacional.cl and are cached locally by `--pdf-cache`, so they
-do not belong in git: they are 40× the size of everything else in the repo combined, and GitHub
-Pages publishes at most 1 GB per site. If they need archiving for reproducibility, a GitHub
-Release asset or Git LFS is the right home for them, not the git object store.
+The **Programa de Estudio PDFs** (~820 MB, 217 files) are source material, not output. They live
+in `.cache/pdfs`, which is gitignored, and `--pdf-cache` rebuilds them from
+curriculumnacional.cl. They do not belong in git: they are 24× the size of everything else in
+the repo combined, and a GitHub Pages site may be no larger than 1 GB — publishing from the
+repository root would have spent 76% of that budget on source PDFs. If you want them archived
+for reproducibility, a GitHub Release asset (2 GB per file, and it does not affect clone size)
+or Git LFS is the right home, not the git object store.
 
 ## Browser navigator
 

@@ -16,8 +16,8 @@ venv/
 #   mineduc-scraper split            -f data/mineduc_curriculum_full.json -o data/by_level
 #   mineduc-scraper export-manifest  -f data/mineduc_curriculum_full.json -o data/manifest.json
 
-# Source PDFs are inputs, not outputs: ~820 MB, re-downloadable from
-# curriculumnacional.cl and cached locally via --pdf-cache. NOTE: a gitignore rule
-# only affects untracked files, and docs/pdfs/ is already tracked and pushed, so
-# this does nothing until those files are removed from the index. See README.
+# The Programa de Estudio PDFs live in .cache/pdfs (covered by .cache/ above).
+# They are inputs, not outputs: ~820 MB, re-downloadable from curriculumnacional.cl
+# and rebuilt by --pdf-cache. They were briefly committed under docs/pdfs and have
+# been purged from history; keep them out.
 docs/pdfs/
