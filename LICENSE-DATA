@@ -1,0 +1,32 @@
+# Dataset license
+
+The **code** in this repository is MIT licensed (see `LICENSE`).
+
+The **dataset** produced by it (`data/*.json`, `data/*.db`) is a structural
+re-publication of the Chilean national curriculum, authored by the Unidad de
+Currículum y Evaluación (UCE) of the Ministerio de Educación de Chile and
+published at <https://www.curriculumnacional.cl>.
+
+The objective statements are official legal text from the *Bases Curriculares*,
+enacted by decree. They are Chilean state normative content; this project claims
+no rights over them and reproduces them verbatim, with attribution.
+
+To the extent that the *structure, identifiers, keyword tags and packaging*
+added by this project are copyrightable, the contributors dedicate them to the
+public domain under CC0 1.0 Universal:
+<https://creativecommons.org/publicdomain/zero/1.0/>
+
+## Attribution
+
+When redistributing the dataset, please retain a note such as:
+
+> Curriculum content: Ministerio de Educación de Chile, Unidad de Currículum y
+> Evaluación — curriculumnacional.cl. Structured by mineduc-curriculum-db.
+
+Every record carries a `source_url` pointing back to the page it was read from.
+
+## No endorsement
+
+This is an independent, unofficial project. It is not affiliated with, endorsed
+by, or supported by MINEDUC. Always treat curriculumnacional.cl and the
+published *Bases Curriculares* as authoritative.

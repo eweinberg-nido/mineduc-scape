@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.cache/
+.pytest_cache/
+
+# Derived dataset artifacts: regenerate from the committed JSON with
+#   mineduc-scraper export-sqlite -f data/mineduc_curriculum_full.json -o data/mineduc_curriculum.db
+#   mineduc-scraper split         -f data/mineduc_curriculum_full.json -o data/by_level
+data/*.db
+data/by_level/
+.DS_Store

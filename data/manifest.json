@@ -1,0 +1,30 @@
+{
+  "scraped_at": "2026-09-04T14:12:49+00:00",
+  "source_url": "https://www.curriculumnacional.cl",
+  "schema_version": "1.0.0",
+  "generator": "mineduc-scraper/1.0.0",
+  "dataset_variant": "full",
+  "total_oas": 4110,
+  "total_by_category": {
+    "actitud": 643,
+    "conocimiento": 3116,
+    "habilidad": 351
+  },
+  "total_subjects": 358,
+  "total_levels": 20,
+  "total_oats": 74,
+  "total_indicators": 13705,
+  "objectives_with_indicators": 1586,
+  "total_modules": 379,
+  "total_criteria": 5024,
+  "files": {
+    "full": {
+      "path": "mineduc_curriculum_full.json",
+      "bytes": 9445793
+    },
+    "slim": {
+      "path": "mineduc_curriculum_slim.json",
+      "bytes": 2053558
+    }
+  }
+}

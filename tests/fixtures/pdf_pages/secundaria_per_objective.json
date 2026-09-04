@@ -1,0 +1,365 @@
+{
+ "source_pdf": "mat1m.pdf",
+ "page": 70,
+ "exercises": "7oB-2oM: standalone 'OA n' cells, one block per bullet",
+ "blocks": [
+  [
+   57.79,
+   740.27,
+   297.09,
+   753.83,
+   "68\nMATEMÁTICA    |   Programa de Estudio   |  1° medio  \n"
+  ],
+  [
+   281.13,
+   77.37,
+   331.16,
+   90.93,
+   "UNIDAD 1\n"
+  ],
+  [
+   81.86,
+   103.79,
+   441.72,
+   114.53,
+   "OBJETIVOS DE APRENDIZAJE\nINDICADORES DE EVALUACIÓN \n"
+  ],
+  [
+   80.84,
+   125.04,
+   500.03,
+   149.31,
+   "Se espera que las y los \nestudiantes sean capaces de:\nLos y las estudiantes que han alcanzado este aprendizaje:\n"
+  ],
+  [
+   75.12,
+   162.66,
+   95.32,
+   174.91,
+   "OA 1\n"
+  ],
+  [
+   75.12,
+   178.91,
+   193.5,
+   216.64,
+   "Calcular operaciones con \nnúmeros racionales en forma \nsimbólica. \n"
+  ],
+  [
+   218.27,
+   162.29,
+   538.73,
+   174.54,
+   "• Identifican el tipo de número, racional, entero y natural, y las operaciones \n"
+  ],
+  [
+   229.61,
+   175.7,
+   282.41,
+   187.43,
+   "involucradas.\n"
+  ],
+  [
+   218.27,
+   191.13,
+   538.69,
+   203.38,
+   "• Realizan operaciones mixtas con números racionales, respetando la jerarquía \n"
+  ],
+  [
+   229.61,
+   204.54,
+   375.38,
+   216.27,
+   "de las operaciones y los paréntesis. \n"
+  ],
+  [
+   218.27,
+   219.96,
+   538.7,
+   232.21,
+   "• Reducen expresiones numéricas de números racionales, aplicando las propiedades \n"
+  ],
+  [
+   229.61,
+   233.37,
+   435.04,
+   245.1,
+   "de conmutatividad, asociatividad y distributividad.\n"
+  ],
+  [
+   218.27,
+   248.8,
+   538.71,
+   261.05,
+   "• Transforman expresiones del lenguaje natural a expresiones matemáticas y \n"
+  ],
+  [
+   229.61,
+   262.21,
+   272.2,
+   273.94,
+   "viceversa. \n"
+  ],
+  [
+   75.12,
+   286.68,
+   95.32,
+   298.93,
+   "OA 2\n"
+  ],
+  [
+   75.12,
+   302.92,
+   192.19,
+   340.65,
+   "Mostrar que comprenden las \npotencias de base racional y \nexponente entero:\n"
+  ],
+  [
+   75.12,
+   344.34,
+   204.5,
+   356.59,
+   "• Transfiriendo propiedades de \n"
+  ],
+  [
+   86.46,
+   357.75,
+   201.15,
+   395.48,
+   "la multiplicación y división \nde potencias a los ámbitos \nnuméricos correspondientes.\n"
+  ],
+  [
+   75.12,
+   399.18,
+   181.67,
+   411.43,
+   "• Relacionándolas con el \n"
+  ],
+  [
+   86.46,
+   412.59,
+   202.99,
+   437.32,
+   "crecimiento y decrecimiento \nde cantidades. \n"
+  ],
+  [
+   75.12,
+   441.01,
+   180.93,
+   453.26,
+   "• Resolviendo problemas \n"
+  ],
+  [
+   86.46,
+   454.42,
+   184.44,
+   479.15,
+   "de la vida diaria y otras \nasignaturas.\n"
+  ],
+  [
+   218.27,
+   286.31,
+   517.08,
+   298.56,
+   "• Reconocen que la potencia de potencia es una multiplicación iterativa.\n"
+  ],
+  [
+   218.27,
+   302.14,
+   535.67,
+   314.39,
+   "• Reconocen el significado del exponente 0 y de los exponentes enteros negativos.\n"
+  ],
+  [
+   218.27,
+   317.98,
+   538.71,
+   330.23,
+   "• Aplican las propiedades de la multiplicación, la división y la potenciación de \n"
+  ],
+  [
+   229.61,
+   331.39,
+   327.25,
+   343.12,
+   "potencias en ejercicios. \n"
+  ],
+  [
+   218.27,
+   346.81,
+   538.7,
+   359.06,
+   "• Modelan procesos de crecimiento y decrecimiento en Economía y en Ciencias \n"
+  ],
+  [
+   229.61,
+   360.22,
+   269.81,
+   371.95,
+   "Naturales.\n"
+  ],
+  [
+   218.27,
+   375.64,
+   538.71,
+   387.89,
+   "• Resuelven problemas de la vida diaria y de otras asignaturas, relacionados \n"
+  ],
+  [
+   229.61,
+   389.05,
+   437.46,
+   400.78,
+   "con potencias de base racional y exponente entero.\n"
+  ],
+  [
+   75.12,
+   491.89,
+   95.32,
+   504.14,
+   "OA 3\n"
+  ],
+  [
+   75.12,
+   508.14,
+   196.83,
+   545.87,
+   "Desarrollar los productos \nnotables de manera concreta, \npictórica y simbólica: \n"
+  ],
+  [
+   75.12,
+   549.56,
+   202.64,
+   561.81,
+   "• Transformando productos en \n"
+  ],
+  [
+   86.46,
+   562.97,
+   163.68,
+   574.7,
+   "sumas, y viceversa.\n"
+  ],
+  [
+   75.12,
+   578.39,
+   195.95,
+   590.64,
+   "• Aplicándolos a situaciones \n"
+  ],
+  [
+   86.46,
+   591.8,
+   127.41,
+   603.53,
+   "concretas.\n"
+  ],
+  [
+   75.12,
+   607.23,
+   205.56,
+   619.48,
+   "• Completando el cuadrado del \n"
+  ],
+  [
+   86.46,
+   620.64,
+   122.03,
+   632.37,
+   "binomio.\n"
+  ],
+  [
+   75.12,
+   636.06,
+   206.13,
+   648.31,
+   "• Utilizándolas en la reducción \n"
+  ],
+  [
+   86.46,
+   649.47,
+   197.97,
+   674.2,
+   "y desarrollo de expresiones \nalgebraicas.\n"
+  ],
+  [
+   218.27,
+   491.52,
+   535.91,
+   503.77,
+   "• Aplican la propiedad distributiva de la multiplicación en productos de sumas.\n"
+  ],
+  [
+   218.27,
+   507.36,
+   538.8,
+   519.61,
+   "• Representan los tres productos notables mediante la composición y \n"
+  ],
+  [
+   229.61,
+   520.77,
+   408.0,
+   532.5,
+   "descomposición de cuadrados y rectángulos.\n"
+  ],
+  [
+   218.27,
+   536.19,
+   538.67,
+   548.44,
+   "• Reconocen los productos notables como caso especial del producto de dos \n"
+  ],
+  [
+   229.61,
+   549.6,
+   311.31,
+   561.33,
+   "sumas o diferencias.\n"
+  ],
+  [
+   218.27,
+   565.03,
+   532.26,
+   577.28,
+   "• Reconocen la estructura de los productos notables en su expresión aditiva.\n"
+  ],
+  [
+   218.27,
+   580.86,
+   530.8,
+   593.11,
+   "• Aplican los productos notables en el desarrollo de expresiones algebraicas.\n"
+  ],
+  [
+   218.27,
+   596.69,
+   538.87,
+   608.94,
+   "• Aplican los productos notables en la factorización y la reducción de expresiones \n"
+  ],
+  [
+   229.61,
+   610.1,
+   373.75,
+   621.83,
+   "algebraicas a situaciones concretas.\n"
+  ],
+  [
+   218.27,
+   625.53,
+   538.65,
+   637.78,
+   "• Aplican la estructura de los productos notables para completar sumas, al \n"
+  ],
+  [
+   229.61,
+   638.94,
+   333.91,
+   650.67,
+   "cuadrado de una adición. \n"
+  ]
+ ],
+ "text": "68\nMATEMÁTICA    |   Programa de Estudio   |  1° medio  \nUNIDAD 1\nOBJETIVOS DE APRENDIZAJE\nINDICADORES DE EVALUACIÓN \nSe espera que las y los \nestudiantes sean capaces de:\nLos y las estudiantes que han alcanzado este aprendizaje:\nOA 1\nCalcular operaciones con \nnúmeros racionales en forma \nsimbólica. \n• Identifican el tipo de número, racional, entero y natural, y las operaciones \ninvolucradas.\n• Realizan operaciones mixtas con números racionales, respetando la jerarquía \nde las operaciones y los paréntesis. \n• Reducen expresiones numéricas de números racionales, aplicando las propiedades \nde conmutatividad, asociatividad y distributividad.\n• Transforman expresiones del lenguaje natural a expresiones matemáticas y \nviceversa. \nOA 2\nMostrar que comprenden las \npotencias de base racional y \nexponente entero:\n• Transfiriendo propiedades de \nla multiplicación y división \nde potencias a los ámbitos \nnuméricos correspondientes.\n• Relacionándolas con el \ncrecimiento y decrecimiento \nde cantidades. \n• Resolviendo problemas \nde la vida diaria y otras \nasignaturas.\n• Reconocen que la potencia de potencia es una multiplicación iterativa.\n• Reconocen el significado del exponente 0 y de los exponentes enteros negativos.\n• Aplican las propiedades de la multiplicación, la división y la potenciación de \npotencias en ejercicios. \n• Modelan procesos de crecimiento y decrecimiento en Economía y en Ciencias \nNaturales.\n• Resuelven problemas de la vida diaria y de otras asignaturas, relacionados \ncon potencias de base racional y exponente entero.\nOA 3\nDesarrollar los productos \nnotables de manera concreta, \npictórica y simbólica: \n• Transformando productos en \nsumas, y viceversa.\n• Aplicándolos a situaciones \nconcretas.\n• Completando el cuadrado del \nbinomio.\n• Utilizándolas en la reducción \ny desarrollo de expresiones \nalgebraicas.\n• Aplican la propiedad distributiva de la multiplicación en productos de sumas.\n• Representan los tres productos notables mediante la composición y \ndescomposición de cuadrados y rectángulos.\n• Reconocen los productos notables como caso especial del producto de dos \nsumas o diferencias.\n• Reconocen la estructura de los productos notables en su expresión aditiva.\n• Aplican los productos notables en el desarrollo de expresiones algebraicas.\n• Aplican los productos notables en la factorización y la reducción de expresiones \nalgebraicas a situaciones concretas.\n• Aplican la estructura de los productos notables para completar sumas, al \ncuadrado de una adición. \n"
+}
