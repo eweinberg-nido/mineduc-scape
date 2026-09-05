@@ -22,6 +22,17 @@ function tokenize(text) {
   return fold(text).match(TOKEN) ?? [];
 }
 
+/**
+ * Count the subordinate components stored under a statement's stem.
+ *
+ * A card shows only the stem. When the objective is a stem plus a bulleted
+ * list, showing the stem alone makes a complete stored objective look
+ * truncated, so the card has to say how much more there is.
+ */
+function componentCount(statement) {
+  return (statement ?? '').split('\n').filter((line) => line.trim()).length - 1;
+}
+
 /** One flat record per objective, with everything the UI needs to render a row. */
 export function flatten(database) {
   const records = [];
@@ -34,6 +45,7 @@ export function flatten(database) {
         records.push({
           idx: records.length,
           order: order++,
+          kind: 'oa',
           oa_id: objective.oa_id,
           code: objective.code ?? '',
           code_slug: objective.code_slug ?? '',
@@ -56,6 +68,14 @@ export function flatten(database) {
           curriculumBase: subject.curriculum_base ?? '',
           documents: subject.documents ?? [],
           modules: subject.modules ?? [],
+          components: componentCount(objective.statement),
+          status: objective.curriculum_status ?? subject.curriculum_status ?? 'desconocido',
+          statusSource: objective.status_source ?? subject.status_source ?? null,
+          prioritization: objective.prioritization ?? null,
+          provenance: objective.provenance ?? null,
+          correction: objective.correction ?? null,
+          levelScope: objective.level_scope ?? level.level_scope ?? [],
+          formationArea: subject.formation_area_name ?? null,
         });
       }
     }
@@ -210,4 +230,112 @@ export function escapeHtml(text) {
   return (text ?? '').replace(/[&<>"']/g, (character) => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
   }[character]));
+}
+
+
+/**
+ * One flat record per transversal objective.
+ *
+ * OATs are stored once per curriculum base rather than per subject, because
+ * that is how they are defined; flattening them into the objective list would
+ * invent a subject mapping the sources do not publish. They therefore get their
+ * own record shape, sharing only the fields the UI genuinely treats alike -
+ * `oa_id`, `code`, `statement` - so one basket, one export and one deep-link
+ * scheme can hold both.
+ */
+export function flattenOats(database, baseNames = {}) {
+  const records = [];
+  let order = 0;
+  for (const [base, bucket] of Object.entries(database.transversal_objectives ?? {})) {
+    for (const oat of bucket) {
+      records.push({
+        idx: records.length,
+        order: order++,
+        kind: 'oat',
+        oa_id: oat.oat_id,
+        code: oat.code ?? `OAT ${oat.oat_number ?? ''}`.trim(),
+        code_slug: (oat.oat_id ?? '').toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+        number: oat.oat_number ?? 0,
+        statement: oat.statement ?? '',
+        title: oat.title ?? '',
+        dimension: oat.dimension ?? '',
+        dimensionDescription: oat.dimension_description ?? '',
+        curriculumBase: base,
+        curriculumBaseName: baseNames[base] ?? base,
+        status: oat.curriculum_status ?? 'desconocido',
+        statusSource: oat.status_source ?? null,
+        provenance: oat.provenance ?? null,
+        components: componentCount(oat.statement),
+        keywords: [],
+        indicators: [],
+        indicators_source: [],
+        source_url: oat.provenance?.source_url ?? '',
+      });
+    }
+  }
+  return records;
+}
+
+/** Inverted index over the OAT records, same shape as the objective one. */
+export function buildOatIndex(records) {
+  const postings = new Map();
+  const add = (token, idx) => {
+    let list = postings.get(token);
+    if (!list) postings.set(token, (list = []));
+    if (list[list.length - 1] !== idx) list.push(idx);
+  };
+  for (const record of records) {
+    for (const field of [record.statement, record.code, record.dimension,
+      record.title, record.curriculumBaseName]) {
+      for (const token of tokenize(field)) add(token, record.idx);
+    }
+  }
+  for (const list of postings.values()) list.sort((a, b) => a - b);
+  return postings;
+}
+
+/**
+ * Where a record matched, and a short excerpt when the match was indicator-only.
+ *
+ * A result whose only connection to the query is a phrase buried in an
+ * indicator looks, on a card, like a result that does not match at all. Saying
+ * so - and showing the sentence responsible - is the difference between a
+ * search a reader trusts and one they work around.
+ */
+export function explainMatch(record, query) {
+  const tokens = [...new Set(tokenize(query))];
+  if (!tokens.length) return null;
+
+  const fields = {
+    code: fold(record.code),
+    statement: fold(record.statement),
+    keywords: fold((record.keywords ?? []).join(' ')),
+    strand: fold(record.strand ?? record.dimension ?? ''),
+    indicators: fold((record.indicators ?? []).join(' ')),
+  };
+  const matched = Object.entries(fields)
+    .filter(([, value]) => tokens.some((token) => value.includes(token)))
+    .map(([name]) => name);
+
+  if (!matched.length || matched.some((name) => name !== 'indicators')) {
+    return { fields: matched, indicatorOnly: false, excerpt: '' };
+  }
+
+  // Indicator-only: find the indicator carrying the query and cut around it.
+  for (const indicator of record.indicators ?? []) {
+    const folded = fold(indicator);
+    for (const token of tokens) {
+      const at = folded.indexOf(token);
+      if (at === -1) continue;
+      const from = Math.max(0, at - 60);
+      const to = Math.min(indicator.length, at + token.length + 90);
+      return {
+        fields: matched,
+        indicatorOnly: true,
+        excerpt: (from > 0 ? '…' : '') + indicator.slice(from, to).trim()
+          + (to < indicator.length ? '…' : ''),
+      };
+    }
+  }
+  return { fields: matched, indicatorOnly: true, excerpt: '' };
 }

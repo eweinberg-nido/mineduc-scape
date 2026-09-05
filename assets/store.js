@@ -72,6 +72,20 @@ export async function clearCache() {
   } catch { /* nothing to clear */ }
 }
 
+/**
+ * Identify a build.
+ *
+ * `built_at` is the one that moves whenever the artefacts are regenerated;
+ * `scraped_at` only moves when the site is re-crawled, so a dataset augmented
+ * from a PDF source would keep the same `scraped_at` and a client keyed on it
+ * would serve a stale copy forever. Falling back to `scraped_at` means a cache
+ * written by an older build (which has no `built_at`) fails the comparison and
+ * is replaced, which is the safe direction.
+ */
+function buildId(entry) {
+  return `${entry?.built_at ?? entry?.metadata?.built_at ?? ''}|${entry?.scraped_at ?? ''}`;
+}
+
 async function fetchJson(url) {
   const response = await fetch(url, { cache: 'no-cache' });
   if (!response.ok) throw new Error(`${response.status} ${response.statusText} — ${url}`);
@@ -95,7 +109,7 @@ export async function loadDataset(onProgress = () => {}) {
   }
 
   const cached = await readCache();
-  if (cached?.data && (!manifest || cached.scraped_at === manifest.scraped_at)) {
+  if (cached?.data && (!manifest || buildId(cached) === buildId(manifest))) {
     onProgress('cache');
     return { data: cached.data, source: 'cache', manifest: manifest ?? cached.manifest };
   }
@@ -108,8 +122,12 @@ export async function loadDataset(onProgress = () => {}) {
 
   onProgress('download');
   const data = await fetchJson(DATA_URL);
-  const scraped_at = data?.metadata?.scraped_at ?? null;
-  await writeCache({ scraped_at, manifest, data });
+  await writeCache({
+    scraped_at: data?.metadata?.scraped_at ?? null,
+    built_at: data?.metadata?.built_at ?? null,
+    manifest,
+    data,
+  });
   onProgress('ready');
   return { data, source: 'network', manifest };
 }

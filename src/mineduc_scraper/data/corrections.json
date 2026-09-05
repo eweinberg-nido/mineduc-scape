@@ -1,0 +1,23 @@
+{
+  "$comment": "Reviewable corrections to official text. Nothing here is a style or typo fix: each entry records a place where MINEDUC's own sources contradict each other, states which one this dataset follows, and cites the document and page that settles it. The original extracted value is preserved in the record so the change is never silent, and every applied correction is echoed in metadata.corrections.",
+  "version": "1.0.0",
+  "corrections": [
+    {
+      "id": "sala-cuna-ces-oa04",
+      "scope": "objective",
+      "level_id": "sala_cuna",
+      "subject_id": "interaccion_comprension_entorno",
+      "code": "OA 04 CES SC",
+      "field": "statement",
+      "original_value": "Manifestar interés por canciones, juegos y bailes que forman parte de su cotidianeidad.",
+      "corrected_value": "Explorar utensilios domésticos y objetos tecnológicos que forman parte de su vida cotidiana, tales como: pocillos, envases de botellas, escobas, cucharas, teléfonos, entre otros, utilizándolos progresivamente en situaciones cotidianas y juegos.",
+      "authoritative_source_url": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-69957_bases.pdf",
+      "authoritative_source_title": "Bases Curriculares de Educación Parvularia (vigentes desde 2019)",
+      "authoritative_source_page": 93,
+      "conflicting_source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/sc-sala-cuna/oa-04-ces-sc",
+      "defect_origin": "mineduc_html",
+      "explanation": "curriculumnacional.cl publishes the statement of OA 03 CES SC twice: under OA 03 and again under OA 04, both on the núcleo listing and on each objective's own detail page. The duplication is in the ministry's HTML, not in this project's parser - the extractor reproduces the page faithfully, and both pages were re-fetched to confirm it. The Bases Curriculares de Educación Parvularia, which the site itself publishes as the governing document, print five distinct objectives for the núcleo Comprensión del Entorno Sociocultural in the Primer Nivel (Sala Cuna); OA 3 is the canciones/juegos/bailes objective and OA 4 is the utensilios domésticos one. OA 01, 02, 03 and 05 match the HTML exactly, which is what identifies OA 04 as the single defective record rather than a wholesale numbering shift.",
+      "verified_on": "2026-09-05"
+    }
+  ]
+}

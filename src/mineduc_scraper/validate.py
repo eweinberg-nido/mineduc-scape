@@ -9,8 +9,9 @@ from typing import Dict, List, Tuple
 
 import jsonschema
 
+from . import integrity
 from .oat import BASE_ID_TO_SLUG, EXPECTED_OAT_COUNTS
-from .taxonomy import LEVELS
+from .taxonomy import LEVELS, known_level_ids
 
 SCHEMA_PATH = Path(__file__).parent / "schema" / "mineduc_curriculum.schema.json"
 
@@ -113,6 +114,7 @@ def audit(database: dict) -> Tuple[List[str], List[str], Dict[str, object]]:
     by_category: Counter = Counter()
     by_level: Dict[str, int] = {}
     empty_subjects: List[str] = []
+    unexplained_empty: List[str] = []
     total = 0
     prioritized = 0
     with_strand = 0
@@ -126,8 +128,7 @@ def audit(database: dict) -> Tuple[List[str], List[str], Dict[str, object]]:
             errors.append(
                 f"levels.{level_id}: level_id mismatch ({level.get('level_id')!r})"
             )
-        known_level_ids = {lvl.level_id for lvl in LEVELS.values()}
-        if level_id not in known_level_ids:
+        if level_id not in known_level_ids():
             warnings.append(f"levels.{level_id}: level not present in the taxonomy")
 
         level_count = 0
@@ -148,6 +149,9 @@ def audit(database: dict) -> Tuple[List[str], List[str], Dict[str, object]]:
             objectives = subject.get("learning_objectives") or []
             if not objectives:
                 empty_subjects.append(f"{level_id}/{subject_id}")
+                if not (subject.get("no_objectives_reason")
+                        or subject.get("objectives_in_level")):
+                    unexplained_empty.append(f"{level_id}/{subject_id}")
             for objective in objectives:
                 total += 1
                 level_count += 1
@@ -196,11 +200,22 @@ def audit(database: dict) -> Tuple[List[str], List[str], Dict[str, object]]:
             f"but counted {dict(sorted(by_category.items()))}"
         )
 
+    # An offering with no objectives is only acceptable when the dataset can say
+    # *why*. Explained ones (source absence, or objectives defined in a combined
+    # level) are reported as counts; unexplained ones are the parser gaps, and
+    # they are named individually so they cannot be lost in a total.
     if empty_subjects:
+        explained = len(empty_subjects) - len(unexplained_empty)
         warnings.append(
-            f"{len(empty_subjects)} subject page(s) publish no objectives in HTML "
-            f"(their curriculum is PDF-only): {', '.join(empty_subjects[:8])}"
-            + (" ..." if len(empty_subjects) > 8 else "")
+            f"{len(empty_subjects)} curriculum offering(s) carry no objectives: "
+            f"{explained} with a verified reason recorded on the subject "
+            f"(no_objectives_reason / objectives_in_level), "
+            f"{len(unexplained_empty)} without one"
+        )
+    for scope in unexplained_empty:
+        warnings.append(
+            f"{scope}: no objectives and no verified reason - this may be a parser "
+            f"gap rather than a gap in the source; run `mineduc-scraper coverage`"
         )
     for failure in metadata.get("failed_pages") or []:
         errors.append(f"page failed during scrape: {failure['url']} ({failure['error']})")
@@ -238,8 +253,69 @@ def audit(database: dict) -> Tuple[List[str], List[str], Dict[str, object]]:
             "Programa de Estudio PDFs - run `mineduc-scraper indicators`"
         )
 
+    findings = integrity.run(database)
+    duplicates = findings["duplicates"]
+    for conflict in duplicates["same_code_different_text"]:
+        errors.append(
+            f"conflicting statements under one official code: {conflict['code']} "
+            f"in {conflict['where']} ({len(conflict['variants'])} variants)"
+        )
+    for conflict in duplicates["conflicting_oa_ids"]:
+        errors.append(
+            f"conflicting records share oa_id {conflict['oa_id']!r}: "
+            f"codes {', '.join(conflict['codes'])}"
+        )
+    for clash in duplicates["same_text_different_codes"]:
+        warnings.append(
+            f"{clash['where']}: one statement published under "
+            f"{len(clash['codes'])} different codes ({', '.join(clash['codes'])})"
+        )
+    for shared in duplicates["shared_code_across_levels_unexpected"]:
+        warnings.append(
+            f"official code {shared['code']} is shared across levels "
+            f"{', '.join(shared['levels'])}, which is not the 3°/4° Medio pattern"
+        )
+
+    text = findings["text"]
+    if text["objectives_flagged"]:
+        warnings.append(
+            f"{text['objectives_flagged']} objective(s) have text-integrity "
+            f"findings: {text['by_problem']}"
+        )
+
+    provenance = findings["provenance"]
+    for where in provenance["missing"][:20]:
+        errors.append(f"{where}: missing provenance")
+    if len(provenance["missing"]) > 20:
+        errors.append(
+            f"... and {len(provenance['missing']) - 20} more records without provenance"
+        )
+    for problem in provenance["unknown_source_type"]:
+        errors.append(problem)
+    for where in provenance["pdf_records_without_page"][:10]:
+        warnings.append(f"{where}: extracted from a PDF but no source_page recorded")
+
+    status = findings["status"]
+    for problem in status["unknown_value"][:10]:
+        errors.append(f"curriculum_status not in the vocabulary: {problem}")
+    for where in status["asserted_without_source"][:10]:
+        errors.append(
+            f"{where}: curriculum_status asserted without an official status_source"
+        )
+    if len(status["asserted_without_source"]) > 10:
+        errors.append(
+            f"... and {len(status['asserted_without_source']) - 10} more statuses "
+            f"asserted without a source"
+        )
+    for where in findings["prioritization"]["without_metadata"][:10]:
+        errors.append(
+            f"{where}: prioritized=true without the `prioritization` metadata that "
+            f"says which programme and period it refers to"
+        )
+
     report = {
         "total_objectives": total,
+        "integrity": findings,
         "by_category": dict(sorted(by_category.items())),
         "by_level": by_level,
         "levels": len(database.get("levels", {})),

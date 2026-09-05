@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/mineduc-curriculum-db/schema/mineduc_curriculum.schema.json",
   "title": "MineducCurriculumDB",
-  "description": "Structured database of the Chilean national curriculum (MINEDUC / curriculumnacional.cl).",
+  "description": "Structured database of the Chilean national curriculum (MINEDUC / curriculumnacional.cl). Every objective carries provenance identifying the exact source it was extracted from, and a curriculum status that is only ever asserted when an official source backs it.",
   "type": "object",
   "required": [
     "metadata",
@@ -236,6 +236,84 @@
         },
         "tp_modules": {
           "type": "object"
+        },
+        "epja_bases": {
+          "type": "object",
+          "description": "Summary of the Bases Curriculares EPJA PDF ingestion pass."
+        },
+        "religion": {
+          "type": "object",
+          "description": "The Religión finding: why those pages publish no objectives, and the evidence."
+        },
+        "corrections": {
+          "type": "object",
+          "properties": {
+            "applied": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "skipped": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "provenance": {
+          "type": "object"
+        },
+        "prioritization": {
+          "$ref": "#/$defs/Prioritization"
+        },
+        "coverage": {
+          "type": "object",
+          "description": "Summary of the coverage report, computed against the official source inventory rather than against a previous run's total."
+        },
+        "integrity": {
+          "type": "object",
+          "description": "Text-integrity findings: statements that look truncated, mojibake, joined words, duplicate or conflicting text."
+        },
+        "status_summary": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "total_by_source_type": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "total_epja_objectives": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "total_religion_objectives": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "distinct_official_codes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "total_offerings": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "oat_verification": {
+          "type": "object",
+          "description": "Result of re-reading the transversal objectives from MINEDUC's JSON:API and comparing codes, dimensions and statements field by field, plus the reason each curriculum base without OATs has none."
+        },
+        "built_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When these artefacts were generated. Distinct from scraped_at, which is when the HTML crawl ran; a build that augments an existing crawl advances built_at only, and that is what clients version their cached copy on."
         }
       }
     },
@@ -278,6 +356,16 @@
           "additionalProperties": {
             "$ref": "#/$defs/SubjectData"
           }
+        },
+        "level_scope": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "For a combined level, the site level_ids it spans."
+        },
+        "level_note": {
+          "type": "string"
         }
       }
     },
@@ -397,6 +485,86 @@
         "modules_shared_programme": {
           "type": "boolean",
           "description": "True when this subject's Programa is shared with the speciality's menciones. It labels each módulo's year but not its mención, so the list may span menciones."
+        },
+        "curriculum_status": {
+          "type": "string",
+          "enum": [
+            "vigente",
+            "propuesta",
+            "en_implementacion",
+            "historico",
+            "desconocido"
+          ],
+          "description": "Legal/implementation status of the curriculum this record belongs to. Never inferred from a page being reachable; anything other than 'desconocido' must carry a status_source."
+        },
+        "status_source": {
+          "$ref": "#/$defs/StatusSource"
+        },
+        "no_objectives_reason": {
+          "$ref": "#/$defs/NoObjectivesReason"
+        },
+        "objectives_source": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "html_curriculum_page",
+            "jsonapi",
+            "base_curricular_pdf",
+            "programa_estudio_pdf",
+            null
+          ]
+        },
+        "objectives_in_level": {
+          "type": "string",
+          "description": "level_id where this subject's objectives are published, when the Bases define them for a combined level."
+        },
+        "formation_area": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "formacion_general",
+            "formacion_instrumental",
+            "formacion_diferenciada_hc",
+            "formacion_diferenciada_tp",
+            null
+          ],
+          "description": "EPJA ámbito de formación. Carried on the subject because an EPJA asignatura belongs to exactly one, and it is not the same axis as `track`."
+        },
+        "formation_area_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "site_page_published": {
+          "type": "boolean",
+          "description": "False when the Bases define this offering but the site navigates no page for it."
+        },
+        "objectives_source_note": {
+          "type": "string"
+        },
+        "programme_model": {
+          "type": "object",
+          "description": "For subjects whose curriculum is not a single national one (Religión), how programmes are approved and by whom."
+        },
+        "big_ideas": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "essential_knowledge": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": "Conocimientos esenciales, published per asignatura and nivel in the EPJA Bases."
         }
       }
     },
@@ -474,7 +642,7 @@
         },
         "prioritized": {
           "type": "boolean",
-          "description": "Flagged as part of the Priorizacion Curricular on curriculumnacional.cl."
+          "description": "Kept for backward compatibility. It records membership of the Priorización Curricular 2023-2025 and nothing about the present; read `prioritization` instead, and never render it as a bare 'Priorizado'."
         },
         "source_url": {
           "type": "string",
@@ -496,6 +664,36 @@
             "mixed"
           ],
           "description": "Whether the indicators are published per objective, or for a group of objectives jointly (the 2021 3° y 4° Medio 'Actividad de Evaluación' tables), or both."
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "curriculum_status": {
+          "type": "string",
+          "enum": [
+            "vigente",
+            "propuesta",
+            "en_implementacion",
+            "historico",
+            "desconocido"
+          ],
+          "description": "Legal/implementation status of the curriculum this record belongs to. Never inferred from a page being reachable; anything other than 'desconocido' must carry a status_source."
+        },
+        "status_source": {
+          "$ref": "#/$defs/StatusSource"
+        },
+        "prioritization": {
+          "$ref": "#/$defs/Prioritization"
+        },
+        "correction": {
+          "$ref": "#/$defs/Correction"
+        },
+        "level_scope": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Site level_ids this objective applies to, when the Bases define it for a combined level."
         }
       }
     },
@@ -540,6 +738,23 @@
         },
         "curriculum_base": {
           "type": "string"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "curriculum_status": {
+          "type": "string",
+          "enum": [
+            "vigente",
+            "propuesta",
+            "en_implementacion",
+            "historico",
+            "desconocido"
+          ],
+          "description": "Legal/implementation status of the curriculum this record belongs to. Never inferred from a page being reachable; anything other than 'desconocido' must carry a status_source."
+        },
+        "status_source": {
+          "$ref": "#/$defs/StatusSource"
         }
       }
     },
@@ -625,6 +840,206 @@
           "items": {
             "$ref": "#/$defs/ExpectedLearning"
           }
+        }
+      }
+    },
+    "Provenance": {
+      "type": "object",
+      "description": "Where a record's text came from, precisely enough to re-fetch and re-verify it.",
+      "required": [
+        "source_url",
+        "source_type",
+        "retrieved_at",
+        "extraction_method"
+      ],
+      "properties": {
+        "source_url": {
+          "type": "string",
+          "description": "The exact URL the text was read from."
+        },
+        "source_type": {
+          "type": "string",
+          "enum": [
+            "html_curriculum_page",
+            "jsonapi",
+            "base_curricular_pdf",
+            "programa_estudio_pdf"
+          ]
+        },
+        "source_document": {
+          "type": "string",
+          "description": "Title of the source document, when it is a PDF."
+        },
+        "source_page": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "1-based page of the source PDF, as a reader would cite it."
+        },
+        "curriculum_base": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "retrieved_at": {
+          "type": "string"
+        },
+        "extraction_method": {
+          "type": "string",
+          "description": "Which engine produced this record, and how."
+        }
+      }
+    },
+    "StatusSource": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "The official source backing a curriculum_status. Required for every status other than 'desconocido'.",
+      "required": [
+        "url",
+        "note",
+        "verified_on"
+      ],
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "verified_on": {
+          "type": "string"
+        }
+      }
+    },
+    "Prioritization": {
+      "type": "object",
+      "description": "Historical membership of a prioritized curriculum subset. Not a present-tense property: `prioritized: true` recorded the Priorización Curricular published for 2023-2025.",
+      "required": [
+        "programme",
+        "period",
+        "status"
+      ],
+      "properties": {
+        "programme": {
+          "type": "string"
+        },
+        "period": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "historico",
+            "vigente",
+            "propuesta",
+            "en_implementacion",
+            "desconocido"
+          ]
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "Correction": {
+      "type": "object",
+      "description": "A reviewed correction applied where official sources contradict each other. The extracted value is kept so the change is never silent.",
+      "required": [
+        "id",
+        "field",
+        "original_value",
+        "corrected_value",
+        "authoritative_source_url",
+        "explanation",
+        "verified_on"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "field": {
+          "type": "string"
+        },
+        "original_value": {
+          "type": "string"
+        },
+        "corrected_value": {
+          "type": "string"
+        },
+        "authoritative_source_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "authoritative_source_title": {
+          "type": "string"
+        },
+        "authoritative_source_page": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "conflicting_source_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "defect_origin": {
+          "type": "string",
+          "enum": [
+            "mineduc_html",
+            "mineduc_jsonapi",
+            "mineduc_pdf",
+            "parser",
+            "unknown"
+          ]
+        },
+        "explanation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "verified_on": {
+          "type": "string"
+        }
+      }
+    },
+    "NoObjectivesReason": {
+      "type": "object",
+      "description": "Why a published curriculum offering carries no objectives. Its presence is what distinguishes source absence from an unexplained parser gap.",
+      "required": [
+        "code",
+        "explanation",
+        "source_url",
+        "verified_on"
+      ],
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "explanation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "source_document": {
+          "type": "string"
+        },
+        "evidence_urls": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "verified_on": {
+          "type": "string"
         }
       }
     }

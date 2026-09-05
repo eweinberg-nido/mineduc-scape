@@ -27,3 +27,18 @@ def parvularia():
 @pytest.fixture
 def epja():
     return load_fixture("epja_artes_visuales_n1_media.html")
+
+
+def load_bases_page(name: str) -> str:
+    """The extracted text of one Bases Curriculares page, captured from the real PDF."""
+    import json
+
+    payload = json.loads(
+        (FIXTURES / "bases_pages" / f"{name}.json").read_text(encoding="utf-8")
+    )
+    return payload["text"]
+
+
+@pytest.fixture
+def bases_page():
+    return load_bases_page

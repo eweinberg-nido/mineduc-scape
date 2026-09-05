@@ -48,15 +48,34 @@ BASE_TOKEN: Dict[str, str] = {
 }
 
 
+def _https(url: Optional[str]) -> Optional[str]:
+    """Force a JSON:API link back onto https.
+
+    Drupal builds ``links.next.href`` from its configured base URL, and this
+    site emits it as ``http://``. The host does not serve plain HTTP at all, so
+    following the link verbatim fails with a connection error on the *second*
+    page of every collection - which looks like a flaky network rather than a
+    truncated fetch, and silently caps a collection at its first 50 records.
+    """
+    if url and url.startswith("http://"):
+        return "https://" + url[len("http://"):]
+    return url
+
+
 def _collection(client: PoliteClient, path: str, limit: int = 50) -> List[dict]:
     """Fetch every page of a JSON:API collection."""
-    url = f"{JSONAPI}/{path}?page%5Blimit%5D={limit}"
+    url: Optional[str] = f"{JSONAPI}/{path}?page%5Blimit%5D={limit}"
     items: List[dict] = []
+    seen: set = set()
     while url:
+        if url in seen:  # a self-referential next link would loop forever
+            log.warning("JSON:API pagination revisited %s; stopping", url)
+            break
+        seen.add(url)
         payload = client.get_json(url)
         items.extend(payload.get("data") or [])
         next_link = (payload.get("links") or {}).get("next")
-        url = next_link.get("href") if isinstance(next_link, dict) else None
+        url = _https(next_link.get("href")) if isinstance(next_link, dict) else None
     return items
 
 
@@ -176,3 +195,81 @@ def fetch_transversal_objectives(client: PoliteClient) -> Dict[str, List[dict]]:
                 base_slug, len(bucket), expected,
             )
     return grouped
+
+
+# --------------------------------------------------------------------------- #
+# Verification
+# --------------------------------------------------------------------------- #
+# Which curriculum bases define OATs at all. Three do; three do not, and their
+# absence is a property of the curriculum rather than a gap:
+#
+# * Educación Parvularia organises its transversal aims through the ámbitos and
+#   núcleos themselves, and defines no separate OAT set.
+# * The 3° y 4° Medio base defines no OAT paragraphs of its own; the OATs that
+#   apply there come from 7° Básico a 2° Medio, and the Formación Diferenciada
+#   Técnico-Profesional base carries its own twelve.
+# * The EPJA 2024 Bases replace the OAT structure with the Habilidades y
+#   Actitudes para el siglo XXI framework, which is not an OAT set.
+#
+# Recorded so "no OATs here" is an answer with a reason attached, instead of a
+# hole in a table.
+BASES_WITHOUT_OATS: Dict[str, str] = {
+    "educacion-parvularia":
+        "Las Bases Curriculares de Educación Parvularia no definen un conjunto "
+        "separado de Objetivos de Aprendizaje Transversales: los propósitos "
+        "transversales se integran en los ámbitos y núcleos de aprendizaje.",
+    "3o-4o-medio":
+        "La base de 3° y 4° Medio no define párrafos OAT propios en el sitio; los "
+        "OAT aplicables provienen de la base de 7° Básico a 2° Medio, y la "
+        "Formación Diferenciada Técnico-Profesional publica los suyos.",
+    "bases-curriculares-educacion-personas-jovenes-adultas-epja":
+        "Las Bases Curriculares EPJA 2024 no usan la estructura de OAT: articulan "
+        "lo transversal mediante el marco de Habilidades y Actitudes para el "
+        "siglo XXI.",
+}
+
+
+def verify(stored: Dict[str, List[dict]], live: Dict[str, List[dict]]) -> dict:
+    """Compare the stored OATs field by field against a freshly fetched set.
+
+    Codes, dimensions and complete statements are all compared; a difference in
+    any of them is reported rather than resolved, because two readings of the
+    same official source disagreeing is a finding.
+    """
+    differences: List[str] = []
+    missing: List[str] = []
+    extra: List[str] = []
+
+    for base_slug, bucket in live.items():
+        by_id = {oat["oat_id"]: oat for oat in stored.get(base_slug, [])}
+        for oat in bucket:
+            current = by_id.get(oat["oat_id"])
+            if current is None:
+                missing.append(f"{base_slug}/{oat['oat_id']} ({oat.get('code')})")
+                continue
+            for field in ("code", "dimension", "statement"):
+                if (current.get(field) or "") != (oat.get(field) or ""):
+                    differences.append(f"{base_slug}/{oat['oat_id']}: {field} differs")
+        for oat_id in sorted(set(by_id) - {oat["oat_id"] for oat in bucket}):
+            extra.append(f"{base_slug}/{oat_id}")
+
+    for base_slug in set(stored) - set(live):
+        extra.extend(f"{base_slug}/{oat['oat_id']}" for oat in stored[base_slug])
+
+    return {
+        "verified_at_source": True,
+        "bases_with_oats": {slug: len(bucket) for slug, bucket in sorted(live.items())},
+        "expected_counts": dict(EXPECTED_OAT_COUNTS),
+        "bases_without_oats": dict(BASES_WITHOUT_OATS),
+        "total": sum(len(bucket) for bucket in live.values()),
+        "records_compared": sum(len(bucket) for bucket in live.values()),
+        "differences": differences,
+        "missing_from_dataset": missing,
+        "not_in_source": extra,
+        "count_mismatches": [
+            f"{slug}: {len(live.get(slug, []))} collected, {expected} expected "
+            f"from the base landing page"
+            for slug, expected in EXPECTED_OAT_COUNTS.items()
+            if len(live.get(slug, [])) != expected
+        ],
+    }

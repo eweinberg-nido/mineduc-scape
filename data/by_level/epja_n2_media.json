@@ -2,13 +2,22 @@
   "metadata": {
     "scraped_at": "2026-09-04T14:12:49+00:00",
     "source_url": "https://www.curriculumnacional.cl",
-    "schema_version": "1.0.0",
-    "generator": "mineduc-scraper/1.0.0",
+    "schema_version": "2.0.0",
+    "generator": "mineduc-scraper/2.0.0",
     "level_id": "epja_n2_media",
-    "total_oas": 0,
-    "total_by_category": {},
-    "total_subjects": 9,
+    "total_oas": 30,
+    "total_by_category": {
+      "conocimiento": 30
+    },
+    "total_subjects": 12,
     "total_levels": 1,
+    "prioritization": {
+      "programme": "Priorización Curricular",
+      "period": "2023-2025",
+      "status": "historico",
+      "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+      "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+    },
     "total_oats": 0
   },
   "levels": {
@@ -35,7 +44,20 @@
               "url": "https://www.curriculumnacional.cl/recursos/programa-estudio-epja-artes-visuales-nivel-1-2-educacion-media"
             }
           ],
-          "learning_objectives": []
+          "learning_objectives": [],
+          "objectives_in_level": "epja_media",
+          "no_objectives_reason": {
+            "code": "objectives_defined_for_combined_level",
+            "explanation": "Las Bases Curriculares EPJA 2024 definen esta asignatura para la Educación Media como un bloque único (Nivel 1 y 2). Sus objetivos se publican en el nivel epja_media.",
+            "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+            "verified_on": "2026-09-05"
+          },
+          "curriculum_status": "en_implementacion",
+          "status_source": {
+            "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+            "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+            "verified_on": "2026-09-05"
+          }
         },
         "ciencias_naturales": {
           "subject_id": "ciencias_naturales",
@@ -49,8 +71,372 @@
             "subject": "143",
             "grade": "32"
           },
-          "documents": [],
-          "learning_objectives": []
+          "documents": [
+            {
+              "doc_type": "Base curricular",
+              "title": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+              "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024"
+            }
+          ],
+          "learning_objectives": [
+            {
+              "oa_id": "CL_CNA_E2M_OYPP_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "code_slug": "oa-1",
+              "statement": "Formular preguntas y problemas sobre tópicos científicos de interés, a partir de la observación de fenómenos y/o la exploración de diversas fuentes.",
+              "keywords": [
+                "formular",
+                "preguntas",
+                "problemas",
+                "tópicos",
+                "científicos",
+                "interés",
+                "observación",
+                "fenómenos",
+                "exploración",
+                "fuentes"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/sites/default/files/adjuntos/recursos/2026-07/WEB_bbcc%20EPJA_v16_0.pdf",
+                "source_type": "base_curricular_pdf",
+                "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+                "source_page": 95,
+                "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
+              },
+              "curriculum_status": "en_implementacion",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+                "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+                "verified_on": "2026-09-05"
+              },
+              "strand_eje": "Observar y plantear preguntas",
+              "strand_id": "observar_y_plantear_preguntas",
+              "strand_kind": "Eje"
+            },
+            {
+              "oa_id": "CL_CNA_E2M_PYCU_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "code_slug": "oa-2",
+              "statement": "Diseñar y desarrollar investigaciones científicas que permitan recoger evidencias y contrastar hipótesis pensando con perseverancia y proactividad para encontrar soluciones innovadoras, considerando:\n- Las relaciones entre datos, información y variables.\n- El uso adecuado de instrumentos y materiales para obtener datos confiables.\n- La medición y el registro de evidencias usando herramientas tecnológicas o matemáticas.",
+              "keywords": [
+                "diseñar",
+                "desarrollar",
+                "investigaciones",
+                "científicas",
+                "permitan",
+                "recoger",
+                "evidencias",
+                "contrastar",
+                "hipótesis",
+                "pensando",
+                "perseverancia",
+                "proactividad"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/sites/default/files/adjuntos/recursos/2026-07/WEB_bbcc%20EPJA_v16_0.pdf",
+                "source_type": "base_curricular_pdf",
+                "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+                "source_page": 95,
+                "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
+              },
+              "curriculum_status": "en_implementacion",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+                "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+                "verified_on": "2026-09-05"
+              },
+              "strand_eje": "Planificar y conducir una investigación",
+              "strand_id": "planificar_y_conducir_una_investigacion",
+              "strand_kind": "Eje"
+            },
+            {
+              "oa_id": "CL_CNA_E2M_PYCU_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "code_slug": "oa-3",
+              "statement": "Diseñar proyectos de investigación para encontrar soluciones a problemas científicos de manera creativa y pertinente, trabajando con honestidad, responsabilidad y liderazgo en tareas colaborativas.",
+              "keywords": [
+                "diseñar",
+                "proyectos",
+                "investigación",
+                "encontrar",
+                "soluciones",
+                "problemas",
+                "científicos",
+                "creativa",
+                "pertinente",
+                "trabajando",
+                "honestidad",
+                "responsabilidad"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/sites/default/files/adjuntos/recursos/2026-07/WEB_bbcc%20EPJA_v16_0.pdf",
+                "source_type": "base_curricular_pdf",
+                "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+                "source_page": 95,
+                "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
+              },
+              "curriculum_status": "en_implementacion",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+                "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+                "verified_on": "2026-09-05"
+              },
+              "strand_eje": "Planificar y conducir una investigación",
+              "strand_id": "planificar_y_conducir_una_investigacion",
+              "strand_kind": "Eje"
+            },
+            {
+              "oa_id": "CL_CNA_E2M_PYAL_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "OA 4",
+              "code_slug": "oa-4",
+              "statement": "Crear, seleccionar, ajustar modelos simples basados en análisis de evidencia, para predecir y explicar mecanismos y fenómenos naturales aprovechando las herramientas disponibles para aprender y resolver problemas.",
+              "keywords": [
+                "crear",
+                "seleccionar",
+                "ajustar",
+                "modelos",
+                "simples",
+                "basados",
+                "análisis",
+                "evidencia",
+                "predecir",
+                "explicar",
+                "mecanismos",
+                "fenómenos"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/sites/default/files/adjuntos/recursos/2026-07/WEB_bbcc%20EPJA_v16_0.pdf",
+                "source_type": "base_curricular_pdf",
+                "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+                "source_page": 95,
+                "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
+              },
+              "curriculum_status": "en_implementacion",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+                "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+                "verified_on": "2026-09-05"
+              },
+              "strand_eje": "Procesar y analizar la evidencia",
+              "strand_id": "procesar_y_analizar_la_evidencia",
+              "strand_kind": "Eje"
+            },
+            {
+              "oa_id": "CL_CNA_E2M_PYAL_OA05",
+              "oa_number": 5,
+              "category": "conocimiento",
+              "code": "OA 5",
+              "code_slug": "oa-5",
+              "statement": "Analizar los resultados de una investigación científica planteando conclusiones e identificando conexiones entre variables y usando vocabulario disciplinar pertinente.",
+              "keywords": [
+                "analizar",
+                "resultados",
+                "investigación",
+                "científica",
+                "planteando",
+                "conclusiones",
+                "identificando",
+                "conexiones",
+                "variables",
+                "vocabulario",
+                "disciplinar",
+                "pertinente"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/sites/default/files/adjuntos/recursos/2026-07/WEB_bbcc%20EPJA_v16_0.pdf",
+                "source_type": "base_curricular_pdf",
+                "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+                "source_page": 95,
+                "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
+              },
+              "curriculum_status": "en_implementacion",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+                "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+                "verified_on": "2026-09-05"
+              },
+              "strand_eje": "Procesar y analizar la evidencia",
+              "strand_id": "procesar_y_analizar_la_evidencia",
+              "strand_kind": "Eje"
+            },
+            {
+              "oa_id": "CL_CNA_E2M_EYC_OA06",
+              "oa_number": 6,
+              "category": "conocimiento",
+              "code": "OA 6",
+              "code_slug": "oa-6",
+              "statement": "Evaluar el proceso de investigación científica con el fin de perfeccionarla, considerando:\n- La validez y confiabilidad de los resultados.\n- La replicabilidad de los procedimientos.\n- Las posibles aplicaciones tecnológicas.",
+              "keywords": [
+                "evaluar",
+                "proceso",
+                "investigación",
+                "científica",
+                "perfeccionarla",
+                "considerando",
+                "validez",
+                "confiabilidad",
+                "resultados",
+                "replicabilidad",
+                "procedimientos",
+                "posibles"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/sites/default/files/adjuntos/recursos/2026-07/WEB_bbcc%20EPJA_v16_0.pdf",
+                "source_type": "base_curricular_pdf",
+                "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+                "source_page": 95,
+                "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
+              },
+              "curriculum_status": "en_implementacion",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+                "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+                "verified_on": "2026-09-05"
+              },
+              "strand_eje": "Evaluar y comunicar",
+              "strand_id": "evaluar_y_comunicar",
+              "strand_kind": "Eje"
+            },
+            {
+              "oa_id": "CL_CNA_E2M_EYC_OA07",
+              "oa_number": 7,
+              "category": "conocimiento",
+              "code": "OA 7",
+              "code_slug": "oa-7",
+              "statement": "Analizar críticamente las implicancias sociales, éticas y ambientales de problemáticas que involucren a la ciencia (aborto, vacunas, contaminación, etc.) con honestidad, responsabilizándose por las implicancias que tiene sobre uno mismo y los otros.",
+              "keywords": [
+                "analizar",
+                "críticamente",
+                "implicancias",
+                "sociales",
+                "éticas",
+                "ambientales",
+                "problemáticas",
+                "involucren",
+                "ciencia",
+                "aborto",
+                "vacunas",
+                "contaminación"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/sites/default/files/adjuntos/recursos/2026-07/WEB_bbcc%20EPJA_v16_0.pdf",
+                "source_type": "base_curricular_pdf",
+                "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+                "source_page": 95,
+                "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
+              },
+              "curriculum_status": "en_implementacion",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+                "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+                "verified_on": "2026-09-05"
+              },
+              "strand_eje": "Evaluar y comunicar",
+              "strand_id": "evaluar_y_comunicar",
+              "strand_kind": "Eje"
+            },
+            {
+              "oa_id": "CL_CNA_E2M_EYC_OA08",
+              "oa_number": 8,
+              "category": "conocimiento",
+              "code": "OA 8",
+              "code_slug": "oa-8",
+              "statement": "Evaluar procesos, resultados y conclusiones con apoyo de herramientas digitales y otros soportes pertinentes.",
+              "keywords": [
+                "evaluar",
+                "procesos",
+                "resultados",
+                "conclusiones",
+                "apoyo",
+                "herramientas",
+                "digitales",
+                "soportes",
+                "pertinentes"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/sites/default/files/adjuntos/recursos/2026-07/WEB_bbcc%20EPJA_v16_0.pdf",
+                "source_type": "base_curricular_pdf",
+                "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+                "source_page": 95,
+                "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
+              },
+              "curriculum_status": "en_implementacion",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+                "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+                "verified_on": "2026-09-05"
+              },
+              "strand_eje": "Evaluar y comunicar",
+              "strand_id": "evaluar_y_comunicar",
+              "strand_kind": "Eje"
+            }
+          ],
+          "formation_area": "formacion_general",
+          "formation_area_name": "Formación General",
+          "objectives_source": "base_curricular_pdf",
+          "curriculum_status": "en_implementacion",
+          "status_source": {
+            "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+            "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+            "verified_on": "2026-09-05"
+          },
+          "big_ideas": [
+            "La vida es el resultado de interacciones que se producen a nivel molecular y celular en todos los organismos.",
+            "Los enlaces permiten explicar las interacciones, propiedades y cambios de la materia.",
+            "La energía en los cuerpos o sistemas en el hogar no se destruye, sino que se transforma.",
+            "Los cambios en el clima y la superficie de la Tierra son producto de la acción humana y de fenómenos geológicos.",
+            "El conocimiento generado por la ciencia es usado en algunas tecnologías para crear productos que sirven a propósitos humanos."
+          ],
+          "essential_knowledge": [
+            "Relación entre salud y enfermedad. Sistema inmune, alergias y enfermedades autoinmunes. Medidas de prevención, como el uso de vacunas.",
+            "Enlace químico y reactividad en sustancias químicas. Plaguicidas, insecticidas y sustancias químicas de uso común.",
+            "Eficiencia energética y medidas para el buen uso de la electricidad.",
+            "Radiación y su efecto en el ser humano y el entorno.",
+            "Sostenibilidad de recursos naturales y consumo responsable.",
+            "Cambio climático, efecto invernadero y sus implicancias.",
+            "Proyectos tecnológicos que permitan resolver problemas relacionados con las ciencias en diversos ámbitos de la vida.",
+            "Desarrollo astronómico en Chile y en el mundo."
+          ]
         },
         "educacion_financiera": {
           "subject_id": "educacion_financiera",
@@ -71,7 +457,20 @@
               "url": "https://www.curriculumnacional.cl/recursos/programa-estudio-epja-educacion-financiera-educacion-media"
             }
           ],
-          "learning_objectives": []
+          "learning_objectives": [],
+          "objectives_in_level": "epja_media",
+          "no_objectives_reason": {
+            "code": "objectives_defined_for_combined_level",
+            "explanation": "Las Bases Curriculares EPJA 2024 definen esta asignatura para la Educación Media como un bloque único (Nivel 1 y 2). Sus objetivos se publican en el nivel epja_media.",
+            "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+            "verified_on": "2026-09-05"
+          },
+          "curriculum_status": "en_implementacion",
+          "status_source": {
+            "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+            "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+            "verified_on": "2026-09-05"
+          }
         },
         "educacion_fisica_salud": {
           "subject_id": "educacion_fisica_salud",
@@ -86,7 +485,20 @@
             "grade": "32"
           },
           "documents": [],
-          "learning_objectives": []
+          "learning_objectives": [],
+          "objectives_in_level": "epja_media",
+          "no_objectives_reason": {
+            "code": "objectives_defined_for_combined_level",
+            "explanation": "Las Bases Curriculares EPJA 2024 definen esta asignatura para la Educación Media como un bloque único (Nivel 1 y 2). Sus objetivos se publican en el nivel epja_media.",
+            "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+            "verified_on": "2026-09-05"
+          },
+          "curriculum_status": "en_implementacion",
+          "status_source": {
+            "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+            "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+            "verified_on": "2026-09-05"
+          }
         },
         "emprendimiento_empleabilidad": {
           "subject_id": "emprendimiento_empleabilidad",
@@ -107,7 +519,20 @@
               "url": "https://www.curriculumnacional.cl/recursos/programa-estudio-epja-emprendimiento-empleabilidad-educacion-media"
             }
           ],
-          "learning_objectives": []
+          "learning_objectives": [],
+          "objectives_in_level": "epja_media",
+          "no_objectives_reason": {
+            "code": "objectives_defined_for_combined_level",
+            "explanation": "Las Bases Curriculares EPJA 2024 definen esta asignatura para la Educación Media como un bloque único (Nivel 1 y 2). Sus objetivos se publican en el nivel epja_media.",
+            "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+            "verified_on": "2026-09-05"
+          },
+          "curriculum_status": "en_implementacion",
+          "status_source": {
+            "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+            "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+            "verified_on": "2026-09-05"
+          }
         },
         "filosofia": {
           "subject_id": "filosofia",
@@ -128,7 +553,20 @@
               "url": "https://www.curriculumnacional.cl/recursos/programa-estudio-epja-filosofia-nivel-1-2-educacion-media-0"
             }
           ],
-          "learning_objectives": []
+          "learning_objectives": [],
+          "objectives_in_level": "epja_media",
+          "no_objectives_reason": {
+            "code": "objectives_defined_for_combined_level",
+            "explanation": "Las Bases Curriculares EPJA 2024 definen esta asignatura para la Educación Media como un bloque único (Nivel 1 y 2). Sus objetivos se publican en el nivel epja_media.",
+            "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+            "verified_on": "2026-09-05"
+          },
+          "curriculum_status": "en_implementacion",
+          "status_source": {
+            "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+            "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+            "verified_on": "2026-09-05"
+          }
         },
         "matematica": {
           "subject_id": "matematica",
@@ -142,8 +580,349 @@
             "subject": "138",
             "grade": "32"
           },
-          "documents": [],
-          "learning_objectives": []
+          "documents": [
+            {
+              "doc_type": "Base curricular",
+              "title": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+              "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024"
+            }
+          ],
+          "learning_objectives": [
+            {
+              "oa_id": "CL_MAT_E2M_RPRS_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "code_slug": "oa-1",
+              "statement": "Expresar ideas matemáticas mediante diferentes representaciones, valorando el uso de las TIC.",
+              "keywords": [
+                "expresar",
+                "ideas",
+                "matemáticas",
+                "representaciones",
+                "valorando"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/sites/default/files/adjuntos/recursos/2026-07/WEB_bbcc%20EPJA_v16_0.pdf",
+                "source_type": "base_curricular_pdf",
+                "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+                "source_page": 75,
+                "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
+              },
+              "curriculum_status": "en_implementacion",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+                "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+                "verified_on": "2026-09-05"
+              },
+              "strand_eje": "Representar",
+              "strand_id": "representar",
+              "strand_kind": "Eje"
+            },
+            {
+              "oa_id": "CL_MAT_E2M_RPRS_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "code_slug": "oa-2",
+              "statement": "Representar un mismo contenido matemático transitando entre los distintos niveles de representación y aprovechando las herramientas disponibles.",
+              "keywords": [
+                "representar",
+                "mismo",
+                "contenido",
+                "matemático",
+                "transitando",
+                "niveles",
+                "representación",
+                "aprovechando",
+                "herramientas",
+                "disponibles"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/sites/default/files/adjuntos/recursos/2026-07/WEB_bbcc%20EPJA_v16_0.pdf",
+                "source_type": "base_curricular_pdf",
+                "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+                "source_page": 75,
+                "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
+              },
+              "curriculum_status": "en_implementacion",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+                "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+                "verified_on": "2026-09-05"
+              },
+              "strand_eje": "Representar",
+              "strand_id": "representar",
+              "strand_kind": "Eje"
+            },
+            {
+              "oa_id": "CL_MAT_E2M_MDLR_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "code_slug": "oa-3",
+              "statement": "Seleccionar y ajustar modelos matemáticos según el fenómeno, perseverando en torno a metas.",
+              "keywords": [
+                "seleccionar",
+                "ajustar",
+                "modelos",
+                "matemáticos",
+                "fenómeno",
+                "perseverando",
+                "torno",
+                "metas"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/sites/default/files/adjuntos/recursos/2026-07/WEB_bbcc%20EPJA_v16_0.pdf",
+                "source_type": "base_curricular_pdf",
+                "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+                "source_page": 75,
+                "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
+              },
+              "curriculum_status": "en_implementacion",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+                "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+                "verified_on": "2026-09-05"
+              },
+              "strand_eje": "Modelar",
+              "strand_id": "modelar",
+              "strand_kind": "Eje"
+            },
+            {
+              "oa_id": "CL_MAT_E2M_MDLR_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "OA 4",
+              "code_slug": "oa-4",
+              "statement": "Evaluar modelos, comparándolos entre sí y con la realidad, determinando sus limitaciones y tomando decisiones razonadas que contribuyan al bien común.",
+              "keywords": [
+                "evaluar",
+                "modelos",
+                "comparándolos",
+                "realidad",
+                "determinando",
+                "limitaciones",
+                "tomando",
+                "decisiones",
+                "razonadas",
+                "contribuyan",
+                "bien",
+                "común"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/sites/default/files/adjuntos/recursos/2026-07/WEB_bbcc%20EPJA_v16_0.pdf",
+                "source_type": "base_curricular_pdf",
+                "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+                "source_page": 75,
+                "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
+              },
+              "curriculum_status": "en_implementacion",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+                "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+                "verified_on": "2026-09-05"
+              },
+              "strand_eje": "Modelar",
+              "strand_id": "modelar",
+              "strand_kind": "Eje"
+            },
+            {
+              "oa_id": "CL_MAT_E2M_AYC_OA05",
+              "oa_number": 5,
+              "category": "conocimiento",
+              "code": "OA 5",
+              "code_slug": "oa-5",
+              "statement": "Fundamentar conjeturas usando conocimientos matemáticos, trabajando colaborativamente.",
+              "keywords": [
+                "fundamentar",
+                "conjeturas",
+                "conocimientos",
+                "matemáticos",
+                "trabajando",
+                "colaborativamente"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/sites/default/files/adjuntos/recursos/2026-07/WEB_bbcc%20EPJA_v16_0.pdf",
+                "source_type": "base_curricular_pdf",
+                "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+                "source_page": 75,
+                "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
+              },
+              "curriculum_status": "en_implementacion",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+                "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+                "verified_on": "2026-09-05"
+              },
+              "strand_eje": "Argumentar y comunicar",
+              "strand_id": "argumentar_y_comunicar",
+              "strand_kind": "Eje"
+            },
+            {
+              "oa_id": "CL_MAT_E2M_AYC_OA06",
+              "oa_number": 6,
+              "category": "conocimiento",
+              "code": "OA 6",
+              "code_slug": "oa-6",
+              "statement": "Realizar demostraciones simples de resultados e identificar en una demostración si hay saltos o errores, trabajando con empatía y respeto.",
+              "keywords": [
+                "realizar",
+                "demostraciones",
+                "simples",
+                "resultados",
+                "identificar",
+                "demostración",
+                "saltos",
+                "errores",
+                "trabajando",
+                "empatía",
+                "respeto"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/sites/default/files/adjuntos/recursos/2026-07/WEB_bbcc%20EPJA_v16_0.pdf",
+                "source_type": "base_curricular_pdf",
+                "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+                "source_page": 75,
+                "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
+              },
+              "curriculum_status": "en_implementacion",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+                "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+                "verified_on": "2026-09-05"
+              },
+              "strand_eje": "Argumentar y comunicar",
+              "strand_id": "argumentar_y_comunicar",
+              "strand_kind": "Eje"
+            },
+            {
+              "oa_id": "CL_MAT_E2M_RP_OA07",
+              "oa_number": 7,
+              "category": "conocimiento",
+              "code": "OA 7",
+              "code_slug": "oa-7",
+              "statement": "Variar parámetros o condiciones, comparando los cambios en los resultados obtenidos, pensando con perseverancia y proactividad.",
+              "keywords": [
+                "variar",
+                "parámetros",
+                "condiciones",
+                "comparando",
+                "cambios",
+                "resultados",
+                "obtenidos",
+                "pensando",
+                "perseverancia",
+                "proactividad"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/sites/default/files/adjuntos/recursos/2026-07/WEB_bbcc%20EPJA_v16_0.pdf",
+                "source_type": "base_curricular_pdf",
+                "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+                "source_page": 75,
+                "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
+              },
+              "curriculum_status": "en_implementacion",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+                "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+                "verified_on": "2026-09-05"
+              },
+              "strand_eje": "Resolver problemas",
+              "strand_id": "resolver_problemas",
+              "strand_kind": "Eje"
+            },
+            {
+              "oa_id": "CL_MAT_E2M_RP_OA08",
+              "oa_number": 8,
+              "category": "conocimiento",
+              "code": "OA 8",
+              "code_slug": "oa-8",
+              "statement": "Evaluar el proceso y comprobar resultados y soluciones dadas de un problema matemático, pensando con flexibilidad para reelaborar.",
+              "keywords": [
+                "evaluar",
+                "proceso",
+                "comprobar",
+                "resultados",
+                "soluciones",
+                "dadas",
+                "problema",
+                "matemático",
+                "pensando",
+                "flexibilidad",
+                "reelaborar"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/sites/default/files/adjuntos/recursos/2026-07/WEB_bbcc%20EPJA_v16_0.pdf",
+                "source_type": "base_curricular_pdf",
+                "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+                "source_page": 75,
+                "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
+              },
+              "curriculum_status": "en_implementacion",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+                "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+                "verified_on": "2026-09-05"
+              },
+              "strand_eje": "Resolver problemas",
+              "strand_id": "resolver_problemas",
+              "strand_kind": "Eje"
+            }
+          ],
+          "formation_area": "formacion_general",
+          "formation_area_name": "Formación General",
+          "objectives_source": "base_curricular_pdf",
+          "curriculum_status": "en_implementacion",
+          "status_source": {
+            "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+            "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+            "verified_on": "2026-09-05"
+          },
+          "big_ideas": [
+            "Utilizar el cálculo numérico permite desarrollar soluciones y fundamentar la toma de decisiones frente a los problemas financieros.",
+            "El modelado de situaciones o fenómenos que involucra la función exponencial permite tomar decisiones respecto a temas relevantes para las personas y las comunidades.",
+            "La geometría provee herramientas clave que permiten resolver problemas de visualización espacial y construcción en ambientes digitales.",
+            "La estadística entrega herramientas que permiten organizar y presentar características de la población."
+          ],
+          "essential_knowledge": [
+            "Porcentajes, cambio porcentual constante, índices económicos, planilla de cálculo.",
+            "Función exponencial, planilla de cálculo.",
+            "Elementos de la geometría básica para el dibujo técnico.",
+            "Cuartiles y quintiles, planilla de cálculo."
+          ]
         },
         "pensamiento_computacional": {
           "subject_id": "pensamiento_computacional",
@@ -158,7 +937,20 @@
             "grade": "32"
           },
           "documents": [],
-          "learning_objectives": []
+          "learning_objectives": [],
+          "objectives_in_level": "epja_media",
+          "no_objectives_reason": {
+            "code": "objectives_defined_for_combined_level",
+            "explanation": "Las Bases Curriculares EPJA 2024 definen esta asignatura para la Educación Media como un bloque único (Nivel 1 y 2). Sus objetivos se publican en el nivel epja_media.",
+            "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+            "verified_on": "2026-09-05"
+          },
+          "curriculum_status": "en_implementacion",
+          "status_source": {
+            "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+            "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+            "verified_on": "2026-09-05"
+          }
         },
         "responsabilidad_personal_social": {
           "subject_id": "responsabilidad_personal_social",
@@ -179,7 +971,717 @@
               "url": "https://www.curriculumnacional.cl/recursos/programa-estudio-epja-responsabilidad-personal-social-educacion-media"
             }
           ],
-          "learning_objectives": []
+          "learning_objectives": [],
+          "objectives_in_level": "epja_media",
+          "no_objectives_reason": {
+            "code": "objectives_defined_for_combined_level",
+            "explanation": "Las Bases Curriculares EPJA 2024 definen esta asignatura para la Educación Media como un bloque único (Nivel 1 y 2). Sus objetivos se publican en el nivel epja_media.",
+            "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+            "verified_on": "2026-09-05"
+          },
+          "curriculum_status": "en_implementacion",
+          "status_source": {
+            "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+            "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+            "verified_on": "2026-09-05"
+          }
+        },
+        "lenguaje_comunicacion": {
+          "subject_id": "lenguaje_comunicacion",
+          "subject_name": "Lenguaje y Comunicación",
+          "track": "plan_comun",
+          "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+          "curriculum_base_name": "Bases Curriculares de Educación de Personas Jóvenes y Adultas (EPJA)",
+          "source_url": "https://www.curriculumnacional.cl/curriculum/bases-curriculares-educacion-personas-jovenes-adultas-epja/lenguaje-comunicacion/nivel-2-educacion-media-3-4-ano-medio",
+          "documents": [
+            {
+              "doc_type": "Base curricular",
+              "title": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+              "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024"
+            }
+          ],
+          "learning_objectives": [
+            {
+              "oa_id": "CL_LEN_E2M_COYE_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "code_slug": "oa-1",
+              "statement": "Evaluar textos no literarios orales, escritos y audiovisuales, analizando la influencia de los contextos socioculturales de enunciador y audiencia.",
+              "keywords": [
+                "evaluar",
+                "textos",
+                "literarios",
+                "orales",
+                "escritos",
+                "audiovisuales",
+                "analizando",
+                "influencia",
+                "contextos",
+                "socioculturales",
+                "enunciador",
+                "audiencia"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/sites/default/files/adjuntos/recursos/2026-07/WEB_bbcc%20EPJA_v16_0.pdf",
+                "source_type": "base_curricular_pdf",
+                "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+                "source_page": 61,
+                "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
+              },
+              "curriculum_status": "en_implementacion",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+                "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+                "verified_on": "2026-09-05"
+              },
+              "strand_eje": "Comprensión oral y escrita",
+              "strand_id": "comprension_oral_y_escrita",
+              "strand_kind": "Eje"
+            },
+            {
+              "oa_id": "CL_LEN_E2M_COYE_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "code_slug": "oa-2",
+              "statement": "Formular una interpretación de los textos literarios leídos, estableciendo relaciones intertextuales con otros referentes de la cultura y del arte.",
+              "keywords": [
+                "formular",
+                "interpretación",
+                "textos",
+                "literarios",
+                "leídos",
+                "estableciendo",
+                "relaciones",
+                "intertextuales",
+                "referentes",
+                "cultura",
+                "arte"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/sites/default/files/adjuntos/recursos/2026-07/WEB_bbcc%20EPJA_v16_0.pdf",
+                "source_type": "base_curricular_pdf",
+                "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+                "source_page": 61,
+                "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
+              },
+              "curriculum_status": "en_implementacion",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+                "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+                "verified_on": "2026-09-05"
+              },
+              "strand_eje": "Comprensión oral y escrita",
+              "strand_id": "comprension_oral_y_escrita",
+              "strand_kind": "Eje"
+            },
+            {
+              "oa_id": "CL_LEN_E2M_CE_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "code_slug": "oa-3",
+              "statement": "Producir textos (orales, escritos o audiovisuales) coherentes y cohesionados para comunicar sus ideas, adecuando el texto a las convenciones del género y a las características de la audiencia.",
+              "keywords": [
+                "producir",
+                "textos",
+                "orales",
+                "escritos",
+                "audiovisuales",
+                "coherentes",
+                "cohesionados",
+                "comunicar",
+                "ideas",
+                "adecuando",
+                "texto",
+                "convenciones"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/sites/default/files/adjuntos/recursos/2026-07/WEB_bbcc%20EPJA_v16_0.pdf",
+                "source_type": "base_curricular_pdf",
+                "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+                "source_page": 61,
+                "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
+              },
+              "curriculum_status": "en_implementacion",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+                "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+                "verified_on": "2026-09-05"
+              },
+              "strand_eje": "Comunicación escrita",
+              "strand_id": "comunicacion_escrita",
+              "strand_kind": "Eje"
+            },
+            {
+              "oa_id": "CL_LEN_E2M_CO_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "OA 4",
+              "code_slug": "oa-4",
+              "statement": "Dialogar argumentativamente, para construir y ampliar ideas, usando evidencia disponible para fundamentar posturas.",
+              "keywords": [
+                "dialogar",
+                "argumentativamente",
+                "construir",
+                "ampliar",
+                "ideas",
+                "evidencia",
+                "disponible",
+                "fundamentar",
+                "posturas"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/sites/default/files/adjuntos/recursos/2026-07/WEB_bbcc%20EPJA_v16_0.pdf",
+                "source_type": "base_curricular_pdf",
+                "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+                "source_page": 61,
+                "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
+              },
+              "curriculum_status": "en_implementacion",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+                "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+                "verified_on": "2026-09-05"
+              },
+              "strand_eje": "Comunicación oral",
+              "strand_id": "comunicacion_oral",
+              "strand_kind": "Eje"
+            },
+            {
+              "oa_id": "CL_LEN_E2M_INVS_OA05",
+              "oa_number": 5,
+              "category": "conocimiento",
+              "code": "OA 5",
+              "code_slug": "oa-5",
+              "statement": "Realizar investigaciones para responder interrogantes propias de la asignatura procesando la información mediante herramientas digitales y comunicando sus hallazgos por medio de distintos géneros haciendo uso ético de la información.",
+              "keywords": [
+                "realizar",
+                "investigaciones",
+                "responder",
+                "interrogantes",
+                "asignatura",
+                "procesando",
+                "información",
+                "herramientas",
+                "digitales",
+                "comunicando",
+                "hallazgos",
+                "medio"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/sites/default/files/adjuntos/recursos/2026-07/WEB_bbcc%20EPJA_v16_0.pdf",
+                "source_type": "base_curricular_pdf",
+                "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+                "source_page": 61,
+                "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
+              },
+              "curriculum_status": "en_implementacion",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+                "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+                "verified_on": "2026-09-05"
+              },
+              "strand_eje": "Investigación",
+              "strand_id": "investigacion",
+              "strand_kind": "Eje"
+            }
+          ],
+          "formation_area": "formacion_general",
+          "formation_area_name": "Formación General",
+          "objectives_source": "base_curricular_pdf",
+          "curriculum_status": "en_implementacion",
+          "status_source": {
+            "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+            "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+            "verified_on": "2026-09-05"
+          },
+          "big_ideas": [
+            "Una lectura crítica permite conocer la ideología y creencias del emisor.",
+            "Los textos literarios se enriquecen con las visiones de mundo y perspectivas de los lectores.",
+            "El diálogo respetuoso nos permite ampliar nuestras ideas y colaborar en contextos diversos, presenciales y digitales.",
+            "Escribimos según nuestros propósitos y para audiencias auténticas.",
+            "Como ciudadanos necesitamos conocer la tecnología y también reflexionar sobre su impacto en las personas."
+          ],
+          "essential_knowledge": [
+            "Temas, tópicos y motivos literarios universales.",
+            "Recursos literarios.",
+            "Efecto estético.",
+            "Posicionamiento de un emisor, su propósito, ideas implícitas, ambigüedades y sesgos.",
+            "Argumentación: razonamientos, premisas, relaciones entre ideas y selección léxica.",
+            "Identidad discursiva."
+          ]
+        },
+        "historia_geografia_ciencias_sociales": {
+          "subject_id": "historia_geografia_ciencias_sociales",
+          "subject_name": "Historia, Geografía y Ciencias Sociales",
+          "track": "plan_comun",
+          "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+          "curriculum_base_name": "Bases Curriculares de Educación de Personas Jóvenes y Adultas (EPJA)",
+          "source_url": "https://www.curriculumnacional.cl/curriculum/bases-curriculares-educacion-personas-jovenes-adultas-epja/historia-geografia-ciencias-sociales/nivel-2-educacion-media-3-4-ano-medio",
+          "documents": [
+            {
+              "doc_type": "Base curricular",
+              "title": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+              "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024"
+            }
+          ],
+          "learning_objectives": [
+            {
+              "oa_id": "CL_HIS_E2M_PTYE_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "code_slug": "oa-1",
+              "statement": "Analizar elementos de continuidad y cambio en procesos, considerando diferentes actores sociales y valorando las TIC como una oportunidad para informarse e investigar.",
+              "keywords": [
+                "analizar",
+                "elementos",
+                "continuidad",
+                "cambio",
+                "procesos",
+                "considerando",
+                "actores",
+                "sociales",
+                "valorando",
+                "oportunidad",
+                "informarse",
+                "investigar"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/sites/default/files/adjuntos/recursos/2026-07/WEB_bbcc%20EPJA_v16_0.pdf",
+                "source_type": "base_curricular_pdf",
+                "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+                "source_page": 85,
+                "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
+              },
+              "curriculum_status": "en_implementacion",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+                "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+                "verified_on": "2026-09-05"
+              },
+              "strand_eje": "Pensamiento temporal y espacial",
+              "strand_id": "pensamiento_temporal_y_espacial",
+              "strand_kind": "Eje"
+            },
+            {
+              "oa_id": "CL_HIS_E2M_PTYE_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "code_slug": "oa-2",
+              "statement": "Evaluar datos e información geográfica, por medio del uso de herramientas geográficas y digitales, para elaborar inferencias y argumentos, actuando de acuerdo con los principios de la ética.",
+              "keywords": [
+                "evaluar",
+                "datos",
+                "información",
+                "geográfica",
+                "medio",
+                "herramientas",
+                "geográficas",
+                "digitales",
+                "elaborar",
+                "inferencias",
+                "argumentos",
+                "actuando"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/sites/default/files/adjuntos/recursos/2026-07/WEB_bbcc%20EPJA_v16_0.pdf",
+                "source_type": "base_curricular_pdf",
+                "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+                "source_page": 85,
+                "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
+              },
+              "curriculum_status": "en_implementacion",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+                "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+                "verified_on": "2026-09-05"
+              },
+              "strand_eje": "Pensamiento temporal y espacial",
+              "strand_id": "pensamiento_temporal_y_espacial",
+              "strand_kind": "Eje"
+            },
+            {
+              "oa_id": "CL_HIS_E2M_AYTC_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "code_slug": "oa-3",
+              "statement": "Evaluar la veracidad y la fiabilidad de las evidencias presentes en distintas fuentes, trabajando con empatía y respeto.",
+              "keywords": [
+                "evaluar",
+                "veracidad",
+                "fiabilidad",
+                "evidencias",
+                "presentes",
+                "fuentes",
+                "trabajando",
+                "empatía",
+                "respeto"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/sites/default/files/adjuntos/recursos/2026-07/WEB_bbcc%20EPJA_v16_0.pdf",
+                "source_type": "base_curricular_pdf",
+                "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+                "source_page": 85,
+                "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
+              },
+              "curriculum_status": "en_implementacion",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+                "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+                "verified_on": "2026-09-05"
+              },
+              "strand_eje": "Análisis y trabajo con fuentes",
+              "strand_id": "analisis_y_trabajo_con_fuentes",
+              "strand_kind": "Eje"
+            },
+            {
+              "oa_id": "CL_HIS_E2M_PC_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "OA 4",
+              "code_slug": "oa-4",
+              "statement": "Elaborar argumentos e interpretaciones sobre los fenómenos estudiados, pensando con apertura a distintas perspectivas y contextos.",
+              "keywords": [
+                "elaborar",
+                "argumentos",
+                "interpretaciones",
+                "fenómenos",
+                "estudiados",
+                "pensando",
+                "apertura",
+                "perspectivas",
+                "contextos"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/sites/default/files/adjuntos/recursos/2026-07/WEB_bbcc%20EPJA_v16_0.pdf",
+                "source_type": "base_curricular_pdf",
+                "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+                "source_page": 85,
+                "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
+              },
+              "curriculum_status": "en_implementacion",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+                "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+                "verified_on": "2026-09-05"
+              },
+              "strand_eje": "Pensamiento crítico",
+              "strand_id": "pensamiento_critico",
+              "strand_kind": "Eje"
+            },
+            {
+              "oa_id": "CL_HIS_E2M_CMNC_OA05",
+              "oa_number": 5,
+              "category": "conocimiento",
+              "code": "OA 5",
+              "code_slug": "oa-5",
+              "statement": "Fundamentar y comunicar puntos de vista propios sobre los temas estudiados, apoyándose en razones y evidencia, con honestidad y responsabilidad por las propias acciones y decisiones.",
+              "keywords": [
+                "fundamentar",
+                "comunicar",
+                "puntos",
+                "vista",
+                "temas",
+                "estudiados",
+                "apoyándose",
+                "razones",
+                "evidencia",
+                "honestidad",
+                "responsabilidad",
+                "acciones"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/sites/default/files/adjuntos/recursos/2026-07/WEB_bbcc%20EPJA_v16_0.pdf",
+                "source_type": "base_curricular_pdf",
+                "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+                "source_page": 85,
+                "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
+              },
+              "curriculum_status": "en_implementacion",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+                "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+                "verified_on": "2026-09-05"
+              },
+              "strand_eje": "Comunicación",
+              "strand_id": "comunicacion",
+              "strand_kind": "Eje"
+            }
+          ],
+          "formation_area": "formacion_general",
+          "formation_area_name": "Formación General",
+          "objectives_source": "base_curricular_pdf",
+          "curriculum_status": "en_implementacion",
+          "status_source": {
+            "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+            "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+            "verified_on": "2026-09-05"
+          },
+          "big_ideas": [
+            "Los procesos globales recientes impactan a las sociedades a nivel local en distintas dimensiones, a la vez que procesos locales pueden repercutir en dinámicas globales.",
+            "La especialización económica y las redes comerciales globales pueden llevar a relaciones de conflicto y cooperación entre sociedades.",
+            "La responsabilidad social, personal y medioambiental implica desafíos que son complejos y que están interconectados.",
+            "La toma de decisiones a distintas escalas (por ejemplo: comunitario, regional y nacional) requiere equilibrar factores políticos, económicos, sociales, culturales"
+          ],
+          "essential_knowledge": [
+            "Democracia y ciudadanía en Chile (valores, atributos y dimensiones); libertades fundamentales, deberes del Estado, derechos y responsabilidades ciudadanas.",
+            "Derechos humanos y su reconocimiento, defensa y exigibilidad en Chile.",
+            "Mecanismos de acceso a la justicia y principales características del sistema judicial chileno.",
+            "Conceptos económicos y economía global actual (por ejemplo: mercado financiero, comercio mundial, cambios en la producción y en el mercado del trabajo, nuevas formas de consumo).",
+            "Procesos geográficos, sociales y culturales recientes en Chile y América Latina (por ejemplo: migraciones, presente de los pueblos indígenas, cambios demográficos, desafíos en torno a la planificación urbana y rural).",
+            "Desafíos de la ciudadanía local y global (por ejemplo: resolución de conflictos y bien común, responsabilidad personal, social y medioambiental)."
+          ]
+        },
+        "ingles": {
+          "subject_id": "ingles",
+          "subject_name": "Inglés",
+          "track": "plan_comun",
+          "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+          "curriculum_base_name": "Bases Curriculares de Educación de Personas Jóvenes y Adultas (EPJA)",
+          "source_url": "https://www.curriculumnacional.cl/curriculum/bases-curriculares-educacion-personas-jovenes-adultas-epja/ingles/nivel-2-educacion-media-3-4-ano-medio",
+          "documents": [
+            {
+              "doc_type": "Base curricular",
+              "title": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+              "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024"
+            }
+          ],
+          "learning_objectives": [
+            {
+              "oa_id": "CL_ING_E2M_CA_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "code_slug": "oa-1",
+              "statement": "Interpretar el significado del texto, comprendiendo expresiones idiomáticas y vocabulario de uso frecuente en textos orales y en diversos formatos.",
+              "keywords": [
+                "interpretar",
+                "significado",
+                "texto",
+                "comprendiendo",
+                "expresiones",
+                "idiomáticas",
+                "vocabulario",
+                "frecuente",
+                "textos",
+                "orales",
+                "formatos"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/sites/default/files/adjuntos/recursos/2026-07/WEB_bbcc%20EPJA_v16_0.pdf",
+                "source_type": "base_curricular_pdf",
+                "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+                "source_page": 106,
+                "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
+              },
+              "curriculum_status": "en_implementacion",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+                "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+                "verified_on": "2026-09-05"
+              },
+              "strand_eje": "Comprensión auditiva",
+              "strand_id": "comprension_auditiva",
+              "strand_kind": "Eje"
+            },
+            {
+              "oa_id": "CL_ING_E2M_CL_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "code_slug": "oa-2",
+              "statement": "Interpretar el significado de las ideas principales, información específica y detalles, vocabulario y combinaciones de palabras, en diversos tipos de textos literarios y no literarios.",
+              "keywords": [
+                "interpretar",
+                "significado",
+                "ideas",
+                "principales",
+                "información",
+                "específica",
+                "detalles",
+                "vocabulario",
+                "combinaciones",
+                "palabras",
+                "tipos",
+                "textos"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/sites/default/files/adjuntos/recursos/2026-07/WEB_bbcc%20EPJA_v16_0.pdf",
+                "source_type": "base_curricular_pdf",
+                "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+                "source_page": 106,
+                "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
+              },
+              "curriculum_status": "en_implementacion",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+                "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+                "verified_on": "2026-09-05"
+              },
+              "strand_eje": "Comprensión lectora",
+              "strand_id": "comprension_lectora",
+              "strand_kind": "Eje"
+            },
+            {
+              "oa_id": "CL_ING_E2M_EE_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "code_slug": "oa-3",
+              "statement": "Escribir textos con distintos propósitos, utilizando vocabulario y la gramática que corresponde, utilizando las herramientas digitales.",
+              "keywords": [
+                "escribir",
+                "textos",
+                "propósitos",
+                "utilizando",
+                "vocabulario",
+                "gramática",
+                "corresponde",
+                "herramientas",
+                "digitales"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/sites/default/files/adjuntos/recursos/2026-07/WEB_bbcc%20EPJA_v16_0.pdf",
+                "source_type": "base_curricular_pdf",
+                "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+                "source_page": 106,
+                "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
+              },
+              "curriculum_status": "en_implementacion",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+                "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+                "verified_on": "2026-09-05"
+              },
+              "strand_eje": "Expresión escrita",
+              "strand_id": "expresion_escrita",
+              "strand_kind": "Eje"
+            },
+            {
+              "oa_id": "CL_ING_E2M_EO_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "OA 4",
+              "code_slug": "oa-4",
+              "statement": "Presentar información sobre un tema investigado previamente, aportando descripciones y detalles demostrando coherencia en la organización de ideas, con honestidad.",
+              "keywords": [
+                "presentar",
+                "información",
+                "tema",
+                "investigado",
+                "previamente",
+                "aportando",
+                "descripciones",
+                "detalles",
+                "demostrando",
+                "coherencia",
+                "organización",
+                "ideas"
+              ],
+              "prioritized": false,
+              "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/sites/default/files/adjuntos/recursos/2026-07/WEB_bbcc%20EPJA_v16_0.pdf",
+                "source_type": "base_curricular_pdf",
+                "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
+                "source_page": 106,
+                "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
+                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
+              },
+              "curriculum_status": "en_implementacion",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+                "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+                "verified_on": "2026-09-05"
+              },
+              "strand_eje": "Expresión oral",
+              "strand_id": "expresion_oral",
+              "strand_kind": "Eje"
+            }
+          ],
+          "formation_area": "formacion_general",
+          "formation_area_name": "Formación General",
+          "objectives_source": "base_curricular_pdf",
+          "curriculum_status": "en_implementacion",
+          "status_source": {
+            "url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
+            "note": "Bases Curriculares EPJA 2024. El documento es el aprobado y publicado por la Unidad de Currículum y Evaluación; su entrada en aula es gradual, por lo que se registra como en implementación y no como vigente.",
+            "verified_on": "2026-09-05"
+          },
+          "big_ideas": [
+            "La comunicación en inglés permite explorar y conocer nuevas perspectivas sobre el mundo.",
+            "Producir textos escritos en inglés permite expresar una postura sobre distintas temáticas en contextos globales.",
+            "La literatura nos permite conocer distintas sociedades en el tiempo, sus valores, tradiciones y personas.",
+            "El aprendizaje de un idioma es un proceso que dura toda la vida y se enriquece a lo largo de esta."
+          ],
+          "essential_knowledge": [
+            "Estrategias de comprensión de textos, como hacer predicciones de acuerdo a conocimientos previos, usar claves contextuales, hacer inferencias, preguntar para clarificar información, confirmar predicciones.",
+            "Estructura de textos informativos para diversos propósitos; estructura de textos narrativos.",
+            "Estructuras para argumentar de forma oral y escrita, como in my opinion, according to, against, etcétera.",
+            "Primer y segundo condicional.",
+            "Adjetivos comparativos y superlativos; pronombres relativos.",
+            "Construcción y uso de oraciones afirmativas, interrogativas y negativas en presente perfecto.",
+            "Adverbios, como already, yet, just, etcétera.",
+            "Conectores, como however, furthermore, besides, otherwise, therefore, indeed, etcétera."
+          ]
         }
       }
     }

@@ -7,7 +7,10 @@
  */
 
 import { loadDataset, clearCache } from './store.js';
-import { flatten, buildIndex, search, highlight, escapeHtml, fold } from './index.js';
+import {
+  flatten, flattenOats, buildIndex, buildOatIndex, search, highlight, escapeHtml,
+  fold, explainMatch,
+} from './index.js';
 import { FORMATS, exportRecords, formatOne } from './export.js';
 
 const PAGE = 60;
@@ -20,6 +23,22 @@ const TRACK_LABEL = {
   plan_comun: 'Plan común',
   plan_diferenciado_hc: 'Diferenciado HC',
   plan_diferenciado_tp: 'Técnico-Profesional',
+};
+const STATUS_LABEL = {
+  vigente: 'Vigente',
+  propuesta: 'Propuesta',
+  en_implementacion: 'En implementación',
+  historico: 'Histórico',
+  desconocido: 'Estado no verificado',
+};
+const STATUS_NOTE = {
+  vigente: 'Una fuente oficial declara este currículum vigente.',
+  propuesta: 'El Ministerio publica este currículum como propuesta, en paralelo al '
+           + 'currículum en vigor. No es el currículum vigente.',
+  en_implementacion: 'Currículum aprobado y publicado, con entrada en aula gradual.',
+  historico: 'Material superado o de un periodo cerrado.',
+  desconocido: 'Este proyecto no ha verificado con una fuente oficial si este '
+             + 'currículum está vigente. La existencia de la página no lo acredita.',
 };
 const SCOPE_NOTE = {
   objective: 'El Programa de Estudio publica estos indicadores para este objetivo.',
@@ -64,25 +83,54 @@ const el = {
   themeToggle: $('#theme-toggle'),
   filters: $('.filters'),
   filtersToggle: $('#filters-toggle'),
+  modeOa: $('#mode-oa'),
+  modeOat: $('#mode-oat'),
+  modeOaN: $('#mode-oa-n'),
+  modeOatN: $('#mode-oat-n'),
+  base: $('#f-base'),
+  dimension: $('#f-dimension'),
+  statusFilter: $('#f-status'),
+  about: $('#about'),
+  aboutBody: $('#about-body'),
+  aboutToggle: $('#about-toggle'),
+  aboutOpen: $('#about-open'),
+  aboutClose: $('#about-close'),
+  oaOnly: document.querySelectorAll('.oa-only'),
+  oatOnly: document.querySelectorAll('.oat-only'),
 };
 
 const NARROW = matchMedia('(max-width: 62rem)');
 
 const state = {
+  // Two record sets, deliberately not merged. An OAT is defined per curriculum
+  // base, not per subject, so it has no level, subject or eje to filter on;
+  // flattening the two into one list would either invent those fields or leave
+  // the filters lying about what they cover. They share `byId`, the basket and
+  // the export path, which are the places the two genuinely behave alike.
+  mode: 'oa',
   records: [],
   postings: null,
+  oats: [],
+  oatPostings: null,
   byId: new Map(),
   byCodeSlug: new Map(),
   levels: [],
+  manifest: {},
   query: '',
-  filters: { level: '', subject: '', strand: '', category: '', track: '' },
+  filters: { level: '', subject: '', strand: '', category: '', track: '', status: '' },
+  oatFilters: { base: '', dimension: '' },
   only: { prioritized: false, indicators: false },
   sort: 'relevance',
   shown: PAGE,
   results: [],
+  why: new Map(),
   selected: null,
   basket: [],
 };
+
+const isOat = (record) => record?.kind === 'oat';
+const activeRecords = () => (state.mode === 'oat' ? state.oats : state.records);
+const activePostings = () => (state.mode === 'oat' ? state.oatPostings : state.postings);
 
 /* ------------------------------------------------------------------ theme */
 function initTheme() {
@@ -114,7 +162,11 @@ function readHash() {
     return;
   }
 
+  state.mode = params.get('mode') === 'oat' ? 'oat' : 'oa';
   state.query = params.get('q') ?? '';
+  state.oatFilters.base = params.get('base') ?? '';
+  state.oatFilters.dimension = params.get('dim') ?? '';
+  state.filters.status = params.get('status') ?? '';
   state.filters.level = params.get('level') ?? '';
   state.filters.subject = params.get('subject') ?? '';
   state.filters.strand = params.get('strand') ?? '';
@@ -135,9 +187,16 @@ function readHash() {
   }
 }
 
-/** Point the filters at one objective's own level and subject. */
+/** Point the filters at one record's own context, whichever kind it is. */
 function focusOn(record) {
   state.selected = record.oa_id;
+  if (isOat(record)) {
+    state.mode = 'oat';
+    state.oatFilters = { base: record.curriculumBase, dimension: '' };
+    state.query = '';
+    return;
+  }
+  state.mode = 'oa';
   state.filters.level = record.levelId;
   // The subject filter is keyed on the display name, because that is what the
   // <select> offers and what usefully spans curriculum bases.
@@ -145,13 +204,18 @@ function focusOn(record) {
   state.filters.strand = '';
   state.filters.category = '';
   state.filters.track = '';
+  state.filters.status = '';
   state.only = { prioritized: false, indicators: false };
   state.query = '';
 }
 
 function writeHash({ replace = false } = {}) {
   const params = new URLSearchParams();
+  if (state.mode !== 'oa') params.set('mode', state.mode);
   if (state.query) params.set('q', state.query);
+  if (state.oatFilters.base) params.set('base', state.oatFilters.base);
+  if (state.oatFilters.dimension) params.set('dim', state.oatFilters.dimension);
+  if (state.filters.status) params.set('status', state.filters.status);
   if (state.filters.level) params.set('level', state.filters.level);
   if (state.filters.subject) params.set('subject', state.filters.subject);
   if (state.filters.strand) params.set('strand', state.filters.strand);
@@ -170,7 +234,15 @@ function writeHash({ replace = false } = {}) {
 
 /* --------------------------------------------------------------- filters */
 function matches(record) {
-  const { level, subject, strand, category, track } = state.filters;
+  if (isOat(record)) {
+    const { base, dimension } = state.oatFilters;
+    if (base && record.curriculumBase !== base) return false;
+    if (dimension && record.dimension !== dimension) return false;
+    if (state.filters.status && record.status !== state.filters.status) return false;
+    return true;
+  }
+  const { level, subject, strand, category, track, status } = state.filters;
+  if (status && record.status !== status) return false;
   if (level && record.levelId !== level) return false;
   if (subject && record.subjectName !== subject) return false;
   if (strand && record.strand !== strand) return false;
@@ -182,9 +254,21 @@ function matches(record) {
 }
 
 function compute() {
-  const found = search(state.records, state.postings, state.query);
-  const pool = found ?? state.records;
+  const records = activeRecords();
+  const found = search(records, activePostings(), state.query);
+  const pool = found ?? records;
   let results = pool.filter(matches);
+
+  // Why each visible result matched, so a card can say "matched only in an
+  // indicator" rather than looking like a false positive. Computed for the
+  // result set, not the whole dataset, so it stays cheap.
+  state.why = new Map();
+  if (state.query) {
+    for (const record of results.slice(0, state.shown + PAGE)) {
+      const why = explainMatch(record, state.query);
+      if (why) state.why.set(record.oa_id, why);
+    }
+  }
 
   const sorters = {
     curriculum: (a, b) => a.order - b.order,
@@ -223,7 +307,75 @@ function chip(container, value, label, count, key, { disabled = false, title = '
   container.append(button);
 }
 
+function statusBadge(record) {
+  const status = record.status ?? 'desconocido';
+  return `<span class="badge status st-${escapeHtml(status)}"`
+    + ` title="${escapeHtml(STATUS_NOTE[status] ?? '')}">`
+    + `${escapeHtml(STATUS_LABEL[status] ?? status)}</span>`;
+}
+
+/**
+ * The prioritization badge.
+ *
+ * It used to read "Priorizado", present tense, which is a claim the data never
+ * supported: the flag records membership of the Priorización Curricular
+ * published for 2023-2025. The label now carries the period, and the detail
+ * pane says in words that it is historical.
+ */
+function priorityBadge(record) {
+  const info = record.prioritization;
+  if (!record.prioritized && !info) return '';
+  const period = info?.period ?? '2023-2025';
+  return `<span class="badge prio" title="${escapeHtml(info?.note ?? '')}">`
+    + `Priorización ${escapeHtml(period.replace('-', '–'))}</span>`;
+}
+
+function renderModeBar() {
+  el.modeOaN.textContent = state.records.length.toLocaleString('es-CL');
+  el.modeOatN.textContent = state.oats.length.toLocaleString('es-CL');
+  el.modeOa.setAttribute('aria-pressed', String(state.mode === 'oa'));
+  el.modeOat.setAttribute('aria-pressed', String(state.mode === 'oat'));
+  for (const node of el.oaOnly) node.hidden = state.mode !== 'oa';
+  for (const node of el.oatOnly) node.hidden = state.mode !== 'oat';
+}
+
+function renderOatFilters() {
+  const bases = new Map();
+  for (const record of state.oats) bases.set(record.curriculumBase, record.curriculumBaseName);
+  fillSelect(el.base, 'Todas las bases curriculares',
+    [...bases.keys()].sort((a, b) => (bases.get(a) ?? a).localeCompare(bases.get(b) ?? b, 'es')),
+    state.oatFilters.base, 'base', (value) => bases.get(value) ?? value);
+
+  const reachable = state.oatFilters.base
+    ? state.oats.filter((r) => r.curriculumBase === state.oatFilters.base)
+    : state.oats;
+  fillSelect(el.dimension, 'Todas las dimensiones',
+    [...new Set(reachable.map((r) => r.dimension).filter(Boolean))]
+      .sort((a, b) => a.localeCompare(b, 'es')),
+    state.oatFilters.dimension, 'dimension');
+}
+
+function renderStatusFilter() {
+  const counts = new Map();
+  for (const record of activeRecords()) {
+    counts.set(record.status, (counts.get(record.status) ?? 0) + 1);
+  }
+  fillSelect(el.statusFilter, 'Todos los estados',
+    [...counts.keys()].sort(),
+    state.filters.status, 'status',
+    (value) => `${STATUS_LABEL[value] ?? value} (${counts.get(value).toLocaleString('es-CL')})`);
+}
+
 function renderFilters() {
+  renderModeBar();
+  el.q.value = state.query;
+  el.clearQ.hidden = !state.query;
+  el.sort.value = state.sort;
+  renderStatusFilter();
+  if (state.mode === 'oat') {
+    renderOatFilters();
+    return;
+  }
   el.level.replaceChildren();
   for (const level of state.levels) {
     chip(el.level, level.id, level.short, level.count, 'level', {
@@ -267,12 +419,9 @@ function renderFilters() {
 
   el.prioritized.checked = state.only.prioritized;
   el.hasIndicators.checked = state.only.indicators;
-  el.sort.value = state.sort;
-  el.q.value = state.query;
-  el.clearQ.hidden = !state.query;
 }
 
-function fillSelect(select, allLabel, values, current, key) {
+function fillSelect(select, allLabel, values, current, key, labelOf = (v) => v) {
   select.replaceChildren();
   const all = document.createElement('option');
   all.value = '';
@@ -281,22 +430,174 @@ function fillSelect(select, allLabel, values, current, key) {
   for (const value of values) {
     const option = document.createElement('option');
     option.value = value;
-    option.textContent = value;
+    option.textContent = labelOf(value);
     select.append(option);
   }
   select.value = values.includes(current) ? current : '';
   // The active value can fall out of range when another filter narrows things;
   // drop it rather than leaving a filter applied that the UI cannot show.
-  if (current && select.value !== current) state.filters[key] = '';
+  if (current && select.value !== current) {
+    const bag = key in state.oatFilters ? state.oatFilters : state.filters;
+    bag[key] = '';
+  }
+}
+
+/**
+ * The "Acerca de los datos" panel.
+ *
+ * Every number here comes from the manifest the build writes, not from a
+ * constant in this file and not from recounting the dataset in the browser.
+ * Two distinctions the panel exists to make, because the previous version made
+ * neither:
+ *
+ * * **offerings are not subjects.** 372 level x subject curriculum offerings
+ *   are about 129 distinct subjects taught across several levels. Calling the
+ *   first number "asignaturas" overstated the dataset threefold.
+ * * **absent at source is not a parser gap.** An offering with no objectives
+ *   because the ministry publishes none is a fact about the curriculum; one
+ *   with no objectives and no verified reason is a defect here. They are
+ *   counted, and labelled, separately.
+ */
+const NUMBER = (value) => (value ?? 0).toLocaleString('es-CL');
+
+function renderAbout(manifest) {
+  const coverage = manifest.coverage ?? {};
+  const byStatus = coverage.by_status ?? {};
+  const statuses = manifest.status_summary ?? {};
+  const sources = manifest.total_by_source_type ?? {};
+  const oat = manifest.oat_verification ?? {};
+
+  const stat = (label, value, note = '') => `
+    <div class="stat">
+      <dt>${escapeHtml(label)}</dt>
+      <dd>${escapeHtml(NUMBER(value))}</dd>
+      ${note ? `<p>${escapeHtml(note)}</p>` : ''}
+    </div>`;
+
+  const SOURCE_LABEL = {
+    html_curriculum_page: 'Páginas de currículum (HTML)',
+    base_curricular_pdf: 'Bases Curriculares (PDF)',
+    programa_estudio_pdf: 'Programas de Estudio (PDF)',
+    jsonapi: 'JSON:API del sitio',
+  };
+  const COVERAGE_LABEL = {
+    ingested: 'Con objetivos ingeridos',
+    source_absent: 'Sin objetivos en la fuente oficial',
+    defined_elsewhere: 'Definidos en un nivel combinado',
+    parser_gap: 'Sin objetivos y sin razón verificada',
+    missing_from_dataset: 'En el índice oficial, fuera del dataset',
+  };
+
+  el.aboutBody.innerHTML = `
+    <p class="about-lede">
+      Construido el <strong>${escapeHtml((manifest.built_at ?? '').slice(0, 10))}</strong>
+      a partir de un rastreo del sitio del
+      ${escapeHtml((manifest.scraped_at ?? '').slice(0, 10))}.
+      Esquema ${escapeHtml(manifest.schema_version ?? '?')}.
+      La cobertura se calcula contra el inventario oficial de fuentes, no contra
+      el total de una construcción anterior.
+    </p>
+
+    <h3>Registros</h3>
+    <dl class="stats">
+      ${stat('Objetivos por nivel y asignatura', manifest.total_oas)}
+      ${stat('Códigos oficiales distintos', manifest.distinct_official_codes,
+             'Un OA de 3° y 4° Medio se publica bajo ambos cursos.')}
+      ${stat('Objetivos transversales (OAT)', manifest.total_oats,
+             'Definidos por base curricular, no por asignatura.')}
+      ${stat('Ofertas curriculares (nivel × asignatura)', manifest.total_offerings)}
+      ${stat('Asignaturas distintas', manifest.distinct_subjects,
+             'Cada una se imparte en varios niveles.')}
+      ${stat('Con indicadores de evaluación', manifest.objectives_with_indicators)}
+      ${stat('Indicadores de evaluación', manifest.total_indicators)}
+      ${stat('Criterios de evaluación (TP)', manifest.total_criteria)}
+    </dl>
+
+    <h3>EPJA y Religión</h3>
+    <dl class="stats">
+      ${stat('Objetivos EPJA', manifest.total_epja_objectives,
+             'Leídos de las Bases Curriculares EPJA 2024 salvo los publicados en HTML.')}
+      ${stat('Objetivos de Religión', manifest.total_religion_objectives,
+             'El Decreto N° 924 establece un programa por credo; no se publican aquí.')}
+    </dl>
+
+    <h3>Cobertura frente al inventario oficial</h3>
+    <ul class="cov">
+      ${Object.entries(byStatus).map(([key, value]) => `
+        <li class="cov-${escapeHtml(key)}">
+          <span>${escapeHtml(COVERAGE_LABEL[key] ?? key)}</span>
+          <strong>${escapeHtml(NUMBER(value))}</strong>
+        </li>`).join('')}
+    </ul>
+    <p class="about-note">
+      ${coverage.parser_gaps
+        ? `${escapeHtml(NUMBER(coverage.parser_gaps))} oferta(s) sin objetivos y sin
+           razón verificada: puede haber contenido que el lector no está extrayendo.`
+        : 'Ninguna oferta queda sin objetivos y sin una razón verificada registrada.'}
+    </p>
+
+    <h3>Estado del currículum</h3>
+    <ul class="cov">
+      ${Object.entries(statuses).map(([key, value]) => `
+        <li><span>${escapeHtml(STATUS_LABEL[key] ?? key)}</span>
+          <strong>${escapeHtml(NUMBER(value))}</strong></li>`).join('')}
+    </ul>
+    <p class="about-note">
+      Un estado distinto de «no verificado» siempre va acompañado de la fuente
+      oficial que lo respalda. Que una página exista no acredita vigencia.
+    </p>
+
+    <h3>Origen de los registros</h3>
+    <ul class="cov">
+      ${Object.entries(sources).map(([key, value]) => `
+        <li><span>${escapeHtml(SOURCE_LABEL[key] ?? key)}</span>
+          <strong>${escapeHtml(NUMBER(value))}</strong></li>`).join('')}
+    </ul>
+
+    <h3>Objetivos transversales</h3>
+    <ul class="cov">
+      ${Object.entries(oat.bases_with_oats ?? {}).map(([base, count]) => `
+        <li><span>${escapeHtml(base)}</span>
+          <strong>${escapeHtml(NUMBER(count))}</strong></li>`).join('')}
+    </ul>
+    ${Object.entries(oat.bases_without_oats ?? {}).map(([base, why]) => `
+      <p class="about-note"><strong>${escapeHtml(base)}:</strong> ${escapeHtml(why)}</p>`).join('')}
+    ${oat.verified_on ? `<p class="about-note">OAT verificados contra la JSON:API
+      del Ministerio el ${escapeHtml(oat.verified_on.slice(0, 10))};
+      ${escapeHtml(NUMBER((oat.differences ?? []).length))} diferencias.</p>` : ''}
+
+    <h3>Limitaciones conocidas</h3>
+    ${(manifest.known_limitations ?? []).length
+      ? `<ul class="lims">${manifest.known_limitations.map((limit) => `
+          <li class="lim-${escapeHtml(limit.kind)}">
+            <strong>${escapeHtml(limit.area)}</strong>
+            <span class="lim-n">${escapeHtml(NUMBER(limit.offerings))} oferta(s)</span>
+            <p>${escapeHtml(limit.summary)}</p>
+            ${limit.source_url ? `<a href="${escapeHtml(limit.source_url)}"
+              target="_blank" rel="noopener">Fuente</a>` : ''}
+          </li>`).join('')}</ul>`
+      : '<p class="about-note">Ninguna registrada.</p>'}
+
+    <h3>Priorización curricular</h3>
+    <p class="about-note">
+      ${escapeHtml(manifest.prioritization?.note
+        ?? 'La marca de priorización es un dato histórico.')}
+    </p>
+  `;
 }
 
 function renderMeta(manifest) {
+  // "Asignaturas" deliberately shows the count of distinct subjects, not the
+  // count of level x subject pages: those are different numbers and the second
+  // one is nearly three times the first.
   const rows = [
     ['Objetivos', manifest.total_oas?.toLocaleString('es-CL')],
+    ['Transversales', manifest.total_oats?.toLocaleString('es-CL')],
     ['Indicadores', manifest.total_indicators?.toLocaleString('es-CL')],
     ['Criterios TP', manifest.total_criteria?.toLocaleString('es-CL')],
-    ['Asignaturas', manifest.total_subjects?.toLocaleString('es-CL')],
-    ['Actualizado', manifest.scraped_at?.slice(0, 10)],
+    ['Asignaturas', manifest.distinct_subjects?.toLocaleString('es-CL')],
+    ['Ofertas nivel × asignatura', manifest.total_offerings?.toLocaleString('es-CL')],
+    ['Construido', manifest.built_at?.slice(0, 10) ?? manifest.scraped_at?.slice(0, 10)],
   ].filter(([, value]) => value);
   el.meta.innerHTML = rows
     .map(([term, value]) => `<dt>${escapeHtml(term)}</dt><dd>${escapeHtml(String(value))}</dd>`)
@@ -311,9 +612,10 @@ function statementFirstLine(statement) {
 
 function renderResults() {
   const total = state.results.length;
-  el.count.textContent = total
-    ? `${total.toLocaleString('es-CL')} objetivo${total === 1 ? '' : 's'}`
-    : '';
+  const noun = state.mode === 'oat'
+    ? (total === 1 ? 'objetivo transversal' : 'objetivos transversales')
+    : (total === 1 ? 'objetivo' : 'objetivos');
+  el.count.textContent = total ? `${total.toLocaleString('es-CL')} ${noun}` : '';
   el.empty.hidden = total > 0;
   if (!total) {
     el.empty.textContent = state.query
@@ -341,21 +643,44 @@ function renderRow(record) {
   if (state.selected === record.oa_id) button.setAttribute('aria-current', 'true');
 
   const badges = [];
-  if (record.category !== 'conocimiento') {
-    badges.push(`<span class="badge cat-${record.category}">${CATEGORY_LABEL[record.category]}</span>`);
+  if (isOat(record)) {
+    badges.push('<span class="badge cat-transversal">Transversal</span>');
+  } else {
+    if (record.category !== 'conocimiento') {
+      badges.push(`<span class="badge cat-${record.category}">${CATEGORY_LABEL[record.category]}</span>`);
+    }
+    badges.push(priorityBadge(record));
+    if (record.indicators.length) {
+      badges.push(`<span class="badge ind">${record.indicators.length} indicador${record.indicators.length === 1 ? '' : 'es'}</span>`);
+    }
   }
-  if (record.prioritized) badges.push('<span class="badge prio">Priorizado</span>');
-  if (record.indicators.length) {
-    badges.push(`<span class="badge ind">${record.indicators.length} indicador${record.indicators.length === 1 ? '' : 'es'}</span>`);
-  }
+  if (record.status && record.status !== 'vigente') badges.push(statusBadge(record));
+
+  const where = isOat(record)
+    ? `${escapeHtml(record.dimension)} · ${escapeHtml(record.curriculumBaseName)}`
+    : `${escapeHtml(record.levelName)} · ${escapeHtml(record.subjectName)}`
+      + (record.strand ? ` · ${escapeHtml(record.strand)}` : '');
+
+  // A stored objective that is a stem plus a list must not read as a truncated
+  // one. The card shows the stem and says how much it is holding back.
+  const more = record.components > 0
+    ? `<span class="more-parts">+ ${record.components} componente${record.components === 1 ? '' : 's'}</span>`
+    : '';
+
+  const why = state.why.get(record.oa_id);
+  const explain = why?.indicatorOnly
+    ? `<p class="why">Coincide solo en un indicador de evaluación:
+         <span class="why-x">${highlight(why.excerpt, state.query)}</span></p>`
+    : '';
 
   button.innerHTML = `
     <span class="row-top">
       <span class="code">${highlight(record.code, state.query)}</span>
-      <span class="row-where">${escapeHtml(record.levelName)} · ${escapeHtml(record.subjectName)}${record.strand ? ` · ${escapeHtml(record.strand)}` : ''}</span>
+      <span class="row-where">${where}</span>
     </span>
-    <p class="row-statement">${highlight(statementFirstLine(record.statement), state.query)}</p>
-    ${badges.length ? `<span class="row-meta">${badges.join('')}</span>` : ''}
+    <p class="row-statement">${highlight(statementFirstLine(record.statement), state.query)}${more}</p>
+    ${explain}
+    ${badges.filter(Boolean).length ? `<span class="row-meta">${badges.filter(Boolean).join('')}</span>` : ''}
   `;
   button.addEventListener('click', () => select(record.oa_id));
   item.append(button);
@@ -395,8 +720,118 @@ function progression(record) {
     .sort((a, b) => a.order - b.order);
 }
 
+/** Where a record came from, in the words the provenance record uses. */
+function provenanceHtml(record) {
+  const p = record.provenance;
+  if (!p) return '';
+  const kind = {
+    html_curriculum_page: 'Página de currículum (HTML)',
+    jsonapi: 'JSON:API de curriculumnacional.cl',
+    base_curricular_pdf: 'Bases Curriculares (PDF)',
+    programa_estudio_pdf: 'Programa de Estudio (PDF)',
+  }[p.source_type] ?? p.source_type;
+  const rows = [
+    ['Tipo de fuente', kind],
+    ['Documento', p.source_document],
+    ['Página del PDF', p.source_page],
+    ['Base curricular', p.curriculum_base],
+    ['Extracción', p.extraction_method],
+    ['Obtenido', (p.retrieved_at ?? '').slice(0, 10)],
+  ].filter(([, value]) => value !== undefined && value !== null && value !== '');
+  return `<h3>Procedencia</h3>
+    <dl class="prov">${rows.map(([term, value]) =>
+      `<dt>${escapeHtml(term)}</dt><dd>${escapeHtml(String(value))}</dd>`).join('')}</dl>
+    <p class="prov-link"><a href="${escapeHtml(p.source_url)}" target="_blank" rel="noopener">
+      Abrir la fuente exacta</a></p>`;
+}
+
+function statusHtml(record) {
+  const status = record.status ?? 'desconocido';
+  const source = record.statusSource;
+  return `<h3>Estado del currículum</h3>
+    <p class="status-line">${statusBadge(record)}
+      <span>${escapeHtml(STATUS_NOTE[status] ?? '')}</span></p>
+    ${source?.url ? `<p class="scope-note">${escapeHtml(source.note ?? '')}
+      <a href="${escapeHtml(source.url)}" target="_blank" rel="noopener">Fuente</a>
+      ${source.verified_on ? `· verificado el ${escapeHtml(source.verified_on)}` : ''}</p>` : ''}`;
+}
+
+function correctionHtml(record) {
+  const c = record.correction;
+  if (!c) return '';
+  return `<h3>Corrección aplicada</h3>
+    <p class="scope-note">${escapeHtml(c.explanation)}</p>
+    <p class="scope-note"><strong>Texto publicado en la fuente conflictiva:</strong>
+      «${escapeHtml(c.original_value)}»</p>
+    <p class="prov-link"><a href="${escapeHtml(c.authoritative_source_url)}"
+      target="_blank" rel="noopener">Fuente autorizada${
+        c.authoritative_source_page ? `, p. ${c.authoritative_source_page}` : ''}</a>
+      ${c.verified_on ? `· verificado el ${escapeHtml(c.verified_on)}` : ''}</p>`;
+}
+
+function renderOatDetail(record) {
+  const inBasket = state.basket.includes(record.oa_id);
+  const siblings = state.oats.filter(
+    (other) => other.dimension === record.dimension
+      && other.curriculumBase === record.curriculumBase
+      && other.oa_id !== record.oa_id,
+  );
+  const parts = [`
+    <span class="d-code">${escapeHtml(record.code)}</span>
+    <h2>${escapeHtml(record.dimension)}</h2>
+    <p class="d-where">Objetivo de Aprendizaje Transversal ·
+      ${escapeHtml(record.curriculumBaseName)}</p>
+    <div class="d-actions">
+      <button class="ghost" data-act="basket">${inBasket ? 'Quitar de la selección' : 'Añadir a la selección'}</button>
+      <button class="ghost" data-act="copy">Copiar</button>
+      <button class="ghost" data-act="link">Copiar enlace</button>
+    </div>
+    ${record.title ? `<p class="oat-title">${escapeHtml(record.title)}</p>` : ''}
+    <div class="statement">${statementHtml(record.statement, state.query)}</div>
+  `];
+  if (record.dimensionDescription) {
+    parts.push(`<h3>Sobre esta dimensión</h3>
+      <p class="scope-note">${escapeHtml(record.dimensionDescription)}</p>`);
+  }
+  parts.push(statusHtml(record));
+  parts.push(provenanceHtml(record));
+  if (siblings.length) {
+    parts.push(`<h3>Otros OAT de esta dimensión (${siblings.length})</h3>`);
+    parts.push(`<ul class="prog">${siblings.map((other) => `
+      <li><button type="button" data-goto="${escapeHtml(other.oa_id)}">
+        <span class="prog-lvl">${escapeHtml(other.code)}</span>
+        <span class="prog-st">${escapeHtml(statementFirstLine(other.statement))}</span>
+      </button></li>`).join('')}</ul>`);
+  }
+  el.detail.innerHTML = parts.join('');
+  wireDetailActions(record);
+}
+
+function wireDetailActions(record) {
+  el.detail.querySelector('[data-act="basket"]')?.addEventListener('click', () => {
+    toggleBasket(record.oa_id);
+    renderDetail();
+  });
+  el.detail.querySelector('[data-act="copy"]')?.addEventListener('click', () => {
+    copy(formatOne(record), 'Objetivo copiado');
+  });
+  el.detail.querySelector('[data-act="link"]')?.addEventListener('click', () => {
+    const params = new URLSearchParams();
+    if (isOat(record)) params.set('mode', 'oat');
+    params.set('oa', record.oa_id);
+    copy(`${location.origin}${location.pathname}#${params.toString()}`, 'Enlace copiado');
+  });
+  for (const button of el.detail.querySelectorAll('[data-goto]')) {
+    button.addEventListener('click', () => select(button.dataset.goto, { reveal: true }));
+  }
+}
+
 function renderDetail() {
   const record = state.byId.get(state.selected);
+  if (record && isOat(record)) {
+    renderOatDetail(record);
+    return;
+  }
   if (!record) {
     el.detail.innerHTML = '<p class="detail-placeholder">Selecciona un objetivo para ver '
       + 'su detalle, sus indicadores de evaluación y su progresión entre cursos.</p>';
@@ -415,8 +850,12 @@ function renderDetail() {
       ${escapeHtml(TRACK_LABEL[record.track] ?? record.track)}
       ${record.strand ? ` · ${escapeHtml(record.strand_kind || 'Eje')}: ${escapeHtml(record.strand)}` : ''}
       · ${escapeHtml(CATEGORY_LABEL[record.category] ?? record.category)}
-      ${record.prioritized ? ' · <strong>Priorización curricular</strong>' : ''}
+      ${record.formationArea ? ` · ${escapeHtml(record.formationArea)}` : ''}
     </p>
+    <p class="d-badges">${[statusBadge(record), priorityBadge(record)].filter(Boolean).join('')}</p>
+    ${record.prioritization ? `<p class="scope-note">${escapeHtml(record.prioritization.note)}</p>` : ''}
+    ${record.levelScope?.length ? `<p class="scope-note">Las Bases definen este objetivo
+      para un nivel combinado; aplica a: ${escapeHtml(record.levelScope.join(', '))}.</p>` : ''}
     <div class="d-actions">
       <button class="ghost" data-act="basket">${inBasket ? 'Quitar de la selección' : 'Añadir a la selección'}</button>
       <button class="ghost" data-act="copy">Copiar</button>
@@ -474,6 +913,10 @@ function renderDetail() {
       </button></li>`).join('')}</ul>`);
   }
 
+  parts.push(correctionHtml(record));
+  parts.push(statusHtml(record));
+  parts.push(provenanceHtml(record));
+
   if (record.keywords.length) {
     parts.push('<h3>Etiquetas</h3>');
     parts.push(`<div class="kw">${record.keywords
@@ -497,21 +940,7 @@ function renderDetail() {
   }
 
   el.detail.innerHTML = parts.join('');
-
-  el.detail.querySelector('[data-act="basket"]')?.addEventListener('click', () => {
-    toggleBasket(record.oa_id);
-    renderDetail();
-  });
-  el.detail.querySelector('[data-act="copy"]')?.addEventListener('click', () => {
-    copy(formatOne(record), 'Objetivo copiado');
-  });
-  el.detail.querySelector('[data-act="link"]')?.addEventListener('click', () => {
-    copy(`${location.origin}${location.pathname}#${encodeURIComponent(record.code_slug || record.oa_id)}`,
-      'Enlace copiado');
-  });
-  for (const button of el.detail.querySelectorAll('[data-goto]')) {
-    button.addEventListener('click', () => select(button.dataset.goto, { reveal: true }));
-  }
+  wireDetailActions(record);
 }
 
 /* --------------------------------------------------------------- basket  */
@@ -574,6 +1003,11 @@ function flash(message, isError = false) {
 /* ------------------------------------------------------------- selection */
 function select(id, { reveal = false } = {}) {
   state.selected = id;
+  const target = state.byId.get(id);
+  if (target && isOat(target) !== (state.mode === 'oat')) {
+    state.mode = isOat(target) ? 'oat' : 'oa';
+    render();
+  }
   if (reveal && !state.results.some((candidate) => candidate.oa_id === id)) {
     // The target is filtered out; widen just enough to show it.
     const record = state.byId.get(id);
@@ -642,7 +1076,8 @@ function wire() {
     writeHash({ replace: true });
   });
 
-  for (const [node, key] of [[el.subject, 'subject'], [el.strand, 'strand']]) {
+  for (const [node, key] of [[el.subject, 'subject'], [el.strand, 'strand'],
+    [el.statusFilter, 'status']]) {
     node.addEventListener('change', () => {
       state.filters[key] = node.value;
       if (key === 'subject') state.filters.strand = '';
@@ -651,6 +1086,39 @@ function wire() {
       writeHash();
     });
   }
+  for (const [node, key] of [[el.base, 'base'], [el.dimension, 'dimension']]) {
+    node.addEventListener('change', () => {
+      state.oatFilters[key] = node.value;
+      if (key === 'base') state.oatFilters.dimension = '';
+      state.shown = PAGE;
+      render();
+      writeHash();
+    });
+  }
+
+  for (const [node, mode] of [[el.modeOa, 'oa'], [el.modeOat, 'oat']]) {
+    node.addEventListener('click', () => {
+      if (state.mode === mode) return;
+      state.mode = mode;
+      state.shown = PAGE;
+      // The selection basket spans both modes, but a selected record from the
+      // other mode has no row here to be current, so it is let go.
+      if (state.byId.get(state.selected)?.kind !== (mode === 'oat' ? 'oat' : 'oa')) {
+        state.selected = null;
+      }
+      render();
+      writeHash();
+    });
+  }
+
+  const showAbout = (open) => {
+    el.about.hidden = !open;
+    el.aboutToggle.setAttribute('aria-expanded', String(open));
+    if (open) el.about.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+  el.aboutToggle.addEventListener('click', () => showAbout(el.about.hidden));
+  el.aboutOpen.addEventListener('click', () => showAbout(true));
+  el.aboutClose.addEventListener('click', () => showAbout(false));
   for (const [node, key] of [[el.prioritized, 'prioritized'], [el.hasIndicators, 'indicators']]) {
     node.addEventListener('change', () => {
       state.only[key] = node.checked;
@@ -672,7 +1140,10 @@ function wire() {
   });
   el.reset.addEventListener('click', () => {
     state.query = '';
-    state.filters = { level: '', subject: '', strand: '', category: '', track: '' };
+    state.filters = {
+      level: '', subject: '', strand: '', category: '', track: '', status: '',
+    };
+    state.oatFilters = { base: '', dimension: '' };
     state.only = { prioritized: false, indicators: false };
     state.shown = PAGE;
     render();
@@ -722,7 +1193,10 @@ function wire() {
       el.q.focus();
       el.q.select();
     } else if (event.key === 'Escape') {
-      if (!el.basket.hidden) {
+      if (!el.about.hidden) {
+        el.about.hidden = true;
+        el.aboutToggle.setAttribute('aria-expanded', 'false');
+      } else if (!el.basket.hidden) {
         el.basket.hidden = true;
         el.basketToggle.setAttribute('aria-expanded', 'false');
       } else if (document.activeElement === el.q) {
@@ -759,9 +1233,21 @@ async function boot() {
   }
 
   const { data, source, manifest } = payload;
+  const baseNames = {};
+  for (const level of Object.values(data.levels ?? {})) {
+    for (const subject of Object.values(level.subjects ?? {})) {
+      if (subject.curriculum_base) {
+        baseNames[subject.curriculum_base] = subject.curriculum_base_name
+          ?? subject.curriculum_base;
+      }
+    }
+  }
+
   state.records = flatten(data);
   state.postings = buildIndex(state.records);
-  for (const record of state.records) {
+  state.oats = flattenOats(data, baseNames);
+  state.oatPostings = buildOatIndex(state.oats);
+  for (const record of [...state.records, ...state.oats]) {
     state.byId.set(record.oa_id, record);
     if (record.code_slug && !state.byCodeSlug.has(record.code_slug)) {
       state.byCodeSlug.set(record.code_slug, record);
@@ -783,7 +1269,9 @@ async function boot() {
     count: counts.get(id) ?? 0,
   }));
 
-  renderMeta({ ...(data.metadata ?? {}), ...(manifest ?? {}) });
+  state.manifest = { ...(data.metadata ?? {}), ...(manifest ?? {}) };
+  renderMeta(state.manifest);
+  renderAbout(state.manifest);
   wire();
   readHash();
   render();

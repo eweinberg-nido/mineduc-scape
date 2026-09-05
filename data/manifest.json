@@ -1,34 +1,100 @@
 {
   "scraped_at": "2026-09-04T14:12:49+00:00",
+  "built_at": "2026-09-05T16:16:15+00:00",
   "source_url": "https://www.curriculumnacional.cl",
-  "schema_version": "1.0.0",
-  "generator": "mineduc-scraper/1.0.0",
+  "schema_version": "2.0.0",
+  "generator": "mineduc-scraper/2.0.0",
   "dataset_variant": "full",
-  "total_oas": 4110,
+  "total_oas": 4261,
   "total_by_category": {
     "actitud": 643,
-    "conocimiento": 3116,
+    "conocimiento": 3267,
     "habilidad": 351
   },
-  "total_subjects": 358,
-  "total_levels": 20,
+  "total_subjects": 372,
+  "total_levels": 21,
   "total_oats": 74,
   "total_indicators": 13705,
   "objectives_with_indicators": 1586,
   "total_modules": 379,
   "total_criteria": 5024,
+  "total_offerings": 372,
+  "distinct_subjects": 129,
+  "distinct_official_codes": 3151,
+  "total_epja_objectives": 156,
+  "total_religion_objectives": 0,
+  "offerings_without_objectives": 27,
+  "total_by_source_type": {
+    "base_curricular_pdf": 151,
+    "html_curriculum_page": 4110
+  },
+  "status_summary": {
+    "en_implementacion": 156,
+    "propuesta": 191,
+    "vigente": 3914
+  },
+  "coverage": {
+    "expected_offerings": 372,
+    "by_status": {
+      "defined_elsewhere": 14,
+      "ingested": 345,
+      "source_absent": 13
+    },
+    "parser_gaps": 0,
+    "source_absent": 13,
+    "offerings_not_in_dataset": 0,
+    "unexpected_in_dataset": 0
+  },
+  "prioritization": {
+    "programme": "Priorización Curricular",
+    "period": "2023-2025",
+    "status": "historico",
+    "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+    "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+  },
+  "known_limitations": [
+    {
+      "area": "Religión",
+      "offerings": 12,
+      "kind": "source_absent",
+      "summary": "Religión se rige por el Decreto N° 924: cada credo tiene su propio programa aprobado por el Ministerio, y esos programas no se publican en curriculumnacional.cl.",
+      "source_url": "https://www.curriculumnacional.cl/recursos/decreto-no-924-reglamenta-clases-religion-establecimientos-educacionales"
+    },
+    {
+      "area": "EPJA",
+      "offerings": 1,
+      "kind": "source_absent",
+      "summary": "El sitio navega páginas para las que las Bases Curriculares EPJA 2024 no definen objetivos.",
+      "source_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024"
+    }
+  ],
+  "oat_verification": {
+    "bases_with_oats": {
+      "1o-6o-basico": 32,
+      "3o-4o-medio-tecnico-profesional": 12,
+      "7o-basico-2o-medio": 30
+    },
+    "bases_without_oats": {
+      "educacion-parvularia": "Las Bases Curriculares de Educación Parvularia no definen un conjunto separado de Objetivos de Aprendizaje Transversales: los propósitos transversales se integran en los ámbitos y núcleos de aprendizaje.",
+      "3o-4o-medio": "La base de 3° y 4° Medio no define párrafos OAT propios en el sitio; los OAT aplicables provienen de la base de 7° Básico a 2° Medio, y la Formación Diferenciada Técnico-Profesional publica los suyos.",
+      "bases-curriculares-educacion-personas-jovenes-adultas-epja": "Las Bases Curriculares EPJA 2024 no usan la estructura de OAT: articulan lo transversal mediante el marco de Habilidades y Actitudes para el siglo XXI."
+    },
+    "total": 74,
+    "differences": [],
+    "verified_on": "2026-09-05T16:16:15+00:00"
+  },
   "files": {
     "full": {
       "path": "mineduc_curriculum_full.json",
-      "bytes": 9445793
+      "bytes": 14068073
     },
     "slim": {
       "path": "mineduc_curriculum_slim.json",
-      "bytes": 2053558
+      "bytes": 2123103
     },
     "sqlite": {
       "path": "mineduc_curriculum.db",
-      "bytes": 13926400
+      "bytes": 14114816
     }
   }
 }

@@ -12,7 +12,14 @@ from .extract import BASE_URL, RawObjective, RawPage, parse_index_page, parse_su
 from .http import PoliteClient
 from .normalize import canonical_oa_id, code_slug, extract_keywords, objective_number, strand_id
 from .oat import fetch_transversal_objectives
-from .taxonomy import BASES, level_for, slugify, track_for
+from .provenance import (
+    HTML_METHOD,
+    PRIORITIZATION,
+    make_provenance,
+    status_for_base,
+    status_for_subject,
+)
+from .taxonomy import BASES, SOURCE_HTML, level_for, slugify, track_for
 
 log = logging.getLogger(__name__)
 
@@ -47,6 +54,26 @@ TP_MODULE_NOTE = (
 )
 
 
+# Added once the Bases Curriculares EPJA pass has run.
+EPJA_BASES_NOTE = (
+    "Los objetivos de la Educación de Personas Jóvenes y Adultas (EPJA) provienen "
+    "de las Bases Curriculares EPJA 2024, publicadas solo en PDF: el sitio publica "
+    "en HTML una única página EPJA con objetivos (Lenguaje y Comunicación, Nivel 1 "
+    "de Educación Básica), que se conserva tal cual y se usa para verificar el "
+    "lector de PDF. Cada objetivo registra el documento y la página de origen."
+)
+
+# Added once the Religión finding has been recorded.
+RELIGION_NOTE = (
+    "Religión no forma parte de las Bases Curriculares nacionales: se rige por el "
+    "Decreto N° 924 (1983), que establece un programa de estudio por credo, "
+    "propuesto por cada autoridad religiosa y aprobado por el Ministerio. Esos "
+    "programas no se publican en curriculumnacional.cl, por lo que las páginas de "
+    "Religión conservan sus documentos y registran la ausencia de objetivos como "
+    "una propiedad de la fuente, no como un fallo de extracción."
+)
+
+
 def discover_pages(client: PoliteClient) -> List[str]:
     """Return every subject/grade page path, from the site's own master index."""
     html = client.get_text(BASE_URL + INDEX_PATH)
@@ -77,6 +104,8 @@ def _objective_record(
     level_token: str,
     position: int,
     page_url: str,
+    base_slug: Optional[str] = None,
+    retrieved_at: Optional[str] = None,
 ) -> dict:
     number = objective_number(raw.code, position)
     record = {
@@ -92,7 +121,23 @@ def _objective_record(
         "keywords": extract_keywords(raw.statement),
         "prioritized": raw.prioritized,
         "source_url": raw.detail_url or page_url,
+        # Provenance is recorded by the engine that did the extraction, not
+        # bolted on afterwards: this is the only place that knows for certain
+        # which URL and which selector produced this text.
+        "provenance": make_provenance(
+            source_url=raw.detail_url or page_url,
+            source_type=SOURCE_HTML,
+            curriculum_base=base_slug,
+            retrieved_at=retrieved_at or datetime.now(timezone.utc).isoformat(
+                timespec="seconds"),
+            extraction_method=HTML_METHOD,
+        ),
+        **status_for_base(base_slug),
     }
+    if raw.prioritized:
+        # Never a bare boolean: the flag records membership of one dated
+        # programme, and a consumer must be able to see which.
+        record["prioritization"] = dict(PRIORITIZATION)
     if raw.strand_name:
         record["strand_eje"] = raw.strand_name
         record["strand_id"] = strand_id(raw.strand_name)
@@ -100,7 +145,8 @@ def _objective_record(
     return record
 
 
-def _subject_record(page: RawPage, level_token: str) -> dict:
+def _subject_record(page: RawPage, level_token: str,
+                    retrieved_at: Optional[str] = None) -> dict:
     subject_id = slugify(page.subject_slug)
     objectives: List[dict] = []
     per_group: Counter = Counter()
@@ -109,7 +155,8 @@ def _subject_record(page: RawPage, level_token: str) -> dict:
         per_group[group] += 1
         objectives.append(
             _objective_record(
-                raw, page.subject_slug, level_token, per_group[group], page.url
+                raw, page.subject_slug, level_token, per_group[group], page.url,
+                base_slug=page.base_slug, retrieved_at=retrieved_at,
             )
         )
     return {
@@ -129,6 +176,7 @@ def _subject_record(page: RawPage, level_token: str) -> dict:
             for d in page.documents
         ],
         "learning_objectives": objectives,
+        **status_for_base(page.base_slug),
     }
 
 
@@ -204,6 +252,7 @@ def build(
     if limit:
         paths = paths[:limit]
     log.info("scraping %d pages", len(paths))
+    retrieved_at = datetime.now(timezone.utc).isoformat(timespec="seconds")
 
     levels: Dict[str, dict] = {}
     order: Dict[str, int] = {}
@@ -232,7 +281,12 @@ def build(
         )
         order[level.level_id] = level.order
 
-        subject = _subject_record(page, level.token)
+        subject = _subject_record(page, level.token, retrieved_at)
+        override = status_for_subject(subject)
+        if override:
+            subject.update(override)
+            for objective in subject["learning_objectives"]:
+                objective.update(override)
         outcome, dropped_url = _insert_subject(bucket["subjects"], subject)
         if outcome == "deduplicated":
             kept = bucket["subjects"][subject["subject_id"]]
@@ -245,7 +299,8 @@ def build(
 
     database = {
         "metadata": {
-            "scraped_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            "scraped_at": retrieved_at,
+            "built_at": retrieved_at,
             "source_url": SOURCE_URL,
             "schema_version": SCHEMA_VERSION,
             "generator": f"mineduc-scraper/{__version__}",
@@ -302,6 +357,7 @@ def refresh_totals(database: dict) -> dict:
     metadata["total_by_category"] = dict(sorted(by_category.items()))
     metadata["total_subjects"] = subjects
     metadata["total_levels"] = len(database.get("levels", {}))
+    metadata["prioritization"] = dict(PRIORITIZATION)
     metadata["total_oats"] = sum(
         len(v) for v in (database.get("transversal_objectives") or {}).values()
     )

@@ -11,6 +11,25 @@ const TRACK_LABEL = {
   plan_diferenciado_tp: 'Técnico-Profesional',
 };
 
+/**
+ * A selection can hold both kinds of record.
+ *
+ * An OAT has no level, no subject and no eje, because it is defined once per
+ * curriculum base rather than per subject. Every format therefore describes
+ * *where* a record comes from through this one function, so a mixed export
+ * places an OAT accurately instead of leaving three columns blank and implying
+ * the data is missing.
+ */
+const isOat = (record) => record.kind === 'oat';
+
+function whereOf(record) {
+  if (isOat(record)) {
+    return `Objetivo de Aprendizaje Transversal · ${record.dimension}`
+      + ` · ${record.curriculumBaseName ?? record.curriculumBase ?? ''}`;
+  }
+  return `${record.subjectName} · ${record.levelName}`;
+}
+
 export const FORMATS = {
   markdown: { label: 'Markdown', extension: 'md' },
   text: { label: 'Texto plano', extension: 'txt' },
@@ -21,7 +40,10 @@ export const FORMATS = {
 
 /** One objective as indented plain text, indicators included. */
 export function formatOne(record) {
-  const lines = [`[${record.code}] ${record.statement.replace(/\n/g, '\n  ')}`];
+  const lines = [
+    `[${record.code}] ${record.statement.replace(/\n/g, '\n  ')}`,
+    `  ${whereOf(record)}`,
+  ];
   if (record.indicators?.length) {
     lines.push('Indicadores de evaluación:');
     for (const indicator of record.indicators) lines.push(`  - ${indicator}`);
@@ -34,13 +56,18 @@ function csvCell(value) {
 }
 
 export function toCsv(records) {
-  const header = ['code', 'level', 'subject', 'strand', 'category', 'statement', 'indicators'];
+  const header = ['kind', 'code', 'level', 'subject', 'strand', 'category',
+    'curriculum_base', 'status', 'statement', 'indicators'];
   const rows = records.map((record) => [
+    isOat(record) ? 'oat' : 'oa',
     record.code,
-    record.levelName,
-    record.subjectName,
-    record.strand,
-    record.category,
+    isOat(record) ? '' : record.levelName,
+    isOat(record) ? '' : record.subjectName,
+    isOat(record) ? record.dimension : record.strand,
+    isOat(record) ? 'transversal' : record.category,
+    isOat(record) ? (record.curriculumBaseName ?? record.curriculumBase ?? '')
+      : record.curriculumBase,
+    record.status ?? '',
     record.statement.replace(/\n/g, ' '),
     (record.indicators ?? []).join(' | '),
   ].map(csvCell).join(','));
@@ -48,7 +75,17 @@ export function toCsv(records) {
 }
 
 export function toJson(records) {
-  return JSON.stringify(records.map((record) => ({
+  return JSON.stringify(records.map((record) => (isOat(record) ? {
+    kind: 'oat',
+    oat_id: record.oa_id,
+    code: record.code,
+    dimension: record.dimension,
+    curriculum_base: record.curriculumBase,
+    statement: record.statement,
+    curriculum_status: record.status ?? null,
+    provenance: record.provenance ?? null,
+  } : {
+    kind: 'oa',
     oa_id: record.oa_id,
     code: record.code,
     level: record.levelName,
@@ -57,16 +94,22 @@ export function toJson(records) {
     category: record.category,
     statement: record.statement,
     indicators: record.indicators ?? [],
+    curriculum_status: record.status ?? null,
+    provenance: record.provenance ?? null,
     source_url: record.source_url,
   })), null, 2);
 }
 
 export function toMarkdown(records) {
   return records.map((record) => {
-    const head = `### ${record.code} — ${record.subjectName}, ${record.levelName}`;
-    const where = record.strand
-      ? `*${record.strand_kind || 'Eje'}: ${record.strand}*\n`
-      : '';
+    const head = isOat(record)
+      ? `### ${record.code} — ${record.dimension}`
+      : `### ${record.code} — ${record.subjectName}, ${record.levelName}`;
+    const where = isOat(record)
+      ? `*Objetivo transversal · ${record.curriculumBaseName ?? record.curriculumBase}*\n`
+      : record.strand
+        ? `*${record.strand_kind || 'Eje'}: ${record.strand}*\n`
+        : '';
     const statement = record.statement
       .split('\n')
       .map((line, at) => (at === 0 ? line : line.replace(/^-\s*/, '- ')))
@@ -81,11 +124,14 @@ export function toMarkdown(records) {
 /** A context block for an LLM prompt: one line per objective, no markup. */
 export function toPrompt(records) {
   return [
-    'Currículum nacional chileno (MINEDUC). Objetivos de Aprendizaje seleccionados:',
+    'Currículum nacional chileno (MINEDUC). Objetivos seleccionados'
+      + (records.some(isOat) ? ' (de asignatura y transversales):' : ':'),
     '',
     ...records.map((record) => {
-      const head = `[${record.code}] ${record.subjectName} · ${record.levelName}`
-        + ` · ${TRACK_LABEL[record.track] ?? record.track}`;
+      const head = isOat(record)
+        ? `[${record.code}] ${whereOf(record)}`
+        : `[${record.code}] ${record.subjectName} · ${record.levelName}`
+          + ` · ${TRACK_LABEL[record.track] ?? record.track}`;
       const statement = record.statement.replace(/\n\s*-\s*/g, '; ').replace(/\n/g, ' ');
       const indicators = record.indicators?.length
         ? `\nIndicadores: ${record.indicators.join(' ')}`

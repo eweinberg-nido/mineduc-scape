@@ -2,21 +2,30 @@
   "metadata": {
     "scraped_at": "2026-09-04T14:12:49+00:00",
     "source_url": "https://www.curriculumnacional.cl",
-    "schema_version": "1.0.0",
-    "generator": "mineduc-scraper/1.0.0",
+    "schema_version": "2.0.0",
+    "generator": "mineduc-scraper/2.0.0",
     "coverage_notes": [
       "Los indicadores de evaluación provienen de los PDF de los Programas de Estudio publicados en curriculumnacional.cl; cada objetivo registra su PDF de origen en indicators_source. La correspondencia se verifica comparando el enunciado impreso en el PDF con el publicado en HTML, porque los Programas de 1° a 6° Básico numeran los objetivos según un decreto anterior al vigente.",
-      "Los Programas de Estudio Técnico-Profesional no publican indicadores de evaluación por objetivo: organizan cada especialidad en módulos con Aprendizajes Esperados y Criterios de Evaluación. Esa estructura se entrega en subjects[].modules."
+      "Los Programas de Estudio Técnico-Profesional no publican indicadores de evaluación por objetivo: organizan cada especialidad en módulos con Aprendizajes Esperados y Criterios de Evaluación. Esa estructura se entrega en subjects[].modules.",
+      "Los objetivos de la Educación de Personas Jóvenes y Adultas (EPJA) provienen de las Bases Curriculares EPJA 2024, publicadas solo en PDF: el sitio publica en HTML una única página EPJA con objetivos (Lenguaje y Comunicación, Nivel 1 de Educación Básica), que se conserva tal cual y se usa para verificar el lector de PDF. Cada objetivo registra el documento y la página de origen.",
+      "Religión no forma parte de las Bases Curriculares nacionales: se rige por el Decreto N° 924 (1983), que establece un programa de estudio por credo, propuesto por cada autoridad religiosa y aprobado por el Ministerio. Esos programas no se publican en curriculumnacional.cl, por lo que las páginas de Religión conservan sus documentos y registran la ausencia de objetivos como una propiedad de la fuente, no como un fallo de extracción."
     ],
     "dataset_variant": "slim",
-    "total_oas": 4110,
+    "total_oas": 4261,
     "total_by_category": {
       "actitud": 643,
-      "conocimiento": 3116,
+      "conocimiento": 3267,
       "habilidad": 351
     },
-    "total_subjects": 358,
-    "total_levels": 20,
+    "total_subjects": 372,
+    "total_levels": 21,
+    "prioritization": {
+      "programme": "Priorización Curricular",
+      "period": "2023-2025",
+      "status": "historico",
+      "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+      "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+    },
     "total_oats": 0
   },
   "levels": {
@@ -385,7 +394,7 @@
               "category": "conocimiento",
               "code": "OA 04 CES SC",
               "strand_eje": "Comprensión del entorno sociocultural",
-              "statement": "Manifestar interés por canciones, juegos y bailes que forman parte de su cotidianeidad."
+              "statement": "Explorar utensilios domésticos y objetos tecnológicos que forman parte de su vida cotidiana, tales como: pocillos, envases de botellas, escobas, cucharas, teléfonos, entre otros, utilizándolos progresivamente en situaciones cotidianas y juegos."
             },
             {
               "oa_id": "CL_ICE_SC_CDES_OA05",
@@ -34030,7 +34039,56 @@
           "subject_id": "matematica",
           "subject_name": "Matemática Nivel 1 Educación Básica: 1º A 4º Año Básico",
           "track": "plan_comun",
-          "learning_objectives": []
+          "learning_objectives": [
+            {
+              "oa_id": "CL_MAT_E1B_RPRS_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "strand_eje": "Representar",
+              "statement": "Utilizar diferentes formas de representación concreta, pictórica y simbólica, con un lenguaje técnico específico, con los símbolos matemáticos correspondientes, aprovechando las herramientas disponibles para aprender."
+            },
+            {
+              "oa_id": "CL_MAT_E1B_RPRS_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "strand_eje": "Representar",
+              "statement": "Transitar de un nivel de representación a otro, por ejemplo: de lo verbal a lo concreto o de lo simbólico a lo verbal, valorando las TIC como una oportunidad para el aprendizaje."
+            },
+            {
+              "oa_id": "CL_MAT_E1B_MDLR_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "strand_eje": "Modelar",
+              "statement": "Seleccionar un modelo pertinente a una situación real, asumiendo una postura razonada."
+            },
+            {
+              "oa_id": "CL_MAT_E1B_MDLR_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "OA 4",
+              "strand_eje": "Modelar",
+              "statement": "Expresar acciones y situaciones cotidianas en lenguaje matemático, asumiendo posturas razonadas."
+            },
+            {
+              "oa_id": "CL_MAT_E1B_AYC_OA05",
+              "oa_number": 5,
+              "category": "conocimiento",
+              "code": "OA 5",
+              "strand_eje": "Argumentar y Comunicar",
+              "statement": "Explicar el razonamiento matemático utilizado para elaborar reglas y procedimientos matemáticos."
+            },
+            {
+              "oa_id": "CL_MAT_E1B_RP_OA06",
+              "oa_number": 6,
+              "category": "conocimiento",
+              "code": "OA 6",
+              "strand_eje": "Resolver problemas",
+              "statement": "Identificar los datos, seleccionando estrategias, y aplicando los procedimientos a situaciones idénticas, pensando con perseverancia y proactividad para encontrar soluciones."
+            }
+          ]
         }
       }
     },
@@ -34042,31 +34100,260 @@
           "subject_id": "ciencias_naturales",
           "subject_name": "Ciencias Naturales",
           "track": "plan_comun",
-          "learning_objectives": []
+          "learning_objectives": [
+            {
+              "oa_id": "CL_CNA_E2B_OYPP_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "strand_eje": "Observar y plantear preguntas",
+              "statement": "Observar y describir objetos, procesos y fenómenos del mundo natural usando los sentidos y pensando con flexibilidad para reelaborar las propias ideas, puntos de vista y creencias."
+            },
+            {
+              "oa_id": "CL_CNA_E2B_OYPP_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "strand_eje": "Observar y plantear preguntas",
+              "statement": "Formular preguntas que puedan ser resueltas mediante una investigación científica a partir de la observación."
+            },
+            {
+              "oa_id": "CL_CNA_E2B_PYCU_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "strand_eje": "Planificar y conducir una investigación",
+              "statement": "Desarrollar investigaciones científicas guiadas de tipo experimental y no experimental, de forma individual y/o colaborativa actuando según los principios de la ética, considerando: La pregunta de investigación y predicción de los resultados; La identificación de variables; La selección de instrumentos y materiales a usar de acuerdo a las variables de estudio; La medida y registro de datos con instrumentos de medición, especificando las unidades de medida y haciendo uso de la tecnología digital cuando corresponda."
+            },
+            {
+              "oa_id": "CL_CNA_E2B_PYAL_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "OA 4",
+              "strand_eje": "Procesar y analizar la evidencia",
+              "statement": "Organizar y presentar datos cuantitativos y/o cualitativos en tablas, gráficos u otras representaciones, con la ayuda de las TIC actuando responsablemente con las posibilidades que ofrece la tecnología."
+            },
+            {
+              "oa_id": "CL_CNA_E2B_PYAL_OA05",
+              "oa_number": 5,
+              "category": "conocimiento",
+              "code": "OA 5",
+              "strand_eje": "Procesar y analizar la evidencia",
+              "statement": "Formular explicaciones y conclusiones a partir de la comparación entre los resultados obtenidos durante la investigación científica y sus predicciones."
+            },
+            {
+              "oa_id": "CL_CNA_E2B_EYC_OA06",
+              "oa_number": 6,
+              "category": "conocimiento",
+              "code": "OA 6",
+              "strand_eje": "Evaluar y comunicar",
+              "statement": "Reflexionar, comunicar y proponer mejoras en sus investigaciones científicas identificando errores y aspectos a mejorar en sus procedimientos con honestidad, responsabilizándose por las implicancias que estas tienen sobre uno mismo y los otros."
+            },
+            {
+              "oa_id": "CL_CNA_E2B_EYC_OA07",
+              "oa_number": 7,
+              "category": "conocimiento",
+              "code": "OA 7",
+              "strand_eje": "Evaluar y comunicar",
+              "statement": "Evaluar el procedimiento científico y resultados, utilizando modelos, presentaciones, TIC e informes, entre otros."
+            }
+          ]
         },
         "historia_geografia_ciencias_sociales": {
           "subject_id": "historia_geografia_ciencias_sociales",
           "subject_name": "Historia, Geografía y Ciencias Sociales",
           "track": "plan_comun",
-          "learning_objectives": []
+          "learning_objectives": [
+            {
+              "oa_id": "CL_HIS_E2B_PTYE_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "strand_eje": "Pensamiento temporal y espacial",
+              "statement": "Caracterizar distintos periodos históricos, considerando principales hitos y procesos, utilizando las herramientas disponibles para aprender y resolver problemas."
+            },
+            {
+              "oa_id": "CL_HIS_E2B_PTYE_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "strand_eje": "Pensamiento temporal y espacial",
+              "statement": "Leer representaciones gráficas, fotográficas y computacionales del espacio geográfico, interesándose por las posibilidades que ofrece la tecnología."
+            },
+            {
+              "oa_id": "CL_HIS_E2B_PTYE_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "strand_eje": "Pensamiento temporal y espacial",
+              "statement": "Representar secuencias cronológicas mediante líneas de tiempo, aplicando conceptos relacionados con el tiempo (años, décadas, siglos, periodos, hitos), utilizando las herramientas disponibles para aprender y resolver problemas."
+            },
+            {
+              "oa_id": "CL_HIS_E2B_AYTC_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "OA 4",
+              "strand_eje": "Análisis y trabajo con fuentes",
+              "statement": "Seleccionar fuentes y obtener información relevante sobre el pasado y el presente a partir de estas, trabajando con autonomía y proactividad."
+            },
+            {
+              "oa_id": "CL_HIS_E2B_PC_OA05",
+              "oa_number": 5,
+              "category": "conocimiento",
+              "code": "OA 5",
+              "strand_eje": "Pensamiento crítico",
+              "statement": "Evaluar la fiabilidad de las fuentes a partir de criterios históricos y de las Ciencias Sociales, actuando con perseverancia y proactividad."
+            },
+            {
+              "oa_id": "CL_HIS_E2B_CMNC_OA06",
+              "oa_number": 6,
+              "category": "conocimiento",
+              "code": "OA 6",
+              "strand_eje": "Comunicación",
+              "statement": "Comunicar ideas de forma oral, escrita u otros, de manera clara y efectiva, asumiendo posturas razonadas."
+            }
+          ]
         },
         "ingles": {
           "subject_id": "ingles",
           "subject_name": "Inglés",
           "track": "plan_comun",
-          "learning_objectives": []
+          "learning_objectives": [
+            {
+              "oa_id": "CL_ING_E2B_CA_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "strand_eje": "Comprensión auditiva",
+              "statement": "Identificar tema, ideas principales, y vocabulario en textos orales, exposiciones y diálogos."
+            },
+            {
+              "oa_id": "CL_ING_E2B_CL_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "strand_eje": "Comprensión lectora",
+              "statement": "Identificar propósito, idea o tema general, vocabulario temático, palabras y expresiones de uso común en textos simples, literarios y no literarios, vinculados con sus contextos e intereses."
+            },
+            {
+              "oa_id": "CL_ING_E2B_EE_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "strand_eje": "Expresión escrita",
+              "statement": "Escribir textos breves y simples de acuerdo con un modelo, utilizando el vocabulario y la gramática que corresponde, con actitud proactiva."
+            },
+            {
+              "oa_id": "CL_ING_E2B_EO_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "OA 4",
+              "strand_eje": "Expresión oral",
+              "statement": "Expresarse oralmente utilizando un vocabulario y el conocimiento gramatical adecuados a la situación comunicativa con respeto."
+            }
+          ]
         },
         "lenguaje_comunicacion": {
           "subject_id": "lenguaje_comunicacion",
           "subject_name": "Lenguaje y Comunicación Nivel 2 Educación Básica: 5º y 6º Año Básico",
           "track": "plan_comun",
-          "learning_objectives": []
+          "learning_objectives": [
+            {
+              "oa_id": "CL_LEN_E2B_LCTR_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "strand_eje": "Lectura",
+              "statement": "Leer textos no literarios, relacionando la información y evaluando lo que se lee a partir de los conocimientos previos."
+            },
+            {
+              "oa_id": "CL_LEN_E2B_LCTR_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "strand_eje": "Lectura",
+              "statement": "Comparar textos literarios, justificando su preferencia por alguno."
+            },
+            {
+              "oa_id": "CL_LEN_E2B_ESCR_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "strand_eje": "Escritura",
+              "statement": "Escribir textos con distintos propósitos, utilizando un vocabulario variado y preciso, y desarrollando el proceso de escritura."
+            },
+            {
+              "oa_id": "CL_LEN_E2B_CO_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "OA 4",
+              "strand_eje": "Comunicación oral",
+              "statement": "Expresarse frente a una audiencia de manera clara y efectiva para comunicar temas, presentando información fidedigna, siguiendo una progresión temática clara, y utilizando un vocabulario variado y preciso."
+            },
+            {
+              "oa_id": "CL_LEN_E2B_INVS_OA05",
+              "oa_number": 5,
+              "category": "conocimiento",
+              "code": "OA 5",
+              "strand_eje": "Investigación",
+              "statement": "Sintetizar ideas de una variedad de fuentes para generar comprensión."
+            }
+          ]
         },
         "matematica": {
           "subject_id": "matematica",
           "subject_name": "Matemática Nivel 2 Educación Básica: 5º y 6º Año Básico",
           "track": "plan_comun",
-          "learning_objectives": []
+          "learning_objectives": [
+            {
+              "oa_id": "CL_MAT_E2B_RPRS_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "strand_eje": "Representar",
+              "statement": "Expresar matemáticamente información del entorno y de problemas utilizando diversas representaciones e interesándose por las posibilidades que ofrece la tecnología."
+            },
+            {
+              "oa_id": "CL_MAT_E2B_RPRS_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "strand_eje": "Representar",
+              "statement": "Contrastar información entre distintos niveles de representación para un mismo contenido matemático aprovechando las herramientas disponibles."
+            },
+            {
+              "oa_id": "CL_MAT_E2B_MDLR_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "strand_eje": "Modelar",
+              "statement": "Usar modelos matemáticos dados para comprender fenómenos, asumiendo una postura razonada."
+            },
+            {
+              "oa_id": "CL_MAT_E2B_MDLR_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "OA 4",
+              "strand_eje": "Modelar",
+              "statement": "Modelar acciones y situaciones cotidianas en lenguaje matemático asumiendo posturas razonadas."
+            },
+            {
+              "oa_id": "CL_MAT_E2B_AYC_OA05",
+              "oa_number": 5,
+              "category": "conocimiento",
+              "code": "OA 5",
+              "strand_eje": "Argumentar y Comunicar",
+              "statement": "Explicar soluciones propias, procedimientos utilizados, definiciones y reglas trabajando con empatía y respeto."
+            },
+            {
+              "oa_id": "CL_MAT_E2B_RP_OA06",
+              "oa_number": 6,
+              "category": "conocimiento",
+              "code": "OA 6",
+              "strand_eje": "Resolver problemas",
+              "statement": "Identificar los datos, seleccionando estrategias, y aplicando los procedimientos a situaciones idénticas pensando con perseverancia y proactividad para encontrar soluciones."
+            }
+          ]
         }
       }
     },
@@ -34078,13 +34365,260 @@
           "subject_id": "lenguaje_comunicacion",
           "subject_name": "Lenguaje y Comunicación Nivel 3 Educación Básica: 7º y 8º Año Básico",
           "track": "plan_comun",
-          "learning_objectives": []
+          "learning_objectives": [
+            {
+              "oa_id": "CL_LEN_E3B_LCTR_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "strand_eje": "Lectura",
+              "statement": "Analizar textos no literarios, identificando la función de los recursos lingüísticos y no lingüísticos e infiriendo sus propósitos."
+            },
+            {
+              "oa_id": "CL_LEN_E3B_LCTR_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "strand_eje": "Lectura",
+              "statement": "Analizar textos literarios, considerando el conflicto, los personajes, el narrador, la visión de mundo y los efectos producidos por recursos literarios."
+            },
+            {
+              "oa_id": "CL_LEN_E3B_ESCR_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "strand_eje": "Escritura",
+              "statement": "Planificar, escribir, revisar, reescribir y editar textos literarios y no literarios en función de la situación comunicativa, el destinatario y el propósito: informar, narrar, explicar, persuadir."
+            },
+            {
+              "oa_id": "CL_LEN_E3B_CO_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "OA 4",
+              "strand_eje": "Comunicación oral",
+              "statement": "Dialogar constructivamente para debatir o explorar ideas, considerando al interlocutor para la toma de turnos, la reformulación de lo dicho y la búsqueda de acuerdos."
+            },
+            {
+              "oa_id": "CL_LEN_E3B_INVS_OA05",
+              "oa_number": 5,
+              "category": "conocimiento",
+              "code": "OA 5",
+              "strand_eje": "Investigación",
+              "statement": "Sintetizar, registrar y ordenar las ideas de textos escuchados o leídos para satisfacer propósitos."
+            }
+          ]
         },
         "matematica": {
           "subject_id": "matematica",
           "subject_name": "Matemática Nivel 3 Educación Básica: 7º y 8º Año Básico",
           "track": "plan_comun",
-          "learning_objectives": []
+          "learning_objectives": [
+            {
+              "oa_id": "CL_MAT_E3B_RPRS_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "strand_eje": "Representar",
+              "statement": "Expresar matemáticamente información del entorno y de problemas utilizando diversas representaciones interesándose por las posibilidades que ofrece la tecnología."
+            },
+            {
+              "oa_id": "CL_MAT_E3B_RPRS_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "strand_eje": "Representar",
+              "statement": "Contrastar información entre distintos niveles de representación para un mismo contenido matemático, valorando las TIC como una oportunidad."
+            },
+            {
+              "oa_id": "CL_MAT_E3B_MDLR_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "strand_eje": "Modelar",
+              "statement": "Usar modelos matemáticos dados para comprender fenómenos, asumiendo posturas razonadas."
+            },
+            {
+              "oa_id": "CL_MAT_E3B_MDLR_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "OA 4",
+              "strand_eje": "Modelar",
+              "statement": "Expresar acciones y situaciones cotidianas en lenguaje matemático, asumiendo posturas razonadas."
+            },
+            {
+              "oa_id": "CL_MAT_E3B_AYC_OA05",
+              "oa_number": 5,
+              "category": "conocimiento",
+              "code": "OA 5",
+              "strand_eje": "Argumentar y comunicar",
+              "statement": "Explicar soluciones propias, procedimientos utilizados, definiciones y reglas, trabajando con empatía y respeto."
+            },
+            {
+              "oa_id": "CL_MAT_E3B_RDP_OA06",
+              "oa_number": 6,
+              "category": "conocimiento",
+              "code": "OA 6",
+              "strand_eje": "Resolución de problemas",
+              "statement": "Seleccionar estrategias, y transferir a nuevas situaciones pensando con perseverancia y proactividad para encontrar soluciones."
+            }
+          ]
+        },
+        "historia_geografia_ciencias_sociales": {
+          "subject_id": "historia_geografia_ciencias_sociales",
+          "subject_name": "Historia, Geografía y Ciencias Sociales",
+          "track": "plan_comun",
+          "learning_objectives": [
+            {
+              "oa_id": "CL_HIS_E3B_PTYE_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "strand_eje": "Pensamiento temporal y espacial",
+              "statement": "Relacionar distintos periodos históricos reconociendo cambios y continuidades, utilizando las herramientas disponibles para aprender y resolver problemas."
+            },
+            {
+              "oa_id": "CL_HIS_E3B_PTYE_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "strand_eje": "Pensamiento temporal y espacial",
+              "statement": "Relacionar información sobre el espacio geográfico, por medio del uso de representaciones gráficas, fotográficas y computacionales, interesándose por las posibilidades que ofrece la tecnología."
+            },
+            {
+              "oa_id": "CL_HIS_E3B_PTYE_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "strand_eje": "Pensamiento temporal y espacial",
+              "statement": "Distinguir, por medio de líneas de tiempo, la duración, la sucesión y la simultaneidad de acontecimientos y procesos vistos en el nivel, utilizando las herramientas disponibles para aprender y resolver problemas."
+            },
+            {
+              "oa_id": "CL_HIS_E3B_AYTC_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "OA 4",
+              "strand_eje": "Análisis y trabajo con fuentes",
+              "statement": "Comparar y clasificar información obtenida en fuentes, trabajando con autonomía y proactividad."
+            },
+            {
+              "oa_id": "CL_HIS_E3B_PC_OA05",
+              "oa_number": 5,
+              "category": "conocimiento",
+              "code": "OA 5",
+              "strand_eje": "Pensamiento crítico",
+              "statement": "Evaluar conceptos e ideas considerando la evidencia que entregan las fuentes, pensando con perseverancia y proactividad."
+            },
+            {
+              "oa_id": "CL_HIS_E3B_CMNC_OA06",
+              "oa_number": 6,
+              "category": "conocimiento",
+              "code": "OA 6",
+              "strand_eje": "Comunicación",
+              "statement": "Comunicar ideas de forma oral, escrita u otros, de manera clara y precisa, utilizando conceptos propios de la disciplina, asumiendo posturas razonadas."
+            }
+          ]
+        },
+        "ciencias_naturales": {
+          "subject_id": "ciencias_naturales",
+          "subject_name": "Ciencias Naturales",
+          "track": "plan_comun",
+          "learning_objectives": [
+            {
+              "oa_id": "CL_CNA_E3B_OYPP_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "strand_eje": "Observar y plantear preguntas",
+              "statement": "Formular predicciones sobre objetos, procesos y fenómenos a partir de la observación."
+            },
+            {
+              "oa_id": "CL_CNA_E3B_OYPP_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "strand_eje": "Observar y plantear preguntas",
+              "statement": "Formular preguntas y/o problemas que puedan ser resueltos mediante una investigación científica a partir de la observación, pensando con flexibilidad para reelaborar las propias ideas, puntos de vista y creencias."
+            },
+            {
+              "oa_id": "CL_CNA_E3B_PYCU_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "strand_eje": "Planificar y conducir una investigación",
+              "statement": "Planificar y desarrollar investigaciones científicas experimentales, no experimentales y/o documentales de forma individual y/o colaborativa trabajando con honestidad e integrando diferentes ideas y puntos de vista para dar respuesta a una pregunta o problema considerando: La variable que será manipulada en el estudio; La selección de instrumentos de medición y materiales a usar de acuerdo a las variables en estudio; La medición y el registro de evidencias usando herramientas tecnológicas y/o digitales."
+            },
+            {
+              "oa_id": "CL_CNA_E3B_PYAL_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "OA 4",
+              "strand_eje": "Procesar y analizar la evidencia",
+              "statement": "Organizar y presentar datos cuantitativos y/o cualitativos en tablas, gráficos u otras representaciones con la ayuda de las TIC actuando responsablemente con las posibilidades que ofrece la tecnología."
+            },
+            {
+              "oa_id": "CL_CNA_E3B_PYAL_OA05",
+              "oa_number": 5,
+              "category": "conocimiento",
+              "code": "OA 5",
+              "strand_eje": "Procesar y analizar la evidencia",
+              "statement": "Analizar los resultados de una investigación científica determinando las relaciones entre las variables en estudio."
+            },
+            {
+              "oa_id": "CL_CNA_E3B_EYC_OA06",
+              "oa_number": 6,
+              "category": "conocimiento",
+              "code": "OA 6",
+              "strand_eje": "Evaluar y comunicar",
+              "statement": "Evaluar el proceso de investigación científica con el fin de perfeccionarla con honestidad, responsabilizándose por las implicancias que estas tienen sobre uno mismo y los otros, considerando: La validez y confiabilidad de los resultados; La replicabilidad de los procedimientos."
+            },
+            {
+              "oa_id": "CL_CNA_E3B_EYC_OA07",
+              "oa_number": 7,
+              "category": "conocimiento",
+              "code": "OA 7",
+              "strand_eje": "Evaluar y comunicar",
+              "statement": "Evaluar el procedimiento científico y resultados, utilizando modelos, presentaciones, TIC e informes, entre otros."
+            }
+          ]
+        },
+        "ingles": {
+          "subject_id": "ingles",
+          "subject_name": "Inglés",
+          "track": "plan_comun",
+          "learning_objectives": [
+            {
+              "oa_id": "CL_ING_E3B_CA_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "strand_eje": "Comprensión auditiva",
+              "statement": "Relacionar información explícita para comprender el tema, las ideas principales, las expresiones de uso frecuente y vocabulario en textos orales, exposiciones y diálogos."
+            },
+            {
+              "oa_id": "CL_ING_E3B_CL_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "strand_eje": "Comprensión lectora",
+              "statement": "Relacionar información explícita, tema o idea general, vocabulario y palabras y frases de uso frecuente en textos literarios y no literarios."
+            },
+            {
+              "oa_id": "CL_ING_E3B_EE_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "strand_eje": "Expresión escrita",
+              "statement": "Escribir textos breves y simples con propósitos informativos o narrativos, utilizando el vocabulario y la gramática que corresponde, con autonomía y proactividad."
+            },
+            {
+              "oa_id": "CL_ING_E3B_EO_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "OA 4",
+              "strand_eje": "Expresión oral",
+              "statement": "Expresarse oralmente para presentar información acerca de temas conocidos o de su interés apoyándose en recursos gráficos, con una actitud honesta."
+            }
+          ]
         }
       }
     },
@@ -34102,7 +34636,56 @@
           "subject_id": "ciencias_naturales",
           "subject_name": "Ciencias Naturales",
           "track": "plan_comun",
-          "learning_objectives": []
+          "learning_objectives": [
+            {
+              "oa_id": "CL_CNA_E1M_OYPP_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "strand_eje": "Observar y plantear preguntas",
+              "statement": "Formular preguntas y/o problemas, a partir de la observación y el conocimiento científico que puedan ser resueltos mediante una investigación científica."
+            },
+            {
+              "oa_id": "CL_CNA_E1M_PYCU_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "strand_eje": "Planificar y conducir una investigación",
+              "statement": "Diseñar y desarrollar investigaciones experimentales, no experimentales y/o documentales, para dar respuesta a una pregunta o problema sobre la base de diversas fuentes de información científica trabajando con honestidad, autonomía y proactividad, considerando: La relación entre las variables del estudio; El uso adecuado de instrumentos y materiales para obtener datos confiables; La medición y el registro de evidencias usando herramientas tecnológicas y/o digitales."
+            },
+            {
+              "oa_id": "CL_CNA_E1M_PYAL_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "strand_eje": "Procesar y analizar la evidencia",
+              "statement": "Organizar y presentar datos cuantitativos y/o cualitativos, fundamentando su confiabilidad en tablas, gráficos, modelos u otras representaciones, con ayuda de las TIC actuando responsablemente con las posibilidades que ofrece la tecnología."
+            },
+            {
+              "oa_id": "CL_CNA_E1M_PYAL_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "OA 4",
+              "strand_eje": "Procesar y analizar la evidencia",
+              "statement": "Analizar los resultados de una investigación científica planteando conclusiones e identificando conexiones entre variables y usando vocabulario disciplinar pertinente pensando con flexibilidad para reelaborar las propias ideas, puntos de vista y creencias."
+            },
+            {
+              "oa_id": "CL_CNA_E1M_EYC_OA05",
+              "oa_number": 5,
+              "category": "conocimiento",
+              "code": "OA 5",
+              "strand_eje": "Evaluar y comunicar",
+              "statement": "Evaluar el proceso de investigación científica asumiendo posturas razonadas y de respeto por uno mismo y por los demás con el fin de perfeccionarla, considerando: La validez y confiabilidad de los resultados; La replicabilidad de los procedimientos; Las posibles aplicaciones tecnológicas."
+            },
+            {
+              "oa_id": "CL_CNA_E1M_EYC_OA06",
+              "oa_number": 6,
+              "category": "conocimiento",
+              "code": "OA 6",
+              "strand_eje": "Evaluar y comunicar",
+              "statement": "Evaluar procesos, resultados y conclusiones con apoyo de herramientas digitales y otros soportes pertinentes."
+            }
+          ]
         },
         "educacion_financiera": {
           "subject_id": "educacion_financiera",
@@ -34132,19 +34715,166 @@
           "subject_id": "historia_geografia_ciencias_sociales",
           "subject_name": "Historia, Geografía y Ciencias Sociales",
           "track": "plan_comun",
-          "learning_objectives": []
+          "learning_objectives": [
+            {
+              "oa_id": "CL_HIS_E1M_PTYE_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "strand_eje": "Pensamiento temporal y espacial",
+              "statement": "Analizar elementos de continuidad y cambio entre periodos y procesos, valorando las TIC como una oportunidad para informarse e investigar."
+            },
+            {
+              "oa_id": "CL_HIS_E1M_PTYE_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "strand_eje": "Pensamiento temporal y espacial",
+              "statement": "Analizar datos e información geográfica, por medio del uso de herramientas geográficas y digitales, para reconocer variables y patrones, actuando de acuerdo con los principios de la ética en el uso de la información y la tecnología."
+            },
+            {
+              "oa_id": "CL_HIS_E1M_AYTC_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "strand_eje": "Análisis y trabajo con fuentes",
+              "statement": "Analizar distintas fuentes sobre un tema, trabajando con empatía y respeto."
+            },
+            {
+              "oa_id": "CL_HIS_E1M_PC_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "OA 4",
+              "strand_eje": "Pensamiento crítico",
+              "statement": "Evaluar los fenómenos estudiados considerando la multicausalidad, pensando con apertura a distintas perspectivas y contextos."
+            },
+            {
+              "oa_id": "CL_HIS_E1M_CMNC_OA05",
+              "oa_number": 5,
+              "category": "conocimiento",
+              "code": "OA 5",
+              "strand_eje": "Comunicación",
+              "statement": "Elaborar y comunicar explicaciones, aplicando la multicausalidad y la multidimensionalidad, para comprender los fenómenos estudiados, con honestidad y responsabilidad por las propias acciones y decisiones."
+            }
+          ]
         },
         "lenguaje_comunicacion": {
           "subject_id": "lenguaje_comunicacion",
           "subject_name": "Lenguaje y Comunicación",
           "track": "plan_comun",
-          "learning_objectives": []
+          "learning_objectives": [
+            {
+              "oa_id": "CL_LEN_E1M_LCTR_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "strand_eje": "Lectura",
+              "statement": "Evaluar textos no literarios analizando la veracidad y consistencia de la información, los propósitos explícitos e implícitos, los recursos lingüísticos y no lingüísticos y estrategias de persuasión."
+            },
+            {
+              "oa_id": "CL_LEN_E1M_LCTR_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "strand_eje": "Lectura",
+              "statement": "Formular una interpretación de los textos literarios leídos, a partir del análisis de la obra."
+            },
+            {
+              "oa_id": "CL_LEN_E1M_ESCR_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "strand_eje": "Escritura",
+              "statement": "Producir textos (orales, escritos o audiovisuales) aplicando procesos de planificación y redacción para crear textos coherentes y cohesionados para una variedad de propósitos y audiencias."
+            },
+            {
+              "oa_id": "CL_LEN_E1M_CO_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "OA 4",
+              "strand_eje": "Comunicación oral",
+              "statement": "Evaluar textos orales y audiovisuales: diferentes puntos de vista, considerando la relación que se establece entre imagen, sonido y texto, formulando una postura frente a lo escuchado."
+            },
+            {
+              "oa_id": "CL_LEN_E1M_INVS_OA05",
+              "oa_number": 5,
+              "category": "conocimiento",
+              "code": "OA 5",
+              "strand_eje": "Investigación",
+              "statement": "Realizar investigaciones para responder interrogantes propias de la asignatura en páginas web y otras fuentes, evaluando la validez y confiabilidad de estas."
+            }
+          ]
         },
         "matematica": {
           "subject_id": "matematica",
           "subject_name": "Matemática Nivel 1 Educación Media: 1° y 2° Año Medio",
           "track": "plan_comun",
-          "learning_objectives": []
+          "learning_objectives": [
+            {
+              "oa_id": "CL_MAT_E1M_RPRS_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "strand_eje": "Representar",
+              "statement": "Expresar ideas matemáticas mediante diferentes representaciones, aprovechando las herramientas disponibles."
+            },
+            {
+              "oa_id": "CL_MAT_E1M_RPRS_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "strand_eje": "Representar",
+              "statement": "Representar un mismo contenido matemático transitando entre los distintos niveles de representación, valorando las TIC como una oportunidad."
+            },
+            {
+              "oa_id": "CL_MAT_E1M_MDLR_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "strand_eje": "Modelar",
+              "statement": "Seleccionar y ajustar modelos matemáticos según el fenómeno, perseverando en torno a metas."
+            },
+            {
+              "oa_id": "CL_MAT_E1M_MDLR_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "OA 4",
+              "strand_eje": "Modelar",
+              "statement": "Evaluar modelos, comparándolos entre sí y con la realidad, determinando sus limitaciones, asumiendo posturas razonadas."
+            },
+            {
+              "oa_id": "CL_MAT_E1M_AYC_OA05",
+              "oa_number": 5,
+              "category": "conocimiento",
+              "code": "OA 5",
+              "strand_eje": "Argumentar y comunicar",
+              "statement": "Fundamentar conjeturas usando conocimientos matemáticos, trabajando colaborativamente."
+            },
+            {
+              "oa_id": "CL_MAT_E1M_AYC_OA06",
+              "oa_number": 6,
+              "category": "conocimiento",
+              "code": "OA 6",
+              "strand_eje": "Argumentar y comunicar",
+              "statement": "Realizar demostraciones simples de resultados e identificar en una demostración si hay saltos o errores, trabajando con empatía y respeto."
+            },
+            {
+              "oa_id": "CL_MAT_E1M_RP_OA07",
+              "oa_number": 7,
+              "category": "conocimiento",
+              "code": "OA 7",
+              "strand_eje": "Resolver problemas",
+              "statement": "Variar parámetros o condiciones y comparar los cambios en los resultados obtenidos, pensando con perseverancia y proactividad."
+            },
+            {
+              "oa_id": "CL_MAT_E1M_RP_OA08",
+              "oa_number": 8,
+              "category": "conocimiento",
+              "code": "OA 8",
+              "strand_eje": "Resolver problemas",
+              "statement": "Evaluar el proceso y comprobar resultados y soluciones dadas de un problema matemático, pensando con flexibilidad para reelaborar."
+            }
+          ]
         },
         "pensamiento_computacional": {
           "subject_id": "pensamiento_computacional",
@@ -34157,6 +34887,45 @@
           "subject_name": "Responsabilidad Personal y Social",
           "track": "plan_comun",
           "learning_objectives": []
+        },
+        "ingles": {
+          "subject_id": "ingles",
+          "subject_name": "Inglés",
+          "track": "plan_comun",
+          "learning_objectives": [
+            {
+              "oa_id": "CL_ING_E1M_CA_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "strand_eje": "Comprensión auditiva",
+              "statement": "Relacionar información explícita e implícita para profundizar la comprensión de textos orales, exposiciones, diálogos."
+            },
+            {
+              "oa_id": "CL_ING_E1M_CL_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "strand_eje": "Comprensión lectora",
+              "statement": "Relacionar información implícita para profundizar la comprensión del tema o idea general, vocabulario y palabras y frases clave en textos literarios y no literarios."
+            },
+            {
+              "oa_id": "CL_ING_E1M_EE_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "strand_eje": "Expresión escrita",
+              "statement": "Escribir textos con distintos propósitos, utilizando vocabulario y la gramática que corresponde, con autonomía y proactividad."
+            },
+            {
+              "oa_id": "CL_ING_E1M_EO_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "OA 4",
+              "strand_eje": "Expresión oral",
+              "statement": "Expresarse oralmente para presentar información, acerca de temas conocidos o de su interés, demostrando coherencia en la organización de ideas y una actitud honesta."
+            }
+          ]
         }
       }
     },
@@ -34174,7 +34943,72 @@
           "subject_id": "ciencias_naturales",
           "subject_name": "Ciencias Naturales",
           "track": "plan_comun",
-          "learning_objectives": []
+          "learning_objectives": [
+            {
+              "oa_id": "CL_CNA_E2M_OYPP_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "strand_eje": "Observar y plantear preguntas",
+              "statement": "Formular preguntas y problemas sobre tópicos científicos de interés, a partir de la observación de fenómenos y/o la exploración de diversas fuentes."
+            },
+            {
+              "oa_id": "CL_CNA_E2M_PYCU_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "strand_eje": "Planificar y conducir una investigación",
+              "statement": "Diseñar y desarrollar investigaciones científicas que permitan recoger evidencias y contrastar hipótesis pensando con perseverancia y proactividad para encontrar soluciones innovadoras, considerando: Las relaciones entre datos, información y variables; El uso adecuado de instrumentos y materiales para obtener datos confiables; La medición y el registro de evidencias usando herramientas tecnológicas o matemáticas."
+            },
+            {
+              "oa_id": "CL_CNA_E2M_PYCU_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "strand_eje": "Planificar y conducir una investigación",
+              "statement": "Diseñar proyectos de investigación para encontrar soluciones a problemas científicos de manera creativa y pertinente, trabajando con honestidad, responsabilidad y liderazgo en tareas colaborativas."
+            },
+            {
+              "oa_id": "CL_CNA_E2M_PYAL_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "OA 4",
+              "strand_eje": "Procesar y analizar la evidencia",
+              "statement": "Crear, seleccionar, ajustar modelos simples basados en análisis de evidencia, para predecir y explicar mecanismos y fenómenos naturales aprovechando las herramientas disponibles para aprender y resolver problemas."
+            },
+            {
+              "oa_id": "CL_CNA_E2M_PYAL_OA05",
+              "oa_number": 5,
+              "category": "conocimiento",
+              "code": "OA 5",
+              "strand_eje": "Procesar y analizar la evidencia",
+              "statement": "Analizar los resultados de una investigación científica planteando conclusiones e identificando conexiones entre variables y usando vocabulario disciplinar pertinente."
+            },
+            {
+              "oa_id": "CL_CNA_E2M_EYC_OA06",
+              "oa_number": 6,
+              "category": "conocimiento",
+              "code": "OA 6",
+              "strand_eje": "Evaluar y comunicar",
+              "statement": "Evaluar el proceso de investigación científica con el fin de perfeccionarla, considerando: La validez y confiabilidad de los resultados; La replicabilidad de los procedimientos; Las posibles aplicaciones tecnológicas."
+            },
+            {
+              "oa_id": "CL_CNA_E2M_EYC_OA07",
+              "oa_number": 7,
+              "category": "conocimiento",
+              "code": "OA 7",
+              "strand_eje": "Evaluar y comunicar",
+              "statement": "Analizar críticamente las implicancias sociales, éticas y ambientales de problemáticas que involucren a la ciencia (aborto, vacunas, contaminación, etc.) con honestidad, responsabilizándose por las implicancias que tiene sobre uno mismo y los otros."
+            },
+            {
+              "oa_id": "CL_CNA_E2M_EYC_OA08",
+              "oa_number": 8,
+              "category": "conocimiento",
+              "code": "OA 8",
+              "strand_eje": "Evaluar y comunicar",
+              "statement": "Evaluar procesos, resultados y conclusiones con apoyo de herramientas digitales y otros soportes pertinentes."
+            }
+          ]
         },
         "educacion_financiera": {
           "subject_id": "educacion_financiera",
@@ -34204,7 +35038,72 @@
           "subject_id": "matematica",
           "subject_name": "Matemática Nivel 2 Educación Media: 3° y 4° Año Medio",
           "track": "plan_comun",
-          "learning_objectives": []
+          "learning_objectives": [
+            {
+              "oa_id": "CL_MAT_E2M_RPRS_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "strand_eje": "Representar",
+              "statement": "Expresar ideas matemáticas mediante diferentes representaciones, valorando el uso de las TIC."
+            },
+            {
+              "oa_id": "CL_MAT_E2M_RPRS_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "strand_eje": "Representar",
+              "statement": "Representar un mismo contenido matemático transitando entre los distintos niveles de representación y aprovechando las herramientas disponibles."
+            },
+            {
+              "oa_id": "CL_MAT_E2M_MDLR_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "strand_eje": "Modelar",
+              "statement": "Seleccionar y ajustar modelos matemáticos según el fenómeno, perseverando en torno a metas."
+            },
+            {
+              "oa_id": "CL_MAT_E2M_MDLR_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "OA 4",
+              "strand_eje": "Modelar",
+              "statement": "Evaluar modelos, comparándolos entre sí y con la realidad, determinando sus limitaciones y tomando decisiones razonadas que contribuyan al bien común."
+            },
+            {
+              "oa_id": "CL_MAT_E2M_AYC_OA05",
+              "oa_number": 5,
+              "category": "conocimiento",
+              "code": "OA 5",
+              "strand_eje": "Argumentar y comunicar",
+              "statement": "Fundamentar conjeturas usando conocimientos matemáticos, trabajando colaborativamente."
+            },
+            {
+              "oa_id": "CL_MAT_E2M_AYC_OA06",
+              "oa_number": 6,
+              "category": "conocimiento",
+              "code": "OA 6",
+              "strand_eje": "Argumentar y comunicar",
+              "statement": "Realizar demostraciones simples de resultados e identificar en una demostración si hay saltos o errores, trabajando con empatía y respeto."
+            },
+            {
+              "oa_id": "CL_MAT_E2M_RP_OA07",
+              "oa_number": 7,
+              "category": "conocimiento",
+              "code": "OA 7",
+              "strand_eje": "Resolver problemas",
+              "statement": "Variar parámetros o condiciones, comparando los cambios en los resultados obtenidos, pensando con perseverancia y proactividad."
+            },
+            {
+              "oa_id": "CL_MAT_E2M_RP_OA08",
+              "oa_number": 8,
+              "category": "conocimiento",
+              "code": "OA 8",
+              "strand_eje": "Resolver problemas",
+              "statement": "Evaluar el proceso y comprobar resultados y soluciones dadas de un problema matemático, pensando con flexibilidad para reelaborar."
+            }
+          ]
         },
         "pensamiento_computacional": {
           "subject_id": "pensamiento_computacional",
@@ -34217,6 +35116,442 @@
           "subject_name": "Responsabilidad Personal y Social",
           "track": "plan_comun",
           "learning_objectives": []
+        },
+        "lenguaje_comunicacion": {
+          "subject_id": "lenguaje_comunicacion",
+          "subject_name": "Lenguaje y Comunicación",
+          "track": "plan_comun",
+          "learning_objectives": [
+            {
+              "oa_id": "CL_LEN_E2M_COYE_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "strand_eje": "Comprensión oral y escrita",
+              "statement": "Evaluar textos no literarios orales, escritos y audiovisuales, analizando la influencia de los contextos socioculturales de enunciador y audiencia."
+            },
+            {
+              "oa_id": "CL_LEN_E2M_COYE_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "strand_eje": "Comprensión oral y escrita",
+              "statement": "Formular una interpretación de los textos literarios leídos, estableciendo relaciones intertextuales con otros referentes de la cultura y del arte."
+            },
+            {
+              "oa_id": "CL_LEN_E2M_CE_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "strand_eje": "Comunicación escrita",
+              "statement": "Producir textos (orales, escritos o audiovisuales) coherentes y cohesionados para comunicar sus ideas, adecuando el texto a las convenciones del género y a las características de la audiencia."
+            },
+            {
+              "oa_id": "CL_LEN_E2M_CO_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "OA 4",
+              "strand_eje": "Comunicación oral",
+              "statement": "Dialogar argumentativamente, para construir y ampliar ideas, usando evidencia disponible para fundamentar posturas."
+            },
+            {
+              "oa_id": "CL_LEN_E2M_INVS_OA05",
+              "oa_number": 5,
+              "category": "conocimiento",
+              "code": "OA 5",
+              "strand_eje": "Investigación",
+              "statement": "Realizar investigaciones para responder interrogantes propias de la asignatura procesando la información mediante herramientas digitales y comunicando sus hallazgos por medio de distintos géneros haciendo uso ético de la información."
+            }
+          ]
+        },
+        "historia_geografia_ciencias_sociales": {
+          "subject_id": "historia_geografia_ciencias_sociales",
+          "subject_name": "Historia, Geografía y Ciencias Sociales",
+          "track": "plan_comun",
+          "learning_objectives": [
+            {
+              "oa_id": "CL_HIS_E2M_PTYE_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "strand_eje": "Pensamiento temporal y espacial",
+              "statement": "Analizar elementos de continuidad y cambio en procesos, considerando diferentes actores sociales y valorando las TIC como una oportunidad para informarse e investigar."
+            },
+            {
+              "oa_id": "CL_HIS_E2M_PTYE_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "strand_eje": "Pensamiento temporal y espacial",
+              "statement": "Evaluar datos e información geográfica, por medio del uso de herramientas geográficas y digitales, para elaborar inferencias y argumentos, actuando de acuerdo con los principios de la ética."
+            },
+            {
+              "oa_id": "CL_HIS_E2M_AYTC_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "strand_eje": "Análisis y trabajo con fuentes",
+              "statement": "Evaluar la veracidad y la fiabilidad de las evidencias presentes en distintas fuentes, trabajando con empatía y respeto."
+            },
+            {
+              "oa_id": "CL_HIS_E2M_PC_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "OA 4",
+              "strand_eje": "Pensamiento crítico",
+              "statement": "Elaborar argumentos e interpretaciones sobre los fenómenos estudiados, pensando con apertura a distintas perspectivas y contextos."
+            },
+            {
+              "oa_id": "CL_HIS_E2M_CMNC_OA05",
+              "oa_number": 5,
+              "category": "conocimiento",
+              "code": "OA 5",
+              "strand_eje": "Comunicación",
+              "statement": "Fundamentar y comunicar puntos de vista propios sobre los temas estudiados, apoyándose en razones y evidencia, con honestidad y responsabilidad por las propias acciones y decisiones."
+            }
+          ]
+        },
+        "ingles": {
+          "subject_id": "ingles",
+          "subject_name": "Inglés",
+          "track": "plan_comun",
+          "learning_objectives": [
+            {
+              "oa_id": "CL_ING_E2M_CA_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "strand_eje": "Comprensión auditiva",
+              "statement": "Interpretar el significado del texto, comprendiendo expresiones idiomáticas y vocabulario de uso frecuente en textos orales y en diversos formatos."
+            },
+            {
+              "oa_id": "CL_ING_E2M_CL_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "strand_eje": "Comprensión lectora",
+              "statement": "Interpretar el significado de las ideas principales, información específica y detalles, vocabulario y combinaciones de palabras, en diversos tipos de textos literarios y no literarios."
+            },
+            {
+              "oa_id": "CL_ING_E2M_EE_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "strand_eje": "Expresión escrita",
+              "statement": "Escribir textos con distintos propósitos, utilizando vocabulario y la gramática que corresponde, utilizando las herramientas digitales."
+            },
+            {
+              "oa_id": "CL_ING_E2M_EO_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "OA 4",
+              "strand_eje": "Expresión oral",
+              "statement": "Presentar información sobre un tema investigado previamente, aportando descripciones y detalles demostrando coherencia en la organización de ideas, con honestidad."
+            }
+          ]
+        }
+      }
+    },
+    "epja_media": {
+      "level_id": "epja_media",
+      "level_name": "EPJA Educación Media (Niveles 1 y 2)",
+      "subjects": {
+        "emprendimiento_empleabilidad": {
+          "subject_id": "emprendimiento_empleabilidad",
+          "subject_name": "Emprendimiento y Empleabilidad",
+          "track": "plan_comun",
+          "learning_objectives": [
+            {
+              "oa_id": "CL_EMEM_EM_IYDD_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "strand_eje": "Investigación y diseño de ideas",
+              "statement": "Investigar e identificar necesidades y potenciales usuarios de un determinado emprendimiento u oportunidad de innovación, con pensamiento crítico, empatía y proactividad."
+            },
+            {
+              "oa_id": "CL_EMEM_EM_IYDD_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "strand_eje": "Investigación y diseño de ideas",
+              "statement": "Proponer soluciones innovadoras que enriquezcan otras existentes, con una visión crítica que incorpore criterios y restricciones sociales, éticas y de sustentabilidad, y apertura a distintas perspectivas y contextos, evaluando los riesgos y asumiendo responsabilidades."
+            },
+            {
+              "oa_id": "CL_EMEM_EM_PLNF_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "strand_eje": "Planificación",
+              "statement": "Planificar el diseño de emprendimientos o soluciones, considerando las distintas etapas y la selección y el uso de recursos y herramientas, considerando las necesidades, eficiencia e impacto, y las posibilidades que ofrece la tecnología."
+            },
+            {
+              "oa_id": "CL_EMEM_EM_EYE_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "OA 4",
+              "strand_eje": "Evaluación y ejecución",
+              "statement": "Desarrollar estrategias para poner a prueba, evaluar y hacer ajustes a prototipos de emprendimiento, soluciones o proyectos de empleabilidad, trabajando con honestidad, responsabilidad y liderazgo en la realización de tareas colaborativas."
+            },
+            {
+              "oa_id": "CL_EMEM_EM_EYE_OA05",
+              "oa_number": 5,
+              "category": "conocimiento",
+              "code": "OA 5",
+              "strand_eje": "Evaluación y ejecución",
+              "statement": "Perseverar en torno a las metas propuestas, considerando la construcción de proyectos de vida personal y laboral, y el aporte a la sociedad, con autonomía y conciencia de que los aprendizajes enriquecen la experiencia."
+            }
+          ]
+        },
+        "educacion_financiera": {
+          "subject_id": "educacion_financiera",
+          "subject_name": "Educación Financiera",
+          "track": "plan_comun",
+          "learning_objectives": [
+            {
+              "oa_id": "CL_EDFN_EM_PLNF_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "strand_eje": "Planificación",
+              "statement": "Planificar y desarrollar un presupuesto, considerando las distintas etapas de la vida y la selección y el uso de recursos y herramientas, tomando decisiones razonadas."
+            },
+            {
+              "oa_id": "CL_EDFN_EM_TD_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "strand_eje": "Tomar decisiones",
+              "statement": "Fundamentar, a partir de un análisis crítico, decisiones financieras, con autorreflexión y autonomía."
+            },
+            {
+              "oa_id": "CL_EDFN_EM_TD_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "strand_eje": "Tomar decisiones",
+              "statement": "Identificar patrones y tendencias en los sistemas y variables financieras globales y locales."
+            },
+            {
+              "oa_id": "CL_EDFN_EM_TD_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "OA 4",
+              "strand_eje": "Tomar decisiones",
+              "statement": "Tomar decisiones estratégicas de inversión y ahorro, considerando deberes y derechos que asumen los distintos agentes económicos. Y actuando con honestidad responsabilizándose por las propias acciones y decisiones."
+            }
+          ]
+        },
+        "responsabilidad_personal_social": {
+          "subject_id": "responsabilidad_personal_social",
+          "subject_name": "Responsabilidad Personal y Social",
+          "track": "plan_comun",
+          "learning_objectives": [
+            {
+              "oa_id": "CL_RSPRSC_EM_RYC_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "strand_eje": "Reflexión y comunicación",
+              "statement": "Reconocer recursos personales y del contexto que favorecen la consolidación de su identidad y autoestima, considerando su trayectoria de vida personal, intereses, capacidades y habilidades personales."
+            },
+            {
+              "oa_id": "CL_RSPRSC_EM_RYC_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "strand_eje": "Reflexión y comunicación",
+              "statement": "Solucionar los conflictos mediante un diálogo constructivo, con una comunicación efectiva, escuchando con respeto a los demás y promoviendo la colaboración en la búsqueda de alternativas de solución al problema."
+            },
+            {
+              "oa_id": "CL_RSPRSC_EM_AYP_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "strand_eje": "Autonomía y proactividad",
+              "statement": "Promover acciones que contribuyan al desarrollo de planes de vida y proyectos personales, sociales y laborales, demostrando compromiso y responsabilidad, y una acción sustentada en valores y orientada al logro del bien común."
+            },
+            {
+              "oa_id": "CL_RSPRSC_EM_PYE_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "OA 4",
+              "strand_eje": "Planificación y evaluación",
+              "statement": "Establecer propósitos y metas significativas y congruentes que propicien el desarrollo personal, social y laboral, reconociendo fortalezas y debilidades, identificando las acciones a seguir, con disposición a evaluar el logro y adecuar sus planes."
+            },
+            {
+              "oa_id": "CL_RSPRSC_EM_PYE_OA05",
+              "oa_number": 5,
+              "category": "conocimiento",
+              "code": "OA 5",
+              "strand_eje": "Planificación y evaluación",
+              "statement": "Gestionar en forma autónoma y colaborativa su propio proceso de aprendizaje con actitud perseverante, reconociendo cuando necesita apoyo y gestionando las ayudas necesarias."
+            }
+          ]
+        },
+        "pensamiento_computacional": {
+          "subject_id": "pensamiento_computacional",
+          "subject_name": "Pensamiento Computacional",
+          "track": "plan_comun",
+          "learning_objectives": [
+            {
+              "oa_id": "CL_PNCM_EM_DSCM_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "strand_eje": "Descomponer",
+              "statement": "Formular problemas a partir de un contexto o situación específica, con apertura a distintas perspectivas, identificando las partes que lo componen."
+            },
+            {
+              "oa_id": "CL_PNCM_EM_EVLR_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "strand_eje": "Evaluar",
+              "statement": "Organizar datos de una situación problemática estableciendo secuencias e identificando fallos y defectos, trabajando con honestidad y considerando criterios de usabilidad, funcionamiento y función."
+            },
+            {
+              "oa_id": "CL_PNCM_EM_MDLR_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "strand_eje": "Modelar",
+              "statement": "Modelar datos de una situación problemática mediante representaciones, simulaciones simples, bloques de programación y diagramas, aprovechando las herramientas disponibles."
+            },
+            {
+              "oa_id": "CL_PNCM_EM_GYT_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "OA 4",
+              "strand_eje": "Generalizar y transferir",
+              "statement": "Establecer conexiones y semejanzas entre las partes del problema para caracterizar patrones en una situación problemática dada."
+            },
+            {
+              "oa_id": "CL_PNCM_EM_GYT_OA05",
+              "oa_number": 5,
+              "category": "conocimiento",
+              "code": "OA 5",
+              "strand_eje": "Generalizar y transferir",
+              "statement": "Aplicar flexiblemente las soluciones elaboradas e implementadas a otras situaciones problemáticas, integrando con honestidad diferentes ideas y puntos de vista."
+            },
+            {
+              "oa_id": "CL_PNCM_EM_PDFA_OA06",
+              "oa_number": 6,
+              "category": "conocimiento",
+              "code": "OA 6",
+              "strand_eje": "Pensar de forma algorítmica",
+              "statement": "Elaborar e implementar soluciones a una situación problemática mediante la formulación de algoritmos, actuando de acuerdo con los principios de la ética."
+            }
+          ]
+        },
+        "artes_visuales": {
+          "subject_id": "artes_visuales",
+          "subject_name": "Artes Visuales",
+          "track": "plan_diferenciado_hc",
+          "learning_objectives": [
+            {
+              "oa_id": "CL_ARV_EM_EYC_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "strand_eje": "Expresar y crear",
+              "statement": "Crear obras y proyectos visuales y audiovisuales, con autonomía y proactividad para expresar sensaciones, emociones e ideas, a partir de la apreciación de referentes artísticos y culturales diversos."
+            },
+            {
+              "oa_id": "CL_ARV_EM_AYR_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "strand_eje": "Apreciar y responder",
+              "statement": "Analizar e interpretar propósitos expresivos de obras visuales y audiovisuales, a partir de criterios estéticos, planteando posturas razonadas y mostrando flexibilidad para reelaborar sus ideas, puntos de vista y creencias."
+            },
+            {
+              "oa_id": "CL_ARV_EM_CYD_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "strand_eje": "Comunicar y difundir",
+              "statement": "Diseñar y gestionar colaborativamente proyectos de difusión de obras visuales y audiovisuales propios, empleando diversidad de medios o TIC de acuerdo con los principios de la ética."
+            }
+          ]
+        },
+        "educacion_fisica_salud": {
+          "subject_id": "educacion_fisica_salud",
+          "subject_name": "Educación Física y Salud",
+          "track": "plan_diferenciado_hc",
+          "learning_objectives": [
+            {
+              "oa_id": "CL_EFI_EM_HME_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "strand_eje": "Habilidades motrices especializadas",
+              "statement": "Aplicar individual y colectivamente las habilidades motrices especializadas con flexibilidad y responsabilidad, en una variedad de actividades físicas que sean de su interés y en diferentes entornos."
+            },
+            {
+              "oa_id": "CL_EFI_EM_VAS_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "strand_eje": "Vida activa saludable",
+              "statement": "Aplicar y evaluar un plan de entrenamiento para mejorar su rendimiento físico, considerando sus características personales y funcionales con perseverancia y proactividad."
+            },
+            {
+              "oa_id": "CL_EFI_EM_VAS_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "strand_eje": "Vida activa saludable",
+              "statement": "Promover el bienestar, el autocuidado, la vida activa y la alimentación saludable en su vida y en la comunidad, valorando la diversidad de las personas a través de la aplicación de programas y proyectos deportivos, recreativos y socioculturales."
+            },
+            {
+              "oa_id": "CL_EFI_EM_VAS_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "OA 4",
+              "strand_eje": "Vida activa saludable",
+              "statement": "Analizar, por medio de la práctica regular de actividad física, cómo los factores sociales, culturales, económicos y tecnológicos favorecen el desarrollo de oportunidades para la adquisición de un estilo de vida activo y saludable a nivel local, regional y global."
+            }
+          ]
+        },
+        "filosofia": {
+          "subject_id": "filosofia",
+          "subject_name": "Filosofía",
+          "track": "plan_diferenciado_hc",
+          "learning_objectives": [
+            {
+              "oa_id": "CL_FIL_EM_PA_OA01",
+              "oa_number": 1,
+              "category": "conocimiento",
+              "code": "OA 1",
+              "strand_eje": "Pensamiento analítico",
+              "statement": "Analizar problemas presentes en textos filosóficos, considerando conceptos, métodos de razonamiento e implicancias para la vida cotidiana pensando con flexibilidad para reelaborar las propias ideas y puntos de vista."
+            },
+            {
+              "oa_id": "CL_FIL_EM_PA_OA02",
+              "oa_number": 2,
+              "category": "conocimiento",
+              "code": "OA 2",
+              "strand_eje": "Pensamiento analítico",
+              "statement": "Elaborar preguntas a partir del análisis de conceptos y teorías filosóficas para pensar con autorreflexión y autonomía."
+            },
+            {
+              "oa_id": "CL_FIL_EM_PC_OA03",
+              "oa_number": 3,
+              "category": "conocimiento",
+              "code": "OA 3",
+              "strand_eje": "Pensamiento crítico",
+              "statement": "Participar en diálogos sobre problemas filosóficos pertinentes para sus contextos, aplicando principios y herramientas de argumentación con empatía hacia otros."
+            },
+            {
+              "oa_id": "CL_FIL_EM_PC_OA04",
+              "oa_number": 4,
+              "category": "conocimiento",
+              "code": "OA 4",
+              "strand_eje": "Pensamiento crítico",
+              "statement": "Elaborar visiones personales a partir de las perspectivas de diversos filósofos pensando con apertura a distintos contextos, asumiendo riesgos y responsabilidades."
+            }
+          ]
         }
       }
     }

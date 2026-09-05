@@ -10,8 +10,28 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import List, Optional
 
-from . import __version__
-from .build import INDICATOR_SOURCE_NOTE, TP_MODULE_NOTE, build
+from . import SCHEMA_VERSION, __version__
+from .bases_pdf import EPJA_BASES_2024, fetch_epja_bases, parse_document
+from .build import (
+    EPJA_BASES_NOTE,
+    INDICATOR_SOURCE_NOTE,
+    RELIGION_NOTE,
+    TP_MODULE_NOTE,
+    build,
+    refresh_totals,
+)
+from .corrections import apply_corrections
+from .epja import merge as epja_merge
+from .inventory import (
+    bases_document_offerings,
+    build_report as build_coverage_report,
+    discover_site_offerings,
+    merge_offerings,
+    summarise as summarise_coverage,
+)
+from .oat import fetch_transversal_objectives, verify as verify_oats
+from .provenance import annotate as annotate_provenance
+from .religion import annotate as annotate_religion
 from .export import split_by_level, to_slim, write_json, write_manifest, write_sqlite
 from .http import DEFAULT_DELAY, PoliteClient
 from .indicators import MATCH_THRESHOLD, coverage as indicator_coverage, enrich
@@ -224,6 +244,178 @@ def cmd_tp_modules(args: argparse.Namespace) -> int:
     return 1 if errors else 0
 
 
+def cmd_augment(args: argparse.Namespace) -> int:
+    """Complete the canonical dataset from the sources the HTML crawl cannot reach.
+
+    Four passes, in this order and for this reason:
+
+    1. **EPJA** - read the Bases Curriculares EPJA 2024 PDF and ingest the
+       objectives the site publishes no HTML for. Runs first because everything
+       after it has to see the new records.
+    2. **Religión** - record the source-backed reason those twelve pages carry no
+       objectives, so the coverage report can tell source absence from a parser
+       gap.
+    3. **Corrections** - apply the reviewed corrections where official sources
+       contradict each other, keeping the original text on the record.
+    4. **Provenance / status / prioritization** - backfill the records that
+       predate the provenance model, and replace the timeless `prioritized`
+       reading with the 2023-2025 programme it actually recorded.
+    """
+    database = _load(args.file)
+    metadata = database.setdefault("metadata", {})
+    retrieved_at = datetime.now(timezone.utc).isoformat(timespec="seconds")
+
+    # Stamp the build identity. `scraped_at` stays what it is - the date the
+    # HTML crawl ran, which is a real and separate fact - and `built_at` records
+    # when these artefacts were generated. The browser versions its cached copy
+    # on `built_at`, so augmenting a dataset without re-crawling still
+    # invalidates every client's copy, which stamping only `scraped_at` would
+    # have got wrong in both directions.
+    metadata["built_at"] = retrieved_at
+    metadata["schema_version"] = SCHEMA_VERSION
+    metadata["generator"] = f"mineduc-scraper/{__version__}"
+
+    # -- 1. EPJA -----------------------------------------------------------
+    epja_report = None
+    if not args.no_epja:
+        with PoliteClient(delay=args.delay, cache_dir=args.cache) as client:
+            pdf_path, pages = fetch_epja_bases(client, args.pdf_cache)
+        parsed = parse_document(pages)
+        epja_report = epja_merge(
+            database, parsed.sections, retrieved_at, parsed.problems
+        )
+        metadata["epja_bases"] = {
+            "extracted_at": retrieved_at,
+            "source": EPJA_BASES_2024["title"],
+            "source_url": EPJA_BASES_2024["pdf_url"],
+            "landing_url": EPJA_BASES_2024["landing_url"],
+            "pdf_pages": parsed.pages_scanned,
+            "definition_sections": epja_report.sections,
+            "objectives_added": epja_report.objectives_added,
+            "subjects_created": epja_report.subjects_created,
+            "subjects_filled": epja_report.subjects_filled,
+            "levels_created": epja_report.levels_created,
+            "verified_against_html": epja_report.verified_against_html,
+            "html_mismatches": epja_report.html_mismatches,
+            "skipped_html_published": epja_report.skipped_html_published,
+            "site_pages_deferred": epja_report.site_pages_deferred,
+            "pages_not_defined_in_bases": epja_report.pages_not_defined,
+            "parser_problems": epja_report.parser_problems,
+        }
+
+    # -- 1b. OAT verification ---------------------------------------------
+    # The OATs were read from the JSON:API in an earlier pass. Re-reading them
+    # here and comparing field by field is what turns "74 OATs" from a number
+    # this project produced once into a number it can still stand behind.
+    oat_report = None
+    if not args.no_oat_check:
+        with PoliteClient(delay=args.delay, cache_dir=args.cache) as client:
+            live = fetch_transversal_objectives(client)
+        oat_report = verify_oats(database.get("transversal_objectives") or {}, live)
+        oat_report["verified_on"] = retrieved_at
+        metadata["oat_verification"] = oat_report
+
+    # -- 2. Religión -------------------------------------------------------
+    religion_report = annotate_religion(database)
+    metadata["religion"] = religion_report
+
+    # -- 3. corrections ----------------------------------------------------
+    applied, skipped = apply_corrections(database)
+    metadata["corrections"] = {"applied": applied, "skipped": skipped}
+
+    # -- 4. provenance, status, prioritization -----------------------------
+    counts = annotate_provenance(database)
+    metadata["provenance"] = {"annotated_at": retrieved_at, **counts}
+
+    notes = metadata.setdefault("coverage_notes", [])
+    for note in (EPJA_BASES_NOTE, RELIGION_NOTE):
+        if note not in notes:
+            notes.append(note)
+
+    refresh_totals(database)
+    output = write_json(database, args.output or args.file,
+                        indent=None if args.compact else 2)
+    print(f"wrote {output} ({output.stat().st_size / 1_048_576:.2f} MB)")
+
+    print("\nAugmentation pass")
+    print("-----------------")
+    if epja_report:
+        print(f"  EPJA definition sections    {epja_report.sections}")
+        print(f"  EPJA objectives added       {epja_report.objectives_added}")
+        print(f"  EPJA subjects created/filled {epja_report.subjects_created}"
+              f"/{epja_report.subjects_filled}")
+        print(f"  EPJA verified against HTML  {epja_report.verified_against_html}")
+        print(f"  EPJA HTML/PDF mismatches    {len(epja_report.html_mismatches)}")
+        print(f"  EPJA pages not defined in Bases {len(epja_report.pages_not_defined)}")
+        print(f"  EPJA parser problems        {len(epja_report.parser_problems)}")
+        for problem in epja_report.parser_problems[:10]:
+            print(f"    ! {problem}")
+        for mismatch in epja_report.html_mismatches[:10]:
+            print(f"    ! {mismatch}")
+    if oat_report:
+        print(f"  OATs re-read and compared   {oat_report['records_compared']}")
+        print(f"  OAT bases with objectives   {oat_report['bases_with_oats']}")
+        print(f"  OAT differences             {len(oat_report['differences'])}")
+        for problem in (oat_report["differences"] + oat_report["missing_from_dataset"]
+                        + oat_report["not_in_source"] + oat_report["count_mismatches"])[:10]:
+            print(f"    ! {problem}")
+    print(f"  Religión pages annotated    {religion_report['pages_annotated']}")
+    print(f"  corrections applied         {len(applied)}")
+    for record in applied:
+        print(f"    ~ {record['id']} ({record['code']}) <- {record['authoritative_source_url']}")
+    for reason in skipped:
+        print(f"    x skipped: {reason}")
+    print(f"  objectives with provenance  {counts['objectives']}")
+    print(f"  OATs with provenance        {counts['oats']}")
+    print(f"  prioritization annotated    {counts['prioritized']}")
+
+    errors, warnings, report = validate(database)
+    _report(report, errors, warnings)
+    return 1 if errors else 0
+
+
+def cmd_coverage(args: argparse.Namespace) -> int:
+    """Build the coverage report from the official source inventory."""
+    database = _load(args.file)
+
+    site: list = []
+    if not args.offline:
+        with PoliteClient(delay=args.delay, cache_dir=args.cache) as client:
+            site = discover_site_offerings(client)
+
+    document: list = []
+    if not args.no_bases:
+        with PoliteClient(delay=args.delay, cache_dir=args.cache) as client:
+            _, pages = fetch_epja_bases(client, args.pdf_cache)
+        document = bases_document_offerings(parse_document(pages).sections)
+
+    offerings = merge_offerings(site, document)
+    report = build_coverage_report(database, offerings)
+    report["discovered"] = {"site_pages": len(site), "bases_sections": len(document)}
+
+    output = write_json(report, args.output)
+    print(f"wrote {output} ({output.stat().st_size / 1024:.0f} KB)")
+
+    print("\nCoverage against the official inventory")
+    print("---------------------------------------")
+    print(f"  expected offerings        {report['expected_offerings']}")
+    for status, count in report["by_status"].items():
+        print(f"    {status:<24} {count}")
+    print(f"  objectives ingested       {report['objectives_ingested']}")
+    for gap in report["parser_gaps"][:20]:
+        print(f"    ! parser gap: {gap['level_id']}/{gap['subject_id']} {gap['source_url']}")
+    for missing in report["offerings_not_in_dataset"][:20]:
+        print(f"    ! not in dataset: {missing['level_id']}/{missing['subject_id']}")
+    for extra in report["unexpected_in_dataset"][:20]:
+        print(f"    ? unexpected: {extra['level_id']}/{extra['subject_id']}")
+
+    if args.embed:
+        database.setdefault("metadata", {})["coverage"] = summarise_coverage(report)
+        write_json(database, args.file, indent=None if args.compact else 2)
+        print(f"embedded the coverage summary in {args.file}")
+    return 0
+
+
 def cmd_validate(args: argparse.Namespace) -> int:
     database = _load(args.file)
     errors, warnings, report = validate(database)
@@ -416,6 +608,52 @@ def build_parser() -> argparse.ArgumentParser:
     tp.add_argument("--threshold", type=float, default=MATCH_THRESHOLD)
     tp.add_argument("--compact", action="store_true")
     tp.set_defaults(func=cmd_tp_modules)
+
+    augment = subparsers.add_parser(
+        "augment",
+        help="complete the dataset: EPJA Bases Curriculares, the Religión finding, "
+             "reviewed corrections, provenance and curriculum status",
+        description="The HTML crawl cannot reach everything the ministry publishes. "
+                    "This reads the Bases Curriculares EPJA 2024 PDF, records the "
+                    "source-backed reason Religión publishes no objectives, applies "
+                    "the reviewed corrections, and attaches provenance, curriculum "
+                    "status and historical prioritization to every record.",
+    )
+    augment.add_argument("--file", "-f", type=Path, required=True)
+    augment.add_argument("--output", "-o", type=Path, default=None)
+    augment.add_argument("--pdf-cache", type=Path, default=Path(".cache/pdfs"))
+    augment.add_argument("--cache", type=Path, default=None)
+    augment.add_argument("--delay", type=float, default=DEFAULT_DELAY)
+    augment.add_argument("--no-epja", action="store_true",
+                         help="skip the Bases Curriculares EPJA pass")
+    augment.add_argument("--no-oat-check", action="store_true",
+                         help="skip re-reading the OATs from the JSON:API to verify them")
+    augment.add_argument("--compact", action="store_true")
+    augment.set_defaults(func=cmd_augment)
+
+    coverage = subparsers.add_parser(
+        "coverage",
+        help="build the coverage report from the official source inventory",
+        description="Enumerates every curriculum offering the ministry publishes - "
+                    "from the site's own indexes and from the Bases Curriculares "
+                    "documents - and reports each one as ingested, absent at "
+                    "source, defined in another level, or an unresolved parser gap.",
+    )
+    coverage.add_argument("--file", "-f", type=Path, required=True)
+    coverage.add_argument("--output", "-o", type=Path,
+                          default=Path("data/coverage_report.json"))
+    coverage.add_argument("--pdf-cache", type=Path, default=Path(".cache/pdfs"))
+    coverage.add_argument("--cache", type=Path, default=None)
+    coverage.add_argument("--delay", type=float, default=DEFAULT_DELAY)
+    coverage.add_argument("--offline", action="store_true",
+                          help="skip site discovery and use only the Bases documents")
+    coverage.add_argument("--no-bases", action="store_true",
+                          help="skip the Bases Curriculares discovery arm")
+    coverage.add_argument("--embed", action="store_true",
+                          help="also write the coverage summary into the dataset "
+                               "metadata, so the manifest can carry it")
+    coverage.add_argument("--compact", action="store_true")
+    coverage.set_defaults(func=cmd_coverage)
 
     validate_cmd = subparsers.add_parser(
         "validate", help="schema + coverage audit of an existing dataset"

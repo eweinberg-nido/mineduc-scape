@@ -29,6 +29,8 @@ pip install -e .
 mineduc-scraper scrape     -o data/mineduc_curriculum_full.json
 mineduc-scraper indicators -f data/mineduc_curriculum_full.json --pdf-cache .cache/pdfs
 mineduc-scraper tp-modules -f data/mineduc_curriculum_full.json --pdf-cache .cache/pdfs
+mineduc-scraper augment    -f data/mineduc_curriculum_full.json --pdf-cache .cache/pdfs
+mineduc-scraper coverage   -f data/mineduc_curriculum_full.json --embed
 mineduc-scraper export-manifest -f data/mineduc_curriculum_full.json -o data/manifest.json
 ```
 
@@ -67,7 +69,9 @@ mineduc-scraper scrape --cache .cache -o data/mineduc_curriculum_full.json
 | `scrape` | Crawl the site and write the full JSON dataset (plus optional slim / SQLite / per-level outputs) |
 | `indicators --file F` | Download the Programa de Estudio PDFs and attach each objective's *Indicadores de Evaluación* |
 | `tp-modules --file F` | Attach the Técnico-Profesional *módulos*, *Aprendizajes Esperados* and *Criterios de Evaluación* |
-| `validate --file F` | Re-run JSON Schema validation and the coverage audit on an existing file |
+| `augment --file F` | Complete the dataset: EPJA objectives from the *Bases Curriculares* PDF, the Religión finding, reviewed corrections, provenance and curriculum status |
+| `coverage --file F` | Build the coverage report from the official source inventory |
+| `validate --file F` | Re-run JSON Schema validation and the integrity audit on an existing file |
 | `export-slim --file F -o G` | OAs only, single-line statements — for browser bundles and LLM context (`--with-indicators` to keep them) |
 | `export-manifest --file F -o G` | Small manifest identifying a build, for the browser navigator's version check |
 | `export-sqlite --file F -o G` | SQLite build with an FTS5 full-text index |
@@ -97,9 +101,10 @@ drops straight into CI.
   "metadata": {
     "scraped_at": "2026-09-04T12:00:00+00:00",
     "source_url": "https://www.curriculumnacional.cl",
-    "schema_version": "1.0.0",
-    "total_oas": 4110,
-    "total_by_category": { "actitud": 643, "conocimiento": 3116, "habilidad": 351 },
+    "built_at": "2026-09-05T16:16:15+00:00",
+    "schema_version": "2.0.0",
+    "total_oas": 4261,
+    "total_by_category": { "actitud": 643, "conocimiento": 3267, "habilidad": 351 },
     "coverage_notes": ["..."],
     "failed_pages": []
   },
@@ -129,6 +134,19 @@ drops straight into CI.
               "statement": "Calcular operaciones con números racionales en forma simbólica.",
               "keywords": ["calcular", "operaciones", "números", "racionales", "simbólica"],
               "prioritized": true,
+              "prioritization": {
+                "programme": "Priorización Curricular", "period": "2023-2025",
+                "status": "historico", "source_url": "..."
+              },
+              "curriculum_status": "vigente",
+              "status_source": { "url": "...", "note": "...", "verified_on": "2026-09-05" },
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/.../ma1m-oa-01",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "7o-basico-2o-medio",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > ..."
+              },
               "source_url": "https://www.curriculumnacional.cl/.../ma1m-oa-01",
               "indicators": [
                 "Identifican el tipo de número, racional, entero y natural, y las operaciones involucradas.",
@@ -180,7 +198,19 @@ Two ids per objective, because both are load-bearing:
   asserted; a residual collision would be disambiguated with a `__2` suffix and reported in
   `metadata.id_collisions` (currently empty).
 
-`prioritized` marks objectives flagged as part of the *Priorización Curricular* on the site.
+`prioritized` marks objectives flagged as part of the *Priorización Curricular* on the site. It
+is **not** a present-tense property: it records membership of the priorización published for
+**2023–2025**, so every flagged objective also carries a `prioritization` object naming that
+programme, its period and its historical status. The boolean is kept for backward compatibility;
+read `prioritization` instead, and never render it as a bare "Priorizado".
+
+`provenance` identifies the exact source each record was extracted from — URL, source type,
+document and page for a PDF, retrieval date, curriculum base and extraction method — so any
+record can be re-fetched and re-verified. `curriculum_status` is one of `vigente`, `propuesta`,
+`en_implementacion`, `historico` or `desconocido`, and is **never** inferred from a page being
+reachable: anything other than `desconocido` carries a `status_source` naming the official
+document that says so. That is why the site's own "Inglés (Propuesta)" subject is `propuesta`
+rather than inheriting its base's `vigente`.
 
 ## Using the dataset
 
@@ -257,10 +287,11 @@ A full run on 2026-09-04 produced:
 
 | | |
 | --- | --- |
-| Levels | 20 (Sala Cuna → 4° Medio, plus EPJA) |
-| Subjects (level × subject pages) | 358 |
-| Objectives | **4110** — 3116 conocimiento, 351 habilidad, 643 actitud |
-| Distinct official codes | 3143 (a 3°/4° Medio OA is published under both grades) |
+| Levels | 21 (Sala Cuna → 4° Medio, plus EPJA) |
+| Curriculum offerings (level × subject) | 372, across **129 distinct subjects** |
+| Objectives | **4261** — 3267 conocimiento, 351 habilidad, 643 actitud |
+| of which EPJA | 156 (5 from HTML, 151 from the *Bases Curriculares EPJA 2024*) |
+| Distinct official codes | 3151 (a 3°/4° Medio OA is published under both grades) |
 | Transversal objectives (OAT) | 74 across 3 curriculum bases |
 | Flagged for *Priorización Curricular* | 942 |
 | **Indicadores de Evaluación** | **13 705**, on 1586 objectives, from 217 Programa PDFs |
@@ -282,12 +313,57 @@ OA04), so sort by `oa_number` if you need a guaranteed order.
 
 Run `mineduc-scraper validate --file <dataset>` at any time for the current picture.
 
-**41 subject pages carry no objectives.** Twelve *Religión* pages and 29 EPJA pages have no
-"Explorar Base Curricular" section at all — their curriculum is published only as PDFs (Religión
-is governed separately, by Decreto N° 924). Those pages still contribute their `documents`, and
-are listed in `metadata.pages_without_objectives` as a warning, not an error. This is a property
-of the source, not a parsing gap: the EPJA *Lenguaje y Comunicación* page does publish its
-objectives, and they are captured.
+**27 curriculum offerings carry no objectives, and every one of them says why.**
+`coverage` classifies all 372 expected offerings against the ministry's own inventory:
+
+| | |
+| --- | --- |
+| 345 | objectives ingested |
+| 14 | objectives defined for a combined EPJA level, and published there |
+| 13 | the ministry publishes no objectives for them, with a verified reason |
+| **0** | **no objectives and no verified reason** — i.e. no unresolved parser gap |
+
+The last row is the only one that would be a defect here, and it is empty. The 13 are the twelve
+*Religión* offerings and EPJA *Ciencias Naturales* Nivel 1 Básica; see below.
+
+### EPJA
+
+The EPJA objectives come from the **Bases Curriculares EPJA 2024**, which the ministry publishes
+only as a PDF. `bases_pdf.py` is a third ingestion engine for exactly that: a *Base Curricular*
+defines objectives in running prose, one section per (asignatura, ciclo, nivel), and pushing it
+through the *Programa de Estudio* indicator parser — a different document type, read
+geometrically for indicator columns — would have found nothing and reported a source gap that is
+not there.
+
+The site publishes one EPJA page with objectives in HTML (Lenguaje y Comunicación, Nivel 1 de
+Educación Básica). Those five records are **kept as the HTML engine produced them**; the PDF is
+used to verify them and then stands aside, because structured HTML beats a PDF whenever both
+exist. All five agree with the Bases character for character, which is the strongest check
+available on the PDF reader and is asserted in the test suite.
+
+**The Bases' level model is preserved.** Formación General asignaturas are defined per
+(ciclo, nivel). Formación Instrumental and Formación Diferenciada Humanístico-Científica
+asignaturas are defined once for *"Educación Media, Nivel 1 y 2"* — one block — while the site
+navigates them under a Nivel 1 page and a Nivel 2 page. Those go into a combined `epja_media`
+level whose objectives carry `level_scope: ["epja_n1_media", "epja_n2_media"]`, rather than being
+duplicated into both site levels or forced into one of them. The site pages they came from record
+`objectives_in_level`, so an empty page does not read as a coverage hole.
+
+### Religión
+
+Religión carries **no objectives, and that is a property of the source rather than a parsing gap.**
+It is not part of the national *Bases Curriculares*: it is governed by **Decreto N° 924 (1983)**,
+which permits the teaching of any credo (art. 4) and establishes that Religión is taught according
+to programmes *"aprobados por el Ministerio de Educación Pública, a propuesta de la autoridad
+religiosa correspondiente"* (art. 6). So there is no single national Religión curriculum — there is
+one approved programme per confession — and those programmes are not published on
+curriculumnacional.cl. A JSON:API query across the site's whole resource collection for titles
+containing "Religi" returns teaching materials, historical readings and the decreto itself, and no
+programme or base for the subject.
+
+Each Religión subject therefore records a `programme_model` (`por_credo`, approved per confession,
+not published here) and a `no_objectives_reason` citing the decreto. Different confessions'
+programmes are **not** merged into one artificial subject, and no objectives are invented.
 
 **Six subjects are reachable by two routes.** Lengua y Cultura de los Pueblos Originarios is
 published both under 1° a 6° Básico and under its own curriculum base, where the page renders no
@@ -309,7 +385,7 @@ Científico vs. Técnico-Profesional is carried by `track`
 develops is not published in machine-readable form; the site lists both sets per subject without
 linking them. Skills are captured as first-class objectives with `category: "habilidad"`.
 
-**1586 of 4110 objectives carry indicators.** Where the other 2524 stand, exactly:
+**1586 of 4261 objectives carry indicators.** Where the other 2524 stand, exactly:
 
 | | |
 | --- | --- |
@@ -513,7 +589,7 @@ mineduc-scraper export-manifest -f data/mineduc_curriculum_full.json -o data/man
 
 ### What it does
 
-- **Search** across all 4110 statements *and* all 13 705 indicators, accent-insensitively —
+- **Search** across all 4261 statements *and* all 13 705 indicators, accent-insensitively —
   `celula` finds *célula*, `fotosintesis` finds *fotosíntesis*. A plain inverted index with
   prefix expansion, built in about a fifth of a second; an official code (`MA1M OA 01`) ranks
   above a statement match, which ranks above an indicator-only match.

@@ -62,17 +62,38 @@ LEVELS: Dict[str, Level] = {
     ),
 }
 
+# Levels that no single subject page publishes, because the Bases define them.
+#
+# The EPJA 2024 Bases scope the Formación Instrumental and Formación
+# Diferenciada Humanístico-Científica subjects to "Educación Media / Nivel 1 y
+# 2" as one block, while the site navigates them under a Nivel 1 page and a
+# Nivel 2 page. Forcing those objectives into either page would assert a level
+# split the Bases do not make, and writing them into both would double every
+# statement. They get their own combined level instead, with `level_scope` on
+# each objective naming the two site levels it applies to.
+SYNTHETIC_LEVELS: Dict[str, Level] = {
+    "epja_media": Level(
+        "epja_media",
+        "EPJA Educación Media (Niveles 1 y 2)",
+        "EM",
+        "EM",
+        36,
+    ),
+}
+
 # --levels group aliases
 LEVEL_GROUPS: Dict[str, List[str]] = {
     "ALL": [],  # filled below
     "PARV": ["SC", "NM", "NT"],
     "BASICA": ["1B", "2B", "3B", "4B", "5B", "6B", "7B", "8B"],
     "MEDIA": ["1M", "2M", "3M", "4M"],
-    "EPJA": ["E1B", "E2B", "E3B", "E1M", "E2M"],
+    "EPJA": ["E1B", "E2B", "E3B", "E1M", "E2M", "EM"],
     # convenience alias for the SPEC.md example: 7° Básico .. 4° Medio
     "SECUNDARIA": ["7B", "8B", "1M", "2M", "3M", "4M"],
 }
-LEVEL_GROUPS["ALL"] = sorted({lvl.cli for lvl in LEVELS.values()})
+LEVEL_GROUPS["ALL"] = sorted(
+    {lvl.cli for lvl in LEVELS.values()} | {lvl.cli for lvl in SYNTHETIC_LEVELS.values()}
+)
 
 # curriculum base slug -> human readable name
 BASES: Dict[str, str] = {
@@ -344,3 +365,72 @@ def resolve_level_tokens(tokens: List[str]) -> List[str]:
             seen.add(token)
             out.append(token)
     return out
+
+
+# --------------------------------------------------------------------------- #
+# Curriculum status
+# --------------------------------------------------------------------------- #
+# A live page and a recent scrape date say nothing about whether a curriculum is
+# legally in force, so status is never inferred from either. Every value other
+# than `desconocido` has to be backed by an official source recorded alongside
+# it (`status_source`), which is why `desconocido` is the default rather than
+# `vigente`.
+STATUS_VIGENTE = "vigente"
+STATUS_PROPUESTA = "propuesta"
+STATUS_EN_IMPLEMENTACION = "en_implementacion"
+STATUS_HISTORICO = "historico"
+STATUS_DESCONOCIDO = "desconocido"
+
+CURRICULUM_STATUSES = (
+    STATUS_VIGENTE,
+    STATUS_PROPUESTA,
+    STATUS_EN_IMPLEMENTACION,
+    STATUS_HISTORICO,
+    STATUS_DESCONOCIDO,
+)
+
+STATUS_LABEL: Dict[str, str] = {
+    STATUS_VIGENTE: "Vigente",
+    STATUS_PROPUESTA: "Propuesta",
+    STATUS_EN_IMPLEMENTACION: "En implementación",
+    STATUS_HISTORICO: "Histórico",
+    STATUS_DESCONOCIDO: "Estado no verificado",
+}
+
+# Where an objective's text was read from. Kept distinct from the *document*
+# so a coverage report can tell "the ministry publishes nothing here" apart
+# from "a parser could not read what the ministry publishes".
+SOURCE_HTML = "html_curriculum_page"
+SOURCE_JSONAPI = "jsonapi"
+SOURCE_BASE_PDF = "base_curricular_pdf"
+SOURCE_PROGRAMA_PDF = "programa_estudio_pdf"
+
+SOURCE_TYPES = (SOURCE_HTML, SOURCE_JSONAPI, SOURCE_BASE_PDF, SOURCE_PROGRAMA_PDF)
+
+# EPJA ámbitos de formación, as the 2024 Bases name them. These are a real part
+# of the EPJA structure -- an asignatura belongs to exactly one -- so they are
+# carried on the subject rather than folded into `track`.
+EPJA_FORMACION_GENERAL = "formacion_general"
+EPJA_FORMACION_INSTRUMENTAL = "formacion_instrumental"
+EPJA_FORMACION_DIFERENCIADA_HC = "formacion_diferenciada_hc"
+EPJA_FORMACION_DIFERENCIADA_TP = "formacion_diferenciada_tp"
+
+EPJA_FORMACION_LABEL: Dict[str, str] = {
+    EPJA_FORMACION_GENERAL: "Formación General",
+    EPJA_FORMACION_INSTRUMENTAL: "Formación Instrumental",
+    EPJA_FORMACION_DIFERENCIADA_HC: "Formación Diferenciada Humanístico-Científica",
+    EPJA_FORMACION_DIFERENCIADA_TP: "Formación Diferenciada Técnico-Profesional",
+}
+
+
+def level_by_id(level_id: str) -> Optional[Level]:
+    """Look a level up by its ``level_id``, including the synthetic ones."""
+    for level in LEVELS.values():
+        if level.level_id == level_id:
+            return level
+    return SYNTHETIC_LEVELS.get(level_id)
+
+
+def known_level_ids() -> set:
+    """Every level_id the taxonomy recognises, site-published or synthetic."""
+    return {lvl.level_id for lvl in LEVELS.values()} | set(SYNTHETIC_LEVELS)

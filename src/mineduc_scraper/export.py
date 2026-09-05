@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import re
 import sqlite3
+from collections import Counter
 from pathlib import Path
 from typing import Dict, List, Optional
 
@@ -14,13 +15,73 @@ SLIM_OBJECTIVE_FIELDS = ("oa_id", "oa_number", "category", "code", "strand_eje",
 
 # Metadata a client needs to identify a build, without the audit payload.
 MANIFEST_FIELDS = (
-    "scraped_at", "source_url", "schema_version", "generator", "dataset_variant",
+    "scraped_at", "built_at", "source_url", "schema_version", "generator",
+    "dataset_variant",
     "total_oas", "total_by_category", "total_subjects", "total_levels", "total_oats",
 )
 
 
+def summarise(database: dict) -> dict:
+    """Totals a client needs for a coverage panel, computed once at build time.
+
+    The browser must not have to load 13 MB and recount to answer "how much of
+    the curriculum is here?", and it must not hardcode the answer either. These
+    are the numbers the panel shows, derived from the dataset itself:
+
+    * `offerings` counts level x subject curriculum offerings, which is **not**
+      the same as subjects - 372 offerings are roughly 120 distinct subjects
+      taught across several levels, and labelling them "subjects" overstates the
+      dataset by a factor of three.
+    * EPJA and Religión get their own lines because they are the two areas whose
+      coverage the previous build could not state.
+    """
+    by_source: Counter = Counter()
+    by_status: Counter = Counter()
+    distinct_codes: set = set()
+    distinct_subjects: set = set()
+    offerings = 0
+    epja = religion = with_indicators = 0
+    offerings_without_objectives = 0
+
+    for level_id, level in (database.get("levels") or {}).items():
+        for subject_id, subject in (level.get("subjects") or {}).items():
+            offerings += 1
+            distinct_subjects.add(subject.get("subject_name") or subject_id)
+            objectives = subject.get("learning_objectives") or []
+            if not objectives:
+                offerings_without_objectives += 1
+            if subject_id == "religion":
+                religion += len(objectives)
+            if level_id.startswith("epja"):
+                epja += len(objectives)
+            for objective in objectives:
+                if objective.get("code"):
+                    distinct_codes.add(objective["code"])
+                if objective.get("indicators"):
+                    with_indicators += 1
+                provenance = objective.get("provenance") or {}
+                by_source[provenance.get("source_type") or "unknown"] += 1
+                by_status[objective.get("curriculum_status") or "desconocido"] += 1
+
+    metadata = database.get("metadata") or {}
+    coverage = metadata.get("coverage") or {}
+    return {
+        "total_offerings": offerings,
+        "distinct_subjects": len(distinct_subjects),
+        "distinct_official_codes": len(distinct_codes),
+        "objectives_with_indicators": with_indicators,
+        "total_epja_objectives": epja,
+        "total_religion_objectives": religion,
+        "offerings_without_objectives": offerings_without_objectives,
+        "total_by_source_type": dict(sorted(by_source.items())),
+        "status_summary": dict(sorted(by_status.items())),
+        "coverage": coverage,
+        "prioritization": metadata.get("prioritization"),
+    }
+
+
 def _manifest_metadata(database: dict) -> dict:
-    """The identifying subset of metadata, plus indicator/módulo totals."""
+    """The identifying subset of metadata, plus the coverage-panel summary."""
     metadata = database.get("metadata", {})
     out = {key: metadata[key] for key in MANIFEST_FIELDS if key in metadata}
     indicators = metadata.get("indicators") or {}
@@ -31,6 +92,51 @@ def _manifest_metadata(database: dict) -> dict:
     if modules:
         out["total_modules"] = modules.get("modules")
         out["total_criteria"] = modules.get("criteria")
+
+    out.update(summarise(database))
+
+    # Known limitations, stated in the manifest so the panel can show them
+    # without the app having to know what they are.
+    limitations: List[dict] = []
+    religion = metadata.get("religion") or {}
+    if religion.get("pages_annotated"):
+        limitations.append({
+            "area": "Religión",
+            "offerings": religion["pages_annotated"],
+            "kind": "source_absent",
+            "summary": "Religión se rige por el Decreto N° 924: cada credo tiene su "
+                       "propio programa aprobado por el Ministerio, y esos programas "
+                       "no se publican en curriculumnacional.cl.",
+            "source_url": (religion.get("governing_document") or {}).get("landing_url"),
+        })
+    epja = metadata.get("epja_bases") or {}
+    if epja.get("pages_not_defined_in_bases"):
+        limitations.append({
+            "area": "EPJA",
+            "offerings": len(epja["pages_not_defined_in_bases"]),
+            "kind": "source_absent",
+            "summary": "El sitio navega páginas para las que las Bases Curriculares "
+                       "EPJA 2024 no definen objetivos.",
+            "source_url": epja.get("landing_url"),
+        })
+    for gap_kind, label in (("parser_gaps", "Sin objetivos y sin razón verificada"),
+                            ("offerings_not_in_dataset", "Ofertas fuera del dataset")):
+        count = (metadata.get("coverage") or {}).get(
+            "parser_gaps" if gap_kind == "parser_gaps" else "offerings_not_in_dataset"
+        )
+        if count:
+            limitations.append({
+                "area": label, "offerings": count, "kind": "parser_gap",
+                "summary": "Requiere revisión: la fuente puede publicar objetivos "
+                           "que el parser no está leyendo.",
+            })
+    out["known_limitations"] = limitations
+    out["oat_verification"] = {
+        key: value
+        for key, value in (metadata.get("oat_verification") or {}).items()
+        if key in ("verified_on", "bases_with_oats", "bases_without_oats", "total",
+                   "differences")
+    }
     return out
 
 

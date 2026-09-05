@@ -2,8 +2,8 @@
   "metadata": {
     "scraped_at": "2026-09-04T14:12:49+00:00",
     "source_url": "https://www.curriculumnacional.cl",
-    "schema_version": "1.0.0",
-    "generator": "mineduc-scraper/1.0.0",
+    "schema_version": "2.0.0",
+    "generator": "mineduc-scraper/2.0.0",
     "level_id": "nivel_medio",
     "total_oas": 71,
     "total_by_category": {
@@ -11,6 +11,13 @@
     },
     "total_subjects": 3,
     "total_levels": 1,
+    "prioritization": {
+      "programme": "Priorización Curricular",
+      "period": "2023-2025",
+      "status": "historico",
+      "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+      "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+    },
     "total_oats": 0
   },
   "levels": {
@@ -63,7 +70,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/comunicacion-integral/nm-nivel-medio/oa-01-lv-nm",
               "strand_eje": "Lenguaje verbal",
               "strand_id": "lenguaje_verbal",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/comunicacion-integral/nm-nivel-medio/oa-01-lv-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_CINT_NM_LV_OA02",
@@ -90,7 +117,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/comunicacion-integral/nm-nivel-medio/oa-02-lv-nm",
               "strand_eje": "Lenguaje verbal",
               "strand_id": "lenguaje_verbal",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/comunicacion-integral/nm-nivel-medio/oa-02-lv-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_CINT_NM_LV_OA03",
@@ -117,7 +164,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/comunicacion-integral/nm-nivel-medio/oa-03-lv-nm",
               "strand_eje": "Lenguaje verbal",
               "strand_id": "lenguaje_verbal",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/comunicacion-integral/nm-nivel-medio/oa-03-lv-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_CINT_NM_LV_OA04",
@@ -144,7 +211,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/comunicacion-integral/nm-nivel-medio/oa-04-lv-nm",
               "strand_eje": "Lenguaje verbal",
               "strand_id": "lenguaje_verbal",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/comunicacion-integral/nm-nivel-medio/oa-04-lv-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_CINT_NM_LV_OA05",
@@ -171,7 +258,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/comunicacion-integral/nm-nivel-medio/oa-05-lv-nm",
               "strand_eje": "Lenguaje verbal",
               "strand_id": "lenguaje_verbal",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/comunicacion-integral/nm-nivel-medio/oa-05-lv-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_CINT_NM_LV_OA06",
@@ -198,7 +305,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/comunicacion-integral/nm-nivel-medio/oa-06-lv-nm",
               "strand_eje": "Lenguaje verbal",
               "strand_id": "lenguaje_verbal",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/comunicacion-integral/nm-nivel-medio/oa-06-lv-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_CINT_NM_LV_OA07",
@@ -224,7 +351,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/comunicacion-integral/nm-nivel-medio/oa-07-lv-nm",
               "strand_eje": "Lenguaje verbal",
               "strand_id": "lenguaje_verbal",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/comunicacion-integral/nm-nivel-medio/oa-07-lv-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_CINT_NM_LV_OA08",
@@ -244,7 +391,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/comunicacion-integral/nm-nivel-medio/oa-08-lv-nm",
               "strand_eje": "Lenguaje verbal",
               "strand_id": "lenguaje_verbal",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/comunicacion-integral/nm-nivel-medio/oa-08-lv-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_CINT_NM_LA_OA01",
@@ -271,7 +438,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/comunicacion-integral/nm-nivel-medio/oa-01-nm",
               "strand_eje": "Lenguajes artísticos",
               "strand_id": "lenguajes_artisticos",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/comunicacion-integral/nm-nivel-medio/oa-01-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_CINT_NM_LA_OA02",
@@ -298,7 +485,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/comunicacion-integral/nm-nivel-medio/oa-02-nm",
               "strand_eje": "Lenguajes artísticos",
               "strand_id": "lenguajes_artisticos",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/comunicacion-integral/nm-nivel-medio/oa-02-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_CINT_NM_LA_OA03",
@@ -322,7 +529,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/comunicacion-integral/nm-nivel-medio/oa-03-nm",
               "strand_eje": "Lenguajes artísticos",
               "strand_id": "lenguajes_artisticos",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/comunicacion-integral/nm-nivel-medio/oa-03-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_CINT_NM_LA_OA04",
@@ -348,7 +575,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/comunicacion-integral/nm-nivel-medio/oa-04-nm",
               "strand_eje": "Lenguajes artísticos",
               "strand_id": "lenguajes_artisticos",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/comunicacion-integral/nm-nivel-medio/oa-04-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_CINT_NM_LA_OA05",
@@ -374,7 +621,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/comunicacion-integral/nm-nivel-medio/oa-05-nm",
               "strand_eje": "Lenguajes artísticos",
               "strand_id": "lenguajes_artisticos",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/comunicacion-integral/nm-nivel-medio/oa-05-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_CINT_NM_LA_OA06",
@@ -396,7 +663,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/comunicacion-integral/nm-nivel-medio/oa-06-nm",
               "strand_eje": "Lenguajes artísticos",
               "strand_id": "lenguajes_artisticos",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/comunicacion-integral/nm-nivel-medio/oa-06-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_CINT_NM_LA_OA07",
@@ -423,9 +710,35 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/comunicacion-integral/nm-nivel-medio/oa-07-nm",
               "strand_eje": "Lenguajes artísticos",
               "strand_id": "lenguajes_artisticos",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/comunicacion-integral/nm-nivel-medio/oa-07-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             }
-          ]
+          ],
+          "curriculum_status": "vigente",
+          "status_source": {
+            "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+            "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+            "verified_on": "2026-09-05"
+          }
         },
         "desarrollo_personal_social": {
           "subject_id": "desarrollo_personal_social",
@@ -466,7 +779,20 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-01-ia-nm",
               "strand_eje": "Identidad y autonomía",
               "strand_id": "identidad_y_autonomia",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-01-ia-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              }
             },
             {
               "oa_id": "CL_DPS_NM_IYA_OA02",
@@ -487,7 +813,20 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-02-ia-nm",
               "strand_eje": "Identidad y autonomía",
               "strand_id": "identidad_y_autonomia",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-02-ia-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              }
             },
             {
               "oa_id": "CL_DPS_NM_IYA_OA03",
@@ -513,7 +852,20 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-03-ia-nm",
               "strand_eje": "Identidad y autonomía",
               "strand_id": "identidad_y_autonomia",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-03-ia-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              }
             },
             {
               "oa_id": "CL_DPS_NM_IYA_OA04",
@@ -540,7 +892,20 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-04-ia-nm",
               "strand_eje": "Identidad y autonomía",
               "strand_id": "identidad_y_autonomia",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-04-ia-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              }
             },
             {
               "oa_id": "CL_DPS_NM_IYA_OA05",
@@ -563,7 +928,20 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-05-ia-nm",
               "strand_eje": "Identidad y autonomía",
               "strand_id": "identidad_y_autonomia",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-05-ia-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              }
             },
             {
               "oa_id": "CL_DPS_NM_IYA_OA06",
@@ -587,7 +965,20 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-06-ia-nm",
               "strand_eje": "Identidad y autonomía",
               "strand_id": "identidad_y_autonomia",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-06-ia-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              }
             },
             {
               "oa_id": "CL_DPS_NM_IYA_OA07",
@@ -610,7 +1001,20 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-07-ia-nm",
               "strand_eje": "Identidad y autonomía",
               "strand_id": "identidad_y_autonomia",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-07-ia-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              }
             },
             {
               "oa_id": "CL_DPS_NM_IYA_OA08",
@@ -630,7 +1034,20 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-08-ia-nm",
               "strand_eje": "Identidad y autonomía",
               "strand_id": "identidad_y_autonomia",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-08-ia-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              }
             },
             {
               "oa_id": "CL_DPS_NM_IYA_OA09",
@@ -657,7 +1074,20 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-09-ia-nm",
               "strand_eje": "Identidad y autonomía",
               "strand_id": "identidad_y_autonomia",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-09-ia-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              }
             },
             {
               "oa_id": "CL_DPS_NM_IYA_OA10",
@@ -684,7 +1114,20 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-10-ia-nm",
               "strand_eje": "Identidad y autonomía",
               "strand_id": "identidad_y_autonomia",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-10-ia-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              }
             },
             {
               "oa_id": "CL_DPS_NM_IYA_OA11",
@@ -706,7 +1149,20 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-11-ia-nm",
               "strand_eje": "Identidad y autonomía",
               "strand_id": "identidad_y_autonomia",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-11-ia-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              }
             },
             {
               "oa_id": "CL_DPS_NM_IYA_OA12",
@@ -732,7 +1188,20 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-12-ia-nm",
               "strand_eje": "Identidad y autonomía",
               "strand_id": "identidad_y_autonomia",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-12-ia-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              }
             },
             {
               "oa_id": "CL_DPS_NM_CYC_OA01",
@@ -756,7 +1225,20 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-01-cc-nm",
               "strand_eje": "Convivencia y ciudadanía",
               "strand_id": "convivencia_y_ciudadania",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-01-cc-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              }
             },
             {
               "oa_id": "CL_DPS_NM_CYC_OA02",
@@ -777,7 +1259,20 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-02-cc-nm",
               "strand_eje": "Convivencia y ciudadanía",
               "strand_id": "convivencia_y_ciudadania",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-02-cc-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              }
             },
             {
               "oa_id": "CL_DPS_NM_CYC_OA03",
@@ -803,7 +1298,20 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-03-cc-nm",
               "strand_eje": "Convivencia y ciudadanía",
               "strand_id": "convivencia_y_ciudadania",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-03-cc-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              }
             },
             {
               "oa_id": "CL_DPS_NM_CYC_OA04",
@@ -825,7 +1333,20 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-04-cc-nm",
               "strand_eje": "Convivencia y ciudadanía",
               "strand_id": "convivencia_y_ciudadania",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-04-cc-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              }
             },
             {
               "oa_id": "CL_DPS_NM_CYC_OA05",
@@ -852,7 +1373,20 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-05-cc-nm",
               "strand_eje": "Convivencia y ciudadanía",
               "strand_id": "convivencia_y_ciudadania",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-05-cc-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              }
             },
             {
               "oa_id": "CL_DPS_NM_CYC_OA06",
@@ -877,7 +1411,20 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-06-cc-nm",
               "strand_eje": "Convivencia y ciudadanía",
               "strand_id": "convivencia_y_ciudadania",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-06-cc-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              }
             },
             {
               "oa_id": "CL_DPS_NM_CYC_OA07",
@@ -902,7 +1449,20 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-07-cc-nm",
               "strand_eje": "Convivencia y ciudadanía",
               "strand_id": "convivencia_y_ciudadania",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-07-cc-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              }
             },
             {
               "oa_id": "CL_DPS_NM_CYC_OA08",
@@ -928,7 +1488,20 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-08-cc-nm",
               "strand_eje": "Convivencia y ciudadanía",
               "strand_id": "convivencia_y_ciudadania",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-08-cc-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              }
             },
             {
               "oa_id": "CL_DPS_NM_CYC_OA09",
@@ -951,7 +1524,20 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-09-cc-nm",
               "strand_eje": "Convivencia y ciudadanía",
               "strand_id": "convivencia_y_ciudadania",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-09-cc-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              }
             },
             {
               "oa_id": "CL_DPS_NM_CYC_OA10",
@@ -978,7 +1564,20 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-10-cc-nm",
               "strand_eje": "Convivencia y ciudadanía",
               "strand_id": "convivencia_y_ciudadania",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-10-cc-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              }
             },
             {
               "oa_id": "CL_DPS_NM_CYM_OA01",
@@ -1004,7 +1603,20 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-01-cm-nm",
               "strand_eje": "Corporalidad y movimiento",
               "strand_id": "corporalidad_y_movimiento",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-01-cm-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              }
             },
             {
               "oa_id": "CL_DPS_NM_CYM_OA02",
@@ -1029,7 +1641,20 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-02-cm-nm",
               "strand_eje": "Corporalidad y movimiento",
               "strand_id": "corporalidad_y_movimiento",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-02-cm-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              }
             },
             {
               "oa_id": "CL_DPS_NM_CYM_OA03",
@@ -1055,7 +1680,20 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-03-cm-nm",
               "strand_eje": "Corporalidad y movimiento",
               "strand_id": "corporalidad_y_movimiento",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-03-cm-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              }
             },
             {
               "oa_id": "CL_DPS_NM_CYM_OA04",
@@ -1082,7 +1720,20 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-04-cm-nm",
               "strand_eje": "Corporalidad y movimiento",
               "strand_id": "corporalidad_y_movimiento",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-04-cm-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              }
             },
             {
               "oa_id": "CL_DPS_NM_CYM_OA05",
@@ -1104,7 +1755,20 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-05-cm-nm",
               "strand_eje": "Corporalidad y movimiento",
               "strand_id": "corporalidad_y_movimiento",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-05-cm-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              }
             },
             {
               "oa_id": "CL_DPS_NM_CYM_OA06",
@@ -1131,7 +1795,20 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-06-cm-nm",
               "strand_eje": "Corporalidad y movimiento",
               "strand_id": "corporalidad_y_movimiento",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-06-cm-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              }
             },
             {
               "oa_id": "CL_DPS_NM_CYM_OA07",
@@ -1158,7 +1835,20 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-07-cm-nm",
               "strand_eje": "Corporalidad y movimiento",
               "strand_id": "corporalidad_y_movimiento",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-07-cm-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              }
             },
             {
               "oa_id": "CL_DPS_NM_CYM_OA08",
@@ -1185,9 +1875,28 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-08-cm-nm",
               "strand_eje": "Corporalidad y movimiento",
               "strand_id": "corporalidad_y_movimiento",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/desarrollo-personal-social/nm-nivel-medio/oat-08-cm-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              }
             }
-          ]
+          ],
+          "curriculum_status": "vigente",
+          "status_source": {
+            "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+            "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+            "verified_on": "2026-09-05"
+          }
         },
         "interaccion_comprension_entorno": {
           "subject_id": "interaccion_comprension_entorno",
@@ -1234,7 +1943,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-01-een-nm",
               "strand_eje": "Exploración del entorno natural",
               "strand_id": "exploracion_del_entorno_natural",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-01-een-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_ICE_NM_EDEN_OA02",
@@ -1261,7 +1990,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-02-een-nm",
               "strand_eje": "Exploración del entorno natural",
               "strand_id": "exploracion_del_entorno_natural",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-02-een-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_ICE_NM_EDEN_OA03",
@@ -1283,7 +2032,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-03-een-nm",
               "strand_eje": "Exploración del entorno natural",
               "strand_id": "exploracion_del_entorno_natural",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-03-een-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_ICE_NM_EDEN_OA04",
@@ -1309,7 +2078,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-04-een-nm",
               "strand_eje": "Exploración del entorno natural",
               "strand_id": "exploracion_del_entorno_natural",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-04-een-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_ICE_NM_EDEN_OA05",
@@ -1336,7 +2125,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-05-een-nm",
               "strand_eje": "Exploración del entorno natural",
               "strand_id": "exploracion_del_entorno_natural",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-05-een-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_ICE_NM_EDEN_OA06",
@@ -1363,7 +2172,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-06-een-nm",
               "strand_eje": "Exploración del entorno natural",
               "strand_id": "exploracion_del_entorno_natural",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-06-een-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_ICE_NM_EDEN_OA07",
@@ -1390,7 +2219,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-07-een-nm",
               "strand_eje": "Exploración del entorno natural",
               "strand_id": "exploracion_del_entorno_natural",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-07-een-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_ICE_NM_EDEN_OA08",
@@ -1417,7 +2266,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-08-een-nm",
               "strand_eje": "Exploración del entorno natural",
               "strand_id": "exploracion_del_entorno_natural",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-08-een-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_ICE_NM_EDEN_OA09",
@@ -1443,7 +2312,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-09-een-nm",
               "strand_eje": "Exploración del entorno natural",
               "strand_id": "exploracion_del_entorno_natural",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-09-een-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_ICE_NM_CDES_OA01",
@@ -1468,7 +2357,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-01-ces-nm",
               "strand_eje": "Comprensión del entorno sociocultural",
               "strand_id": "comprension_del_entorno_sociocultural",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-01-ces-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_ICE_NM_CDES_OA02",
@@ -1495,7 +2404,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-02-ces-nm",
               "strand_eje": "Comprensión del entorno sociocultural",
               "strand_id": "comprension_del_entorno_sociocultural",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-02-ces-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_ICE_NM_CDES_OA03",
@@ -1521,7 +2450,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-03-ces-nm",
               "strand_eje": "Comprensión del entorno sociocultural",
               "strand_id": "comprension_del_entorno_sociocultural",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-03-ces-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_ICE_NM_CDES_OA04",
@@ -1548,7 +2497,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-04-ces-nm",
               "strand_eje": "Comprensión del entorno sociocultural",
               "strand_id": "comprension_del_entorno_sociocultural",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-04-ces-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_ICE_NM_CDES_OA05",
@@ -1572,7 +2541,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-05-ces-nm",
               "strand_eje": "Comprensión del entorno sociocultural",
               "strand_id": "comprension_del_entorno_sociocultural",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-05-ces-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_ICE_NM_CDES_OA06",
@@ -1599,7 +2588,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-06-ces-nm",
               "strand_eje": "Comprensión del entorno sociocultural",
               "strand_id": "comprension_del_entorno_sociocultural",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-06-ces-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_ICE_NM_CDES_OA07",
@@ -1626,7 +2635,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-07-ces-nm",
               "strand_eje": "Comprensión del entorno sociocultural",
               "strand_id": "comprension_del_entorno_sociocultural",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-07-ces-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_ICE_NM_PM_OA01",
@@ -1649,7 +2678,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-01-pm-nm",
               "strand_eje": "Pensamiento matemático",
               "strand_id": "pensamiento_matematico",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-01-pm-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_ICE_NM_PM_OA02",
@@ -1674,7 +2723,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-02-pm-nm",
               "strand_eje": "Pensamiento matemático",
               "strand_id": "pensamiento_matematico",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-02-pm-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_ICE_NM_PM_OA03",
@@ -1701,7 +2770,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-03-pm-nm",
               "strand_eje": "Pensamiento matemático",
               "strand_id": "pensamiento_matematico",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-03-pm-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_ICE_NM_PM_OA04",
@@ -1728,7 +2817,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-04-pm-nm",
               "strand_eje": "Pensamiento matemático",
               "strand_id": "pensamiento_matematico",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-04-pm-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_ICE_NM_PM_OA05",
@@ -1754,7 +2863,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-05-pm-nm",
               "strand_eje": "Pensamiento matemático",
               "strand_id": "pensamiento_matematico",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-05-pm-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_ICE_NM_PM_OA06",
@@ -1781,7 +2910,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-06-pm-nm",
               "strand_eje": "Pensamiento matemático",
               "strand_id": "pensamiento_matematico",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-06-pm-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_ICE_NM_PM_OA07",
@@ -1802,7 +2951,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-07-pm-nm",
               "strand_eje": "Pensamiento matemático",
               "strand_id": "pensamiento_matematico",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-07-pm-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_ICE_NM_PM_OA08",
@@ -1826,7 +2995,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-08-pm-nm",
               "strand_eje": "Pensamiento matemático",
               "strand_id": "pensamiento_matematico",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-08-pm-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_ICE_NM_PM_OA09",
@@ -1848,7 +3037,27 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-09-pm-nm",
               "strand_eje": "Pensamiento matemático",
               "strand_id": "pensamiento_matematico",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-09-pm-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             },
             {
               "oa_id": "CL_ICE_NM_PM_OA10",
@@ -1870,9 +3079,35 @@
               "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-10-pm-nm",
               "strand_eje": "Pensamiento matemático",
               "strand_id": "pensamiento_matematico",
-              "strand_kind": "Núcleo"
+              "strand_kind": "Núcleo",
+              "provenance": {
+                "source_url": "https://www.curriculumnacional.cl/curriculum/educacion-parvularia/interaccion-comprension-entorno/nm-nivel-medio/oa-10-pm-nm",
+                "source_type": "html_curriculum_page",
+                "curriculum_base": "educacion-parvularia",
+                "retrieved_at": "2026-09-04T14:12:49+00:00",
+                "extraction_method": "selectolax: div.items-wrapper > div.item-wrapper > span.oa-title"
+              },
+              "curriculum_status": "vigente",
+              "status_source": {
+                "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+                "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+                "verified_on": "2026-09-05"
+              },
+              "prioritization": {
+                "programme": "Priorización Curricular",
+                "period": "2023-2025",
+                "status": "historico",
+                "source_url": "https://www.curriculumnacional.cl/curriculum/priorizacion-curricular",
+                "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
+              }
             }
-          ]
+          ],
+          "curriculum_status": "vigente",
+          "status_source": {
+            "url": "https://www.curriculumnacional.cl/recursos/educacion-parvularia-vigentes-2019",
+            "note": "Bases Curriculares de Educación Parvularia, vigentes desde 2019 según la propia ficha del documento en curriculumnacional.cl.",
+            "verified_on": "2026-09-05"
+          }
         }
       }
     }

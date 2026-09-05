@@ -350,3 +350,97 @@ mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 .
   main { grid-template-columns: 1fr; }
   body { overflow: visible; }
 }
+
+/* ------------------------------------------------------------------ mode bar
+   Two top-level ways into the data. Objetivos transversales are defined once
+   per curriculum base rather than per subject, so they cannot be reached
+   through the level/subject filters at all — they need their own entrance. */
+.modebar {
+  display: flex; align-items: center; gap: .25rem;
+  padding: 0 1rem; border-bottom: 1px solid var(--line);
+  background: var(--panel); flex: 0 0 auto;
+}
+.mode {
+  appearance: none; border: 0; background: none; cursor: pointer;
+  font: inherit; color: var(--ink-2);
+  padding: .6rem .75rem; border-bottom: 2px solid transparent;
+}
+.mode:hover { color: var(--ink); }
+.mode[aria-pressed="true"] { color: var(--ink); border-bottom-color: var(--accent); font-weight: 600; }
+.mode .n {
+  font: 600 11px/1 var(--mono); color: var(--ink-3);
+  background: var(--panel-2); border-radius: 999px; padding: .2rem .4rem; margin-left: .3rem;
+}
+.about-toggle { margin-left: auto; }
+
+/* --------------------------------------------------------- coverage panel */
+.about-panel {
+  flex: 0 0 auto; max-height: 60vh; overflow: auto;
+  border-bottom: 1px solid var(--line); background: var(--panel);
+  padding: 1rem 1.25rem 1.5rem;
+}
+.about-head { display: flex; align-items: baseline; gap: 1rem; }
+.about-head h2 { margin: 0 auto 0 0; font-size: 1.05rem; }
+.about-panel h3 {
+  margin: 1.25rem 0 .5rem; font-size: .8rem; text-transform: uppercase;
+  letter-spacing: .04em; color: var(--ink-3);
+}
+.about-lede { margin: .5rem 0 0; max-width: 70ch; color: var(--ink-2); }
+.about-note { margin: .5rem 0 0; max-width: 70ch; color: var(--ink-2); font-size: .9rem; }
+.stats { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: .75rem; margin: 0; }
+.stat { border: 1px solid var(--line); border-radius: var(--radius); padding: .6rem .75rem; }
+.stat dt { font-size: .8rem; color: var(--ink-2); }
+.stat dd { margin: .15rem 0 0; font: 600 1.4rem/1.1 var(--sans); }
+.stat p { margin: .35rem 0 0; font-size: .78rem; color: var(--ink-3); }
+.cov { list-style: none; margin: 0; padding: 0; display: grid; gap: .25rem; max-width: 46rem; }
+.cov li {
+  display: flex; justify-content: space-between; gap: 1rem;
+  padding: .35rem .6rem; border-radius: 6px; background: var(--panel-2);
+}
+.cov li strong { font-variant-numeric: tabular-nums; }
+.cov .cov-parser_gap, .cov .cov-missing_from_dataset { background: var(--warn-soft); color: var(--warn); }
+.cov .cov-ingested { background: var(--ok-soft); color: var(--ok); }
+.lims { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; max-width: 60rem; }
+.lims li { border-left: 3px solid var(--line-2); padding: .4rem .75rem; }
+.lims li.lim-parser_gap { border-left-color: var(--warn); }
+.lims .lim-n { color: var(--ink-3); font-size: .8rem; margin-left: .5rem; }
+.lims li p { margin: .25rem 0; color: var(--ink-2); font-size: .9rem; }
+
+/* -------------------------------------------------------- status & badges */
+.badge.status { border-color: var(--line-2); color: var(--ink-2); }
+.badge.status.st-propuesta,
+.badge.status.st-en_implementacion { color: var(--warn); background: var(--warn-soft); border-color: transparent; }
+.badge.status.st-vigente { color: var(--ok); background: var(--ok-soft); border-color: transparent; }
+.badge.status.st-historico,
+.badge.status.st-desconocido { color: var(--ink-2); background: var(--panel-2); border-color: transparent; }
+.badge.cat-transversal { color: var(--accent); background: var(--accent-soft); border-color: transparent; }
+.d-badges { display: flex; flex-wrap: wrap; gap: .3rem; margin: .5rem 0 0; }
+.status-line { display: flex; align-items: baseline; gap: .5rem; flex-wrap: wrap; margin: .25rem 0 0; }
+.status-line span { color: var(--ink-2); font-size: .9rem; }
+
+/* A stem-plus-list objective is complete in the data; the card must not make
+   it look cut off. */
+.more-parts {
+  margin-left: .4rem; font-size: .8rem; color: var(--ink-3);
+  white-space: nowrap;
+}
+
+/* Why a result matched, when the only connection is inside an indicator. */
+.why { margin: .35rem 0 0; font-size: .82rem; color: var(--ink-3); }
+.why-x { color: var(--ink-2); font-style: italic; }
+
+/* ------------------------------------------------------------- provenance */
+.prov { display: grid; grid-template-columns: auto 1fr; gap: .2rem .75rem; margin: .35rem 0 0; }
+.prov dt { color: var(--ink-3); font-size: .82rem; }
+.prov dd { margin: 0; font-size: .85rem; overflow-wrap: anywhere; }
+.prov-link { margin: .5rem 0 0; font-size: .85rem; }
+.oat-title { margin: .5rem 0 0; font-weight: 600; }
+
+@media (max-width: 62rem) {
+  .modebar { padding: 0 .5rem; flex-wrap: wrap; }
+  .mode { padding: .55rem .5rem; font-size: .92rem; }
+  .about-toggle { margin-left: auto; }
+  .about-panel { max-height: none; padding: .75rem .9rem 1.25rem; }
+  .stats { grid-template-columns: 1fr; }
+}
+@media print { .modebar, .about-panel { display: none !important; } }

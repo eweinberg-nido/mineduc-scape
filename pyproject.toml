@@ -30,7 +30,7 @@ mineduc-scraper = "mineduc_scraper.cli:main"
 where = ["src"]
 
 [tool.setuptools.package-data]
-mineduc_scraper = ["schema/*.json"]
+mineduc_scraper = ["schema/*.json", "data/*.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

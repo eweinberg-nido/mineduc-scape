@@ -32,45 +32,82 @@
   </div>
 </header>
 
+<nav class="modebar" aria-label="Tipo de objetivo">
+  <button id="mode-oa" class="mode" type="button" aria-pressed="true">
+    Objetivos por asignatura <span id="mode-oa-n" class="n"></span>
+  </button>
+  <button id="mode-oat" class="mode" type="button" aria-pressed="false">
+    Objetivos transversales <span id="mode-oat-n" class="n"></span>
+  </button>
+  <button id="about-toggle" class="ghost small about-toggle" type="button" aria-expanded="false"
+          aria-controls="about">Acerca de los datos</button>
+</nav>
+
 <div id="status" class="status" role="status" aria-live="polite">Cargando currículum…</div>
+
+<section id="about" class="about-panel" hidden aria-label="Acerca de los datos">
+  <div class="about-head">
+    <h2>Acerca de los datos</h2>
+    <button id="about-close" class="ghost icon" type="button" aria-label="Cerrar">&times;</button>
+  </div>
+  <div id="about-body"></div>
+</section>
 
 <main hidden id="app">
   <aside class="filters" aria-label="Filtros">
     <button id="filters-toggle" class="ghost block filters-toggle" aria-expanded="true"
             aria-controls="filters-scroll">Filtros</button>
     <div class="filters-scroll" id="filters-scroll">
-      <section class="fgroup">
+      <section class="fgroup oa-only">
         <h2>Nivel</h2>
         <div id="f-level" class="chips"></div>
       </section>
-      <section class="fgroup">
+      <section class="fgroup oat-only" hidden>
+        <h2>Base curricular</h2>
+        <label class="sr" for="f-base">Base curricular</label>
+        <select id="f-base"><option value="">Todas</option></select>
+      </section>
+      <section class="fgroup oat-only" hidden>
+        <h2>Dimensión</h2>
+        <label class="sr" for="f-dimension">Dimensión</label>
+        <select id="f-dimension"><option value="">Todas</option></select>
+      </section>
+      <section class="fgroup oa-only">
         <h2>Asignatura</h2>
         <label class="sr" for="f-subject">Asignatura</label>
         <select id="f-subject"><option value="">Todas</option></select>
       </section>
-      <section class="fgroup">
+      <section class="fgroup oa-only">
         <h2>Eje / Núcleo</h2>
         <label class="sr" for="f-strand">Eje</label>
         <select id="f-strand"><option value="">Todos</option></select>
       </section>
-      <section class="fgroup">
+      <section class="fgroup oa-only">
         <h2>Tipo de objetivo</h2>
         <div id="f-category" class="chips"></div>
       </section>
-      <section class="fgroup">
+      <section class="fgroup oa-only">
         <h2>Plan</h2>
         <div id="f-track" class="chips"></div>
       </section>
-      <section class="fgroup">
+      <section class="fgroup oa-only">
         <h2>Solo mostrar</h2>
-        <label class="check"><input type="checkbox" id="f-prioritized"> Priorización curricular</label>
-        <label class="check"><input type="checkbox" id="f-indicators"> Con indicadores de evaluación</label>
+        <label class="check"><input type="checkbox" id="f-prioritized">
+          Priorización 2023&ndash;2025</label>
+        <label class="check"><input type="checkbox" id="f-indicators">
+          Con indicadores de evaluación</label>
+      </section>
+      <section class="fgroup">
+        <h2>Estado del currículum</h2>
+        <label class="sr" for="f-status">Estado</label>
+        <select id="f-status"><option value="">Todos los estados</option></select>
       </section>
       <button id="reset" class="ghost block">Limpiar filtros</button>
 
       <section class="fgroup about">
         <h2>Dataset</h2>
         <dl id="meta"></dl>
+        <button id="about-open" class="ghost block small" type="button">Acerca de los datos</button>
         <p class="fineprint">
           Contenido curricular: Ministerio de Educación de Chile, Unidad de Currículum y
           Evaluación &mdash;
