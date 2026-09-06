@@ -640,6 +640,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34302_programa.pdf",
+          "tp_sector": "Marítimo",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -1110,6 +1111,7 @@
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34310_programa.pdf",
           "modules_shared_programme": true,
+          "tp_sector": "Administración",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -1545,6 +1547,7 @@
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34310_programa.pdf",
           "modules_shared_programme": true,
+          "tp_sector": "Administración",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -2072,6 +2075,7 @@
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34310_programa.pdf",
           "modules_shared_programme": true,
+          "tp_sector": "Administración",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -2276,6 +2280,7 @@
               }
             }
           ],
+          "tp_sector": "Agropecuario",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -2548,6 +2553,7 @@
               }
             }
           ],
+          "tp_sector": "Agropecuario",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -2789,6 +2795,7 @@
               }
             }
           ],
+          "tp_sector": "Agropecuario",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -3433,6 +3440,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34312_programa.pdf",
+          "tp_sector": "Agropecuario",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -3984,6 +3992,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34333_programa.pdf",
+          "tp_sector": "Minero",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -4228,6 +4237,7 @@
               }
             }
           ],
+          "tp_sector": "Salud y Educación",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -4361,6 +4371,7 @@
               }
             }
           ],
+          "tp_sector": "Salud y Educación",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -4905,6 +4916,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34350_programa.pdf",
+          "tp_sector": "Salud y Educación",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -5598,6 +5610,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34352_programa.pdf",
+          "tp_sector": "Salud y Educación",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -6297,6 +6310,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34335_programa.pdf",
+          "tp_sector": "Tecnología y Comunicaciones",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -6504,6 +6518,7 @@
               }
             }
           ],
+          "tp_sector": "Construcción",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -6781,6 +6796,7 @@
               }
             }
           ],
+          "tp_sector": "Construcción",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -7025,6 +7041,7 @@
               }
             }
           ],
+          "tp_sector": "Construcción",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -7703,6 +7720,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34315_programa.pdf",
+          "tp_sector": "Construcción",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -8263,6 +8281,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34329_programa.pdf",
+          "tp_sector": "Metalmecánica",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -8812,6 +8831,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34311_programa.pdf",
+          "tp_sector": "Administración",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -9449,6 +9469,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34322_programa.pdf",
+          "tp_sector": "Gráfico",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -9959,6 +9980,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34341_programa.pdf",
+          "tp_sector": "Alimentación",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -10519,6 +10541,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34320_programa.pdf",
+          "tp_sector": "Electricidad",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -11136,6 +11159,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34321_programa.pdf",
+          "tp_sector": "Electricidad",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -11745,6 +11769,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34331_programa.pdf",
+          "tp_sector": "Minero",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -12364,6 +12389,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34326_programa.pdf",
+          "tp_sector": "Maderero",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -12568,6 +12594,7 @@
               }
             }
           ],
+          "tp_sector": "Alimentación",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -12773,6 +12800,7 @@
               }
             }
           ],
+          "tp_sector": "Alimentación",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -13404,6 +13432,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34313_programa.pdf",
+          "tp_sector": "Alimentación",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -13923,6 +13952,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34323_programa.pdf",
+          "tp_sector": "Gráfico",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -14513,6 +14543,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34470_programa.pdf",
+          "tp_sector": "Construcción",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -15158,6 +15189,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34330_programa.pdf",
+          "tp_sector": "Metalmecánica",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -15365,6 +15397,7 @@
               }
             }
           ],
+          "tp_sector": "Metalmecánica",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -15572,6 +15605,7 @@
               }
             }
           ],
+          "tp_sector": "Metalmecánica",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -15806,6 +15840,7 @@
               }
             }
           ],
+          "tp_sector": "Metalmecánica",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -16376,6 +16411,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34328_programa.pdf",
+          "tp_sector": "Metalmecánica",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -16972,6 +17008,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-37245_programa.pdf",
+          "tp_sector": "Metalmecánica",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -17496,6 +17533,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34332_programa.pdf",
+          "tp_sector": "Minero",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -18128,6 +18166,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34317_programa.pdf",
+          "tp_sector": "Construcción",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -18868,6 +18907,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34327_programa.pdf",
+          "tp_sector": "Maderero",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -19379,6 +19419,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34306_programa.pdf",
+          "tp_sector": "Marítimo",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -19944,6 +19985,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34308_programa.pdf",
+          "tp_sector": "Marítimo",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -20579,6 +20621,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34336_programa.pdf",
+          "tp_sector": "Tecnología y Comunicaciones",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -20785,6 +20828,7 @@
               }
             }
           ],
+          "tp_sector": "Química e Industria",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -20918,6 +20962,7 @@
               }
             }
           ],
+          "tp_sector": "Química e Industria",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -21423,6 +21468,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34334_programa.pdf",
+          "tp_sector": "Química e Industria",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -22013,6 +22059,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34318_programa.pdf",
+          "tp_sector": "Construcción",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -22631,6 +22678,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34324_programa.pdf",
+          "tp_sector": "Hotelería y Turismo",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -23188,6 +23236,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34325_programa.pdf",
+          "tp_sector": "Hotelería y Turismo",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -23886,6 +23935,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34340_programa.pdf",
+          "tp_sector": "Tecnología y Comunicaciones",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -24490,6 +24540,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34309_programa.pdf",
+          "tp_sector": "Marítimo",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -25147,6 +25198,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34314_programa.pdf",
+          "tp_sector": "Confección",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",

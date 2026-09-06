@@ -314,6 +314,10 @@
           "type": "string",
           "format": "date-time",
           "description": "When these artefacts were generated. Distinct from scraped_at, which is when the HTML crawl ran; a build that augments an existing crawl advances built_at only, and that is what clients version their cached copy on."
+        },
+        "tp_sectors": {
+          "type": "object",
+          "description": "Summary of the pass that reads the TP sectores económicos from the site index."
         }
       }
     },
@@ -565,6 +569,10 @@
             "minLength": 1
           },
           "description": "Conocimientos esenciales, published per asignatura and nivel in the EPJA Bases."
+        },
+        "tp_sector": {
+          "type": "string",
+          "description": "Sector económico of a Técnico-Profesional speciality. MINEDUC's own grouping of the specialities, read from the site's master index rather than derived here."
         }
       }
     },

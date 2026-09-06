@@ -1,6 +1,6 @@
 {
   "scraped_at": "2026-09-04T14:12:49+00:00",
-  "built_at": "2026-09-05T16:16:15+00:00",
+  "built_at": "2026-09-06T10:06:56+00:00",
   "source_url": "https://www.curriculumnacional.cl",
   "schema_version": "2.0.0",
   "generator": "mineduc-scraper/2.0.0",
@@ -81,12 +81,12 @@
     },
     "total": 74,
     "differences": [],
-    "verified_on": "2026-09-05T16:16:15+00:00"
+    "verified_on": "2026-09-06T10:06:56+00:00"
   },
   "files": {
     "full": {
       "path": "mineduc_curriculum_full.json",
-      "bytes": 14068073
+      "bytes": 14072527
     },
     "slim": {
       "path": "mineduc_curriculum_slim.json",

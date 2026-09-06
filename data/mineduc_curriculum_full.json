@@ -4472,9 +4472,9 @@
       "objective_links": 345,
       "match_threshold": 0.55
     },
-    "built_at": "2026-09-05T16:16:15+00:00",
+    "built_at": "2026-09-06T10:06:56+00:00",
     "epja_bases": {
-      "extracted_at": "2026-09-05T16:16:15+00:00",
+      "extracted_at": "2026-09-06T10:06:56+00:00",
       "source": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
       "source_url": "https://www.curriculumnacional.cl/sites/default/files/adjuntos/recursos/2026-07/WEB_bbcc%20EPJA_v16_0.pdf",
       "landing_url": "https://www.curriculumnacional.cl/recursos/bases-curriculares-educacion-personas-jovenes-adultas-2024",
@@ -4592,7 +4592,13 @@
       "missing_from_dataset": [],
       "not_in_source": [],
       "count_mismatches": [],
-      "verified_on": "2026-09-05T16:16:15+00:00"
+      "verified_on": "2026-09-06T10:06:56+00:00"
+    },
+    "tp_sectors": {
+      "source": "https://www.curriculumnacional.cl/curriculum/ambitos-y-asignaturas",
+      "sectors": 15,
+      "subjects_tagged": 104,
+      "subjects_unmapped": []
     },
     "religion": {
       "pages_annotated": 12,
@@ -4648,7 +4654,7 @@
       "note": "Marca de pertenencia a la Priorización Curricular 2023-2025. Es un dato histórico: no significa que el objetivo forme parte de un subconjunto priorizado vigente."
     },
     "provenance": {
-      "annotated_at": "2026-09-05T16:16:15+00:00",
+      "annotated_at": "2026-09-06T10:06:56+00:00",
       "objectives": 4261,
       "oats": 74,
       "already_had_provenance": 151,
@@ -147883,6 +147889,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34302_programa.pdf",
+          "tp_sector": "Marítimo",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -148353,6 +148360,7 @@
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34310_programa.pdf",
           "modules_shared_programme": true,
+          "tp_sector": "Administración",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -148788,6 +148796,7 @@
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34310_programa.pdf",
           "modules_shared_programme": true,
+          "tp_sector": "Administración",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -149315,6 +149324,7 @@
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34310_programa.pdf",
           "modules_shared_programme": true,
+          "tp_sector": "Administración",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -149519,6 +149529,7 @@
               }
             }
           ],
+          "tp_sector": "Agropecuario",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -149791,6 +149802,7 @@
               }
             }
           ],
+          "tp_sector": "Agropecuario",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -150032,6 +150044,7 @@
               }
             }
           ],
+          "tp_sector": "Agropecuario",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -150676,6 +150689,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34312_programa.pdf",
+          "tp_sector": "Agropecuario",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -151227,6 +151241,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34333_programa.pdf",
+          "tp_sector": "Minero",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -151471,6 +151486,7 @@
               }
             }
           ],
+          "tp_sector": "Salud y Educación",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -151604,6 +151620,7 @@
               }
             }
           ],
+          "tp_sector": "Salud y Educación",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -152148,6 +152165,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34350_programa.pdf",
+          "tp_sector": "Salud y Educación",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -152841,6 +152859,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34352_programa.pdf",
+          "tp_sector": "Salud y Educación",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -153540,6 +153559,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34335_programa.pdf",
+          "tp_sector": "Tecnología y Comunicaciones",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -153747,6 +153767,7 @@
               }
             }
           ],
+          "tp_sector": "Construcción",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -154024,6 +154045,7 @@
               }
             }
           ],
+          "tp_sector": "Construcción",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -154268,6 +154290,7 @@
               }
             }
           ],
+          "tp_sector": "Construcción",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -154946,6 +154969,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34315_programa.pdf",
+          "tp_sector": "Construcción",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -155506,6 +155530,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34329_programa.pdf",
+          "tp_sector": "Metalmecánica",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -156055,6 +156080,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34311_programa.pdf",
+          "tp_sector": "Administración",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -156692,6 +156718,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34322_programa.pdf",
+          "tp_sector": "Gráfico",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -157202,6 +157229,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34341_programa.pdf",
+          "tp_sector": "Alimentación",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -157762,6 +157790,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34320_programa.pdf",
+          "tp_sector": "Electricidad",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -158379,6 +158408,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34321_programa.pdf",
+          "tp_sector": "Electricidad",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -158988,6 +159018,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34331_programa.pdf",
+          "tp_sector": "Minero",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -159607,6 +159638,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34326_programa.pdf",
+          "tp_sector": "Maderero",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -159811,6 +159843,7 @@
               }
             }
           ],
+          "tp_sector": "Alimentación",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -160016,6 +160049,7 @@
               }
             }
           ],
+          "tp_sector": "Alimentación",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -160647,6 +160681,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34313_programa.pdf",
+          "tp_sector": "Alimentación",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -161166,6 +161201,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34323_programa.pdf",
+          "tp_sector": "Gráfico",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -161756,6 +161792,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34470_programa.pdf",
+          "tp_sector": "Construcción",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -162401,6 +162438,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34330_programa.pdf",
+          "tp_sector": "Metalmecánica",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -162608,6 +162646,7 @@
               }
             }
           ],
+          "tp_sector": "Metalmecánica",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -162815,6 +162854,7 @@
               }
             }
           ],
+          "tp_sector": "Metalmecánica",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -163049,6 +163089,7 @@
               }
             }
           ],
+          "tp_sector": "Metalmecánica",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -163619,6 +163660,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34328_programa.pdf",
+          "tp_sector": "Metalmecánica",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -164215,6 +164257,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-37245_programa.pdf",
+          "tp_sector": "Metalmecánica",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -164739,6 +164782,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34332_programa.pdf",
+          "tp_sector": "Minero",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -165371,6 +165415,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34317_programa.pdf",
+          "tp_sector": "Construcción",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -166111,6 +166156,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34327_programa.pdf",
+          "tp_sector": "Maderero",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -166622,6 +166668,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34306_programa.pdf",
+          "tp_sector": "Marítimo",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -167187,6 +167234,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34308_programa.pdf",
+          "tp_sector": "Marítimo",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -167822,6 +167870,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34336_programa.pdf",
+          "tp_sector": "Tecnología y Comunicaciones",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -168028,6 +168077,7 @@
               }
             }
           ],
+          "tp_sector": "Química e Industria",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -168161,6 +168211,7 @@
               }
             }
           ],
+          "tp_sector": "Química e Industria",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -168666,6 +168717,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34334_programa.pdf",
+          "tp_sector": "Química e Industria",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -169256,6 +169308,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34318_programa.pdf",
+          "tp_sector": "Construcción",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -169874,6 +169927,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34324_programa.pdf",
+          "tp_sector": "Hotelería y Turismo",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -170431,6 +170485,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34325_programa.pdf",
+          "tp_sector": "Hotelería y Turismo",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -171129,6 +171184,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34340_programa.pdf",
+          "tp_sector": "Tecnología y Comunicaciones",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -171733,6 +171789,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34309_programa.pdf",
+          "tp_sector": "Marítimo",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -172390,6 +172447,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34314_programa.pdf",
+          "tp_sector": "Confección",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -185328,6 +185386,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34302_programa.pdf",
+          "tp_sector": "Marítimo",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -185954,6 +186013,7 @@
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34310_programa.pdf",
           "modules_shared_programme": true,
+          "tp_sector": "Administración",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -186543,6 +186603,7 @@
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34310_programa.pdf",
           "modules_shared_programme": true,
+          "tp_sector": "Administración",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -187203,6 +187264,7 @@
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34310_programa.pdf",
           "modules_shared_programme": true,
+          "tp_sector": "Administración",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -187407,6 +187469,7 @@
               }
             }
           ],
+          "tp_sector": "Agropecuario",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -187679,6 +187742,7 @@
               }
             }
           ],
+          "tp_sector": "Agropecuario",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -187920,6 +187984,7 @@
               }
             }
           ],
+          "tp_sector": "Agropecuario",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -188982,6 +189047,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34312_programa.pdf",
+          "tp_sector": "Agropecuario",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -189515,6 +189581,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34333_programa.pdf",
+          "tp_sector": "Minero",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -189759,6 +189826,7 @@
               }
             }
           ],
+          "tp_sector": "Salud y Educación",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -189892,6 +189960,7 @@
               }
             }
           ],
+          "tp_sector": "Salud y Educación",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -190677,6 +190746,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34350_programa.pdf",
+          "tp_sector": "Salud y Educación",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -191356,6 +191426,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34352_programa.pdf",
+          "tp_sector": "Salud y Educación",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -191971,6 +192042,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34335_programa.pdf",
+          "tp_sector": "Tecnología y Comunicaciones",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -192178,6 +192250,7 @@
               }
             }
           ],
+          "tp_sector": "Construcción",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -192455,6 +192528,7 @@
               }
             }
           ],
+          "tp_sector": "Construcción",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -192699,6 +192773,7 @@
               }
             }
           ],
+          "tp_sector": "Construcción",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -193642,6 +193717,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34315_programa.pdf",
+          "tp_sector": "Construcción",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -194279,6 +194355,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34329_programa.pdf",
+          "tp_sector": "Metalmecánica",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -194795,6 +194872,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34311_programa.pdf",
+          "tp_sector": "Administración",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -195478,6 +195556,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34322_programa.pdf",
+          "tp_sector": "Gráfico",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -195990,6 +196069,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34341_programa.pdf",
+          "tp_sector": "Alimentación",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -196562,6 +196642,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34320_programa.pdf",
+          "tp_sector": "Electricidad",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -197235,6 +197316,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34321_programa.pdf",
+          "tp_sector": "Electricidad",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -197874,6 +197956,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34331_programa.pdf",
+          "tp_sector": "Minero",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -198470,6 +198553,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34326_programa.pdf",
+          "tp_sector": "Maderero",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -198674,6 +198758,7 @@
               }
             }
           ],
+          "tp_sector": "Alimentación",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -198879,6 +198964,7 @@
               }
             }
           ],
+          "tp_sector": "Alimentación",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -199552,6 +199638,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34313_programa.pdf",
+          "tp_sector": "Alimentación",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -200030,6 +200117,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34323_programa.pdf",
+          "tp_sector": "Gráfico",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -200561,6 +200649,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34470_programa.pdf",
+          "tp_sector": "Construcción",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -201096,6 +201185,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34330_programa.pdf",
+          "tp_sector": "Metalmecánica",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -201303,6 +201393,7 @@
               }
             }
           ],
+          "tp_sector": "Metalmecánica",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -201510,6 +201601,7 @@
               }
             }
           ],
+          "tp_sector": "Metalmecánica",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -201744,6 +201836,7 @@
               }
             }
           ],
+          "tp_sector": "Metalmecánica",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -202681,6 +202774,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34328_programa.pdf",
+          "tp_sector": "Metalmecánica",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -203292,6 +203386,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-37245_programa.pdf",
+          "tp_sector": "Metalmecánica",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -203851,6 +203946,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34332_programa.pdf",
+          "tp_sector": "Minero",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -204452,6 +204548,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34317_programa.pdf",
+          "tp_sector": "Construcción",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -205124,6 +205221,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34327_programa.pdf",
+          "tp_sector": "Maderero",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -205628,6 +205726,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34306_programa.pdf",
+          "tp_sector": "Marítimo",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -206197,6 +206296,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34308_programa.pdf",
+          "tp_sector": "Marítimo",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -206803,6 +206903,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34336_programa.pdf",
+          "tp_sector": "Tecnología y Comunicaciones",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -207009,6 +207110,7 @@
               }
             }
           ],
+          "tp_sector": "Química e Industria",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -207142,6 +207244,7 @@
               }
             }
           ],
+          "tp_sector": "Química e Industria",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -207804,6 +207907,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34334_programa.pdf",
+          "tp_sector": "Química e Industria",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -208357,6 +208461,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34318_programa.pdf",
+          "tp_sector": "Construcción",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -208908,6 +209013,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34324_programa.pdf",
+          "tp_sector": "Hotelería y Turismo",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -209392,6 +209498,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34325_programa.pdf",
+          "tp_sector": "Hotelería y Turismo",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -210048,6 +210155,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34340_programa.pdf",
+          "tp_sector": "Tecnología y Comunicaciones",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -210641,6 +210749,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34309_programa.pdf",
+          "tp_sector": "Marítimo",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -211178,6 +211287,7 @@
             }
           ],
           "modules_source": "https://www.curriculumnacional.cl/sites/default/files/newtenberg/614/articles-34314_programa.pdf",
+          "tp_sector": "Confección",
           "curriculum_status": "vigente",
           "status_source": {
             "url": "https://www.curriculumnacional.cl/curriculum/3o-4o-medio-tecnico-profesional",
@@ -223528,7 +223638,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 71,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -223567,7 +223677,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 71,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -223605,7 +223715,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 71,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -223644,7 +223754,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 71,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -223682,7 +223792,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 71,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -223724,7 +223834,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 71,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -223820,7 +223930,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 92,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -223857,7 +223967,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 92,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -223899,7 +224009,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 92,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -223941,7 +224051,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 92,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -223981,7 +224091,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 92,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -224023,7 +224133,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 92,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -224061,7 +224171,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 92,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -224154,7 +224264,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 82,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -224195,7 +224305,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 82,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -224237,7 +224347,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 82,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -224277,7 +224387,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 82,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -224317,7 +224427,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 82,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -224356,7 +224466,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 82,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -224444,7 +224554,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 103,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -224486,7 +224596,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 103,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -224527,7 +224637,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 103,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -224567,7 +224677,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 103,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -224656,7 +224766,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 58,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -224692,7 +224802,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 58,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -224732,7 +224842,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 58,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -224774,7 +224884,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 58,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -224810,7 +224920,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 58,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -224905,7 +225015,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 72,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -224945,7 +225055,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 72,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -224984,7 +225094,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 72,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -225023,7 +225133,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 72,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -225062,7 +225172,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 72,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -225104,7 +225214,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 72,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -225193,7 +225303,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 59,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -225235,7 +225345,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 59,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -225277,7 +225387,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 59,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -225319,7 +225429,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 59,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -225358,7 +225468,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 59,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -225448,7 +225558,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 73,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -225487,7 +225597,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 73,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -225526,7 +225636,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 73,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -225565,7 +225675,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 73,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -225604,7 +225714,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 73,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -225644,7 +225754,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 73,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -225728,7 +225838,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 83,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -225770,7 +225880,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 83,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -225812,7 +225922,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 83,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -225850,7 +225960,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 83,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -225890,7 +226000,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 83,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -225932,7 +226042,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 83,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -226007,7 +226117,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 93,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -226049,7 +226159,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 93,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -226091,7 +226201,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 93,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -226133,7 +226243,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 93,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -226171,7 +226281,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 93,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -226213,7 +226323,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 93,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -226251,7 +226361,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 93,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -226338,7 +226448,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 104,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -226380,7 +226490,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 104,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -226422,7 +226532,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 104,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -226464,7 +226574,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 104,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -226596,7 +226706,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 94,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -226638,7 +226748,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 94,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -226680,7 +226790,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 94,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -226722,7 +226832,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 94,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -226764,7 +226874,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 94,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -226803,7 +226913,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 94,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -227025,7 +227135,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 84,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -227067,7 +227177,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 84,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -227103,7 +227213,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 84,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -227142,7 +227252,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 84,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -227184,7 +227294,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 84,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -227276,7 +227386,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 60,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -227313,7 +227423,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 60,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -227355,7 +227465,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 60,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -227397,7 +227507,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 60,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -227437,7 +227547,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 60,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -227528,7 +227638,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 74,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -227567,7 +227677,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 74,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -227605,7 +227715,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 74,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -227644,7 +227754,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 74,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -227680,7 +227790,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 74,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -227721,7 +227831,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 74,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -227761,7 +227871,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 74,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -227802,7 +227912,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 74,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -227944,7 +228054,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 105,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -227986,7 +228096,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 105,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -228025,7 +228135,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 105,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -228067,7 +228177,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 105,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -228194,7 +228304,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 95,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -228236,7 +228346,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 95,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -228278,7 +228388,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 95,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -228320,7 +228430,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 95,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -228362,7 +228472,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 95,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -228404,7 +228514,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 95,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -228446,7 +228556,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 95,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -228485,7 +228595,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 95,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -228698,7 +228808,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 75,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -228738,7 +228848,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 75,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -228776,7 +228886,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 75,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -228818,7 +228928,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 75,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -228854,7 +228964,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 75,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -228895,7 +229005,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 75,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -228935,7 +229045,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 75,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -228976,7 +229086,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 75,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -229118,7 +229228,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 61,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -229159,7 +229269,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 61,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -229201,7 +229311,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 61,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -229240,7 +229350,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 61,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -229282,7 +229392,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 61,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -229365,7 +229475,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 85,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -229407,7 +229517,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 85,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -229446,7 +229556,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 85,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -229485,7 +229595,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 85,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -229527,7 +229637,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 85,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -229608,7 +229718,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 106,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -229650,7 +229760,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 106,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -229689,7 +229799,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 106,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -229731,7 +229841,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 106,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -229821,7 +229931,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 115,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -229867,7 +229977,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 115,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -229913,7 +230023,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 115,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -229959,7 +230069,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 115,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -230005,7 +230115,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 115,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -230094,7 +230204,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 118,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -230135,7 +230245,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 118,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -230177,7 +230287,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 118,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -230223,7 +230333,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 118,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -230310,7 +230420,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 122,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -230356,7 +230466,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 122,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -230402,7 +230512,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 122,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -230448,7 +230558,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 122,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -230494,7 +230604,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 122,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -230580,7 +230690,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 126,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -230626,7 +230736,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 126,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -230672,7 +230782,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 126,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -230716,7 +230826,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 126,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -230762,7 +230872,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 126,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -230806,7 +230916,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 126,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -230889,7 +230999,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 131,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -230935,7 +231045,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 131,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -230981,7 +231091,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 131,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -231067,7 +231177,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 134,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -231113,7 +231223,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 134,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -231159,7 +231269,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 134,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -231205,7 +231315,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 134,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -231290,7 +231400,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 137,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -231333,7 +231443,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 137,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -231378,7 +231488,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 137,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",
@@ -231423,7 +231533,7 @@
                 "source_document": "Bases Curriculares para la Educación de Personas Jóvenes y Adultas 2024",
                 "source_page": 137,
                 "curriculum_base": "bases-curriculares-educacion-personas-jovenes-adultas-epja",
-                "retrieved_at": "2026-09-05T16:16:15+00:00",
+                "retrieved_at": "2026-09-06T10:06:56+00:00",
                 "extraction_method": "bases_pdf: sección 'Estructura curricular' de las Bases Curriculares (asignatura x ciclo x nivel), líneas 'OA n.' con su eje entre paréntesis"
               },
               "curriculum_status": "en_implementacion",

@@ -22,6 +22,8 @@ from .build import (
 )
 from .corrections import apply_corrections
 from .epja import merge as epja_merge
+from .markdown import write_markdown
+from .sectors import annotate as annotate_sectors, fetch_sectors
 from .inventory import (
     bases_document_offerings,
     build_report as build_coverage_report,
@@ -315,6 +317,16 @@ def cmd_augment(args: argparse.Namespace) -> int:
         oat_report["verified_on"] = retrieved_at
         metadata["oat_verification"] = oat_report
 
+    # -- 1c. TP sectores económicos ---------------------------------------
+    # The 15 sectors are MINEDUC's own grouping of the specialities, read from
+    # the site index. Stored on the subject so any consumer -- the Markdown
+    # export, the explorer -- groups by the ministry's structure rather than
+    # inventing one of its own.
+    if not args.no_sectors:
+        with PoliteClient(delay=args.delay, cache_dir=args.cache) as client:
+            sector_map = fetch_sectors(client)
+        metadata["tp_sectors"] = annotate_sectors(database, sector_map)
+
     # -- 2. Religión -------------------------------------------------------
     religion_report = annotate_religion(database)
     metadata["religion"] = religion_report
@@ -359,6 +371,12 @@ def cmd_augment(args: argparse.Namespace) -> int:
         for problem in (oat_report["differences"] + oat_report["missing_from_dataset"]
                         + oat_report["not_in_source"] + oat_report["count_mismatches"])[:10]:
             print(f"    ! {problem}")
+    if metadata.get("tp_sectors"):
+        sectors = metadata["tp_sectors"]
+        print(f"  TP subjects tagged w/ sector {sectors['subjects_tagged']}"
+              f" across {sectors['sectors']} sectores económicos")
+        for where in sectors["subjects_unmapped"][:10]:
+            print(f"    ! no sector for {where}")
     print(f"  Religión pages annotated    {religion_report['pages_annotated']}")
     print(f"  corrections applied         {len(applied)}")
     for record in applied:
@@ -453,6 +471,26 @@ def cmd_export_manifest(args: argparse.Namespace) -> int:
             }
     output = write_manifest(database, args.output, files)
     print(f"wrote {output} ({output.stat().st_size} bytes)")
+    return 0
+
+
+def cmd_export_markdown(args: argparse.Namespace) -> int:
+    """Write the curriculum as Markdown documents, grouped for a 50-source notebook."""
+    database = _load(args.file)
+    paths = write_markdown(database, args.output)
+    total = sum(path.stat().st_size for path in paths)
+    print(f"wrote {len(paths)} files in {args.output} ({total / 1_048_576:.2f} MB)")
+
+    documents = len(paths) - 1  # the index is not a source
+    print(f"\n  documents         {documents}")
+    if documents > 50:
+        print(f"  ! {documents} documents exceeds the 50-source limit of a "
+              f"NotebookLM notebook")
+    else:
+        print(f"  headroom          {50 - documents} more sources available")
+    largest = max(paths, key=lambda p: p.stat().st_size)
+    print(f"  largest document  {largest.name} "
+          f"({largest.stat().st_size / 1024:.0f} KB)")
     return 0
 
 
@@ -626,6 +664,9 @@ def build_parser() -> argparse.ArgumentParser:
     augment.add_argument("--delay", type=float, default=DEFAULT_DELAY)
     augment.add_argument("--no-epja", action="store_true",
                          help="skip the Bases Curriculares EPJA pass")
+    augment.add_argument("--no-sectors", action="store_true",
+                         help="skip reading the Técnico-Profesional sectores "
+                              "económicos from the site index")
     augment.add_argument("--no-oat-check", action="store_true",
                          help="skip re-reading the OATs from the JSON:API to verify them")
     augment.add_argument("--compact", action="store_true")
@@ -687,6 +728,20 @@ def build_parser() -> argparse.ArgumentParser:
     manifest.add_argument("--slim", type=Path, default=None)
     manifest.add_argument("--sqlite", type=Path, default=None)
     manifest.set_defaults(func=cmd_export_manifest)
+
+    markdown = subparsers.add_parser(
+        "export-markdown",
+        help="the curriculum as Markdown documents, grouped to fit a 50-source notebook",
+        description="Tools like NotebookLM take Markdown rather than JSON and cap a "
+                    "notebook at 50 sources, so the single 14 MB dataset is unusable "
+                    "there twice over. This writes the same canonical data as subject "
+                    "documents that fit inside that budget: one file per subject in "
+                    "the plan común, one per sector económico in Técnico-Profesional, "
+                    "and one per area for Parvularia, EPJA and the HC electives.",
+    )
+    markdown.add_argument("--file", "-f", type=Path, required=True)
+    markdown.add_argument("--output", "-o", type=Path, default=Path("data/markdown"))
+    markdown.set_defaults(func=cmd_export_markdown)
 
     split = subparsers.add_parser("split", help="one JSON file per level, plus index.json")
     split.add_argument("--file", "-f", type=Path, required=True)

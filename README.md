@@ -75,6 +75,7 @@ mineduc-scraper scrape --cache .cache -o data/mineduc_curriculum_full.json
 | `export-slim --file F -o G` | OAs only, single-line statements — for browser bundles and LLM context (`--with-indicators` to keep them) |
 | `export-manifest --file F -o G` | Small manifest identifying a build, for the browser navigator's version check |
 | `export-sqlite --file F -o G` | SQLite build with an FTS5 full-text index |
+| `export-markdown --file F -o DIR` | The curriculum as Markdown documents, grouped to fit a 50-source notebook (NotebookLM and similar) |
 | `split --file F -o DIR` | One JSON file per level plus an `index.json` manifest, for lazy client-side loading |
 | `levels` | List the tokens accepted by `--levels` |
 | `query TEXT --file F` | Grep the dataset from the shell — handy for spot-checking a scrape |
@@ -506,6 +507,7 @@ installing Python and re-scraping:
 | `data/mineduc_curriculum_slim.json` | 2.0 MB | objectives only, single-line statements — browser bundles, LLM context |
 | `data/mineduc_curriculum.db` | 13.3 MB | SQLite with FTS5 over statements *and* indicators — see [examples/queries.sql](examples/queries.sql) |
 | `data/by_level/*.json` | 9.0 MB | one file per level plus `index.json`, for loading a single grade |
+| `data/markdown/*.md` | 5.2 MB | 43 subject documents plus an index, for tools that take Markdown rather than JSON |
 | `data/manifest.json` | <1 KB | build identity (`scraped_at` and totals) for version checks |
 
 They are all derived from the full JSON and can be rebuilt from it without touching the network:
@@ -514,6 +516,7 @@ They are all derived from the full JSON and can be rebuilt from it without touch
 mineduc-scraper export-sqlite   -f data/mineduc_curriculum_full.json -o data/mineduc_curriculum.db
 mineduc-scraper export-slim     -f data/mineduc_curriculum_full.json -o data/mineduc_curriculum_slim.json
 mineduc-scraper split           -f data/mineduc_curriculum_full.json -o data/by_level
+mineduc-scraper export-markdown -f data/mineduc_curriculum_full.json -o data/markdown
 mineduc-scraper export-manifest -f data/mineduc_curriculum_full.json -o data/manifest.json
 ```
 
@@ -531,6 +534,38 @@ the repo combined, and a GitHub Pages site may be no larger than 1 GB — publis
 repository root would have spent 76% of that budget on source PDFs. If you want them archived
 for reproducibility, a GitHub Release asset (2 GB per file, and it does not affect clone size)
 or Git LFS is the right home, not the git object store.
+
+## Markdown build (for NotebookLM and similar)
+
+`data/markdown/` holds the same curriculum as **43 Markdown documents plus an index**. It exists
+because the tools people want to ask questions of this data with — NotebookLM in particular — do
+not accept JSON, and cap a notebook at **50 sources**. A single 14 MB JSON file fails both tests.
+
+The binding constraint is the file *count*, not the size: the whole curriculum is about 536 000
+words and one source holds roughly 500 000, so documents can be generous as long as there are few
+enough. The grouping lands at 43, leaving 7 sources spare:
+
+| | |
+| --- | --- |
+| 23 | **Plan Común y Formación General** — one file per subject, spanning every level it is taught in. Grade-suffixed names (`Matemática 3º Medio`) fold onto the subject, which is a mechanical read of the published name. |
+| 15 | **Técnico-Profesional** — one file per *sector económico*. Those 15 sectors are MINEDUC's own grouping, read from the site's master index and stored on each subject as `tp_sector`, not invented by the exporter. |
+| 3 | **Educación Parvularia**, **EPJA**, and the **Formación Diferenciada HC** electives — one file each. |
+| 1 | `00_indice.md`, a table of every document with its counts. |
+
+Each objective is written with its official code, eje, complete statement (**including the
+subordinate list**, where it has one), evaluation indicators, curriculum status, the Priorización
+2023–2025 marker where it applies, any correction that was applied, and **the exact source it was
+extracted from** — so an answer traced back through a notebook lands on a real page or PDF page.
+Técnico-Profesional documents carry the módulos with their Aprendizajes Esperados and all 5 024
+Criterios de Evaluación. A subject with no objectives explains *why* rather than rendering empty,
+so Religión reads as the documented property of the source that it is.
+
+```bash
+mineduc-scraper export-markdown -f data/mineduc_curriculum_full.json -o data/markdown
+```
+
+The command reports whether the result fits the 50-source budget, so a future curriculum expansion
+that pushes it over is visible rather than discovered when an upload is refused.
 
 ## Browser navigator
 
